@@ -1,0 +1,47 @@
+---
+import { content } from '../data/content';
+---
+<footer data-section="footer" class="bg-white pt-16 pb-10 border-t border-gray-100">
+  <div class="mx-auto max-w-[1440px] px-6 lg:px-[140px]">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-100">
+      {content.footer.columns.map((column) => (
+        <div>
+          <p class="text-black font-bold uppercase mb-4 tracking-wider text-sm">{column.title}</p>
+          <ul class="p-0 m-0 list-none space-y-2">
+            {column.links.map((link) => (
+              <li>
+                <a href="#" class="text-brand-muted hover:text-brand-blue transition-colors duration-300 ease-in-out text-xs">
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <div>
+        <p class="text-black font-bold uppercase mb-4 tracking-wider text-sm">Síguenos</p>
+        <ul class="p-0 m-0 list-none space-y-2">
+          {content.footer.social.map((social) => (
+            <li>
+              <a href="#" class="text-brand-blue hover:opacity-70 transition-opacity duration-300 ease-in-out text-xs">
+                {social.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center md:items-end justify-between gap-6 pt-8">
+      <img
+        src="images/Logo-Capitalizarme-Bicolor-Horizontal-05.png"
+        alt={content.header.logoAlt}
+        class="w-[150px] h-auto order-2 md:order-1"
+      />
+      <div class="text-center md:text-left order-1 md:order-2">
+        <p class="text-brand-muted max-w-[441px] mx-auto md:mx-0 text-[10px] leading-[14px]">{content.footer.legal}</p>
+        <p class="text-brand-muted max-w-[441px] mx-auto md:mx-0 mt-1 text-[10px] leading-[14px]">{content.footer.copyright}</p>
+        <p class="text-brand-muted mt-2 text-[10px] leading-[14px]">{content.footer.address}</p>
+      </div>
+    </div>
+  </div>
+</footer>

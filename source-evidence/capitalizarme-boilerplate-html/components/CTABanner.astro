@@ -1,0 +1,16 @@
+---
+import { content } from '../data/content';
+---
+<section data-section="cta-banner" class="bg-brand-blue py-16 lg:py-24 text-center">
+  <div class="mx-auto max-w-[1440px] px-6 lg:px-[140px]">
+    <h2 class="text-white font-black text-3xl lg:text-4xl mb-1.5">{content.cta.title}</h2>
+    <p class="text-white mb-0">{content.cta.subtitle}</p>
+    <p class="text-white/85 max-w-[561px] mx-auto mt-4 mb-0">{content.cta.description}</p>
+    <a
+      href="#contact"
+      class="font-raleway inline-block mt-8 bg-white text-brand-blue rounded-full uppercase px-8 py-3 tracking-wider hover:opacity-90 transition-all duration-300 ease-in-out"
+    >
+      {content.cta.button}
+    </a>
+  </div>
+</section>

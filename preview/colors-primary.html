@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Primary Colors</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 1080px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 680px; }
+  h2 { font-size: 15px; margin: 40px 0 6px; color: var(--fg-emphasis); }
+  .section-note { font-size: 12px; color: var(--muted); max-width: 680px; margin: 0 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .swatch { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
+  .swatch-fill { height: 96px; }
+  .swatch-meta { padding: 12px 14px; background: var(--surface); }
+  .swatch-name { font-weight: var(--weight-bold); font-size: 14px; }
+  .swatch-value { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); }
+  .swatch-source { font-size: 11px; color: var(--muted); margin-top: 4px; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Primary colors</h1>
+    <p>The official brand palette is the 2021 branding guidelines cover page — per company decision,
+    this is the only official color source. The unrelated landing-campaign palette below is kept only
+    for fidelity to the archived landing-page source.</p>
+  </div>
+
+  <h2>Official palette — 2021 branding guidelines (DESIGN.md §2.1)</h2>
+  <p class="section-note">Pixel-sampled from the 2021 "Uso de color" cover page. Navy, Blue, Gold,
+  Green, and Red are the five evidenced color bars; blue-dark/red-dark are DERIVED via oklch, and
+  purple/off-white/blue-light/slate have no 2021 equivalent — unverified functional placeholders kept
+  only so the system has the neutrals/secondary hue it needs.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-navy);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-navy</div>
+        <div class="swatch-value">#25397F</div>
+        <div class="swatch-source">Fondos, títulos, primario</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-blue);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-blue</div>
+        <div class="swatch-value">#106CB5</div>
+        <div class="swatch-source">Acento primario — links, badges</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-blue-dark); color: #fff;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-blue-dark</div>
+        <div class="swatch-value">DERIVED (oklch)</div>
+        <div class="swatch-source">CTAs secundarios, datos</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-red);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-red</div>
+        <div class="swatch-value">#ED1847</div>
+        <div class="swatch-source">Alertas, acciones críticas</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-red-dark);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-red-dark</div>
+        <div class="swatch-value">DERIVED (oklch)</div>
+        <div class="swatch-source">Hover rojo, texto de alerta</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-gold);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-gold</div>
+        <div class="swatch-value">#FBAF17</div>
+        <div class="swatch-source">IA, elementos premium — no usar como warning</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-purple);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-purple</div>
+        <div class="swatch-value">#8E27C6</div>
+        <div class="swatch-source">Elementos secundarios — no 2021 equivalent, unverified placeholder</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-green);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">brand-green</div>
+        <div class="swatch-value">#006939</div>
+        <div class="swatch-source">Éxito</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-off-white); border-bottom: 1px solid var(--border);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">off-white</div>
+        <div class="swatch-value">#F8F9FB</div>
+        <div class="swatch-source">Fondo — no 2021 equivalent, unverified placeholder</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-blue-light); border-bottom: 1px solid var(--border);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">blue-light</div>
+        <div class="swatch-value">#DDE6FF</div>
+        <div class="swatch-source">Bordes, paneles tintados — no 2021 equivalent, unverified placeholder</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-slate);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">slate</div>
+        <div class="swatch-value">#64748B</div>
+        <div class="swatch-source">Texto secundario — no 2021 equivalent, unverified placeholder</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Status colors</h2>
+  <p class="section-note">Success and Danger now map directly to the official 2021 Green/Red above.
+  Warning has no evidenced source and stays derived — Gold is reserved for AI/premium, not warning.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--status-success);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">status-success</div>
+        <div class="swatch-value">#006939 (brand-green)</div>
+        <div class="swatch-source">Source-backed — §2.1 (2021 guidelines)</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--status-warning);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">status-warning (derived)</div>
+        <div class="swatch-value">oklch(72% 0.15 75)</div>
+        <div class="swatch-source">Not evidenced — tuned near the official palette</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--status-danger);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">status-danger</div>
+        <div class="swatch-value">#ED1847 (brand-red)</div>
+        <div class="swatch-source">Source-backed — §2.1 (2021 guidelines)</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Landing-campaign variant</h2>
+  <p class="section-note">From <code>src/styles/global.css</code>'s Tailwind <code>@theme</code> block —
+  a themed marketing-landing codebase (archived here as a frozen snapshot; still Capitalizarme's live
+  production landing-page repo), not the production product. Kept for
+  reproducing <code>source-evidence/</code> pixel-for-pixel; prefer the official palette above for new
+  work.</p>
+  <div class="grid">
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #0169CB;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">campaign blue</div>
+        <div class="swatch-value">#0169CB</div>
+        <div class="swatch-source">@theme --color-brand-blue (archived source)</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #11224C;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">campaign navy</div>
+        <div class="swatch-value">#11224C</div>
+        <div class="swatch-source">@theme --color-brand-navy (archived source)</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: #878683;"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">campaign muted</div>
+        <div class="swatch-value">#878683</div>
+        <div class="swatch-source">@theme --color-brand-muted (archived source)</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-blue-tint-50); border-bottom: 1px solid var(--border);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">blue-tint-50</div>
+        <div class="swatch-value">#EAF5FD</div>
+        <div class="swatch-source">Features.astro inline background-color</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-fill" style="background: var(--color-brand-blue-tint-100); border-bottom: 1px solid var(--border);"></div>
+      <div class="swatch-meta">
+        <div class="swatch-name">blue-tint-100</div>
+        <div class="swatch-value">#E8F0FC</div>
+        <div class="swatch-source">Features.astro / ImageTextPanel.astro icon &amp; graphic fills</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

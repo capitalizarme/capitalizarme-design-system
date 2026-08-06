@@ -1,0 +1,37 @@
+---
+import { content } from '../data/content';
+---
+<section data-section="featured-work" class="mx-auto max-w-[1440px] px-6 lg:px-[140px] py-16">
+  <div class="mb-5">
+    <h4 class="text-brand-navy font-bold uppercase text-sm tracking-wide m-0">{content.featuredWork.label}</h4>
+    <h2 class="text-brand-navy font-black text-3xl lg:text-4xl m-0">{content.featuredWork.heading}</h2>
+    <h3 class="text-black text-xl font-normal">{content.featuredWork.subtitle}</h3>
+  </div>
+  <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+    <div class="w-full lg:max-w-[480px] shrink-0">
+      <ul class="flex flex-col gap-3 list-none p-0 m-0">
+        {content.featuredWork.features.map((feature) => (
+          <li class="flex items-center gap-3">
+            <svg width="24" height="24" viewBox="0 0 25 25" class="shrink-0" aria-hidden="true">
+              <circle cx="12.5" cy="12.5" r="12.5" fill="#0169CB" />
+              <path d="M7 12.5l3.5 3.5 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <a
+        href="#"
+        class="font-raleway inline-block mt-6 bg-brand-blue text-white rounded-full uppercase px-8 py-3 tracking-wider hover:opacity-90 transition-all duration-300 ease-in-out"
+      >
+        {content.featuredWork.cta}
+      </a>
+    </div>
+    <div class="w-full lg:flex-1 flex justify-center">
+      <svg viewBox="0 0 400 300" class="w-full max-w-[561px] h-auto rounded-lg" role="img" aria-hidden="true">
+        <rect width="400" height="300" rx="12" fill="#11224C" opacity="0.1" />
+        <rect x="40" y="40" width="320" height="220" rx="8" fill="#0169CB" opacity="0.3" />
+      </svg>
+    </div>
+  </div>
+</section>

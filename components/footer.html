@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Footer component</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .demo { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px; }
+
+  /* ---- Footer — applied verbatim from ui_kits/app-react/components/Footer.jsx (Footer.astro source),
+       including the compliance disclaimer required by DESIGN.md §8 ---- */
+  .app-footer { background: #fff; padding: 64px 24px 40px; border-top: 1px solid var(--border-subtle); }
+  .app-footer .cols {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .app-footer .col-title { font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px; margin-bottom: 12px; }
+  .app-footer ul { list-style: none; margin: 0; padding: 0; }
+  .app-footer li { margin-bottom: 6px; }
+  .app-footer a.footer-link { color: var(--muted); font-size: 12px; text-decoration: none; }
+  .app-footer a.social-link { color: var(--accent); font-size: 12px; text-decoration: none; }
+  .app-footer .bottom-row { display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; padding-top: 32px; }
+  .app-footer .bottom-row img { width: 140px; height: auto; }
+  .app-footer .legal { max-width: 440px; font-size: 10px; line-height: 14px; color: var(--muted); }
+  .app-footer .legal p { margin: 0; }
+  .app-footer .legal p + p { margin-top: 4px; }
+
+  pre { background: var(--surface-tint); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; overflow-x: auto; font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Footer component</h1>
+    <p>5-column link grid + bottom row (wordmark + legal/compliance disclaimer). Copied from
+    <code>ui_kits/app-react/components/Footer.jsx</code>, itself applied verbatim from <code>Footer.astro</code>
+    (see <code>source-evidence/capitalizarme-boilerplate-html/components/Footer.astro</code>). The rentabilidad disclaimer in the
+    legal block must carry into every derivative page per <code>DESIGN.md</code> §8 — don't drop it.</p>
+  </div>
+
+  <div class="meta">Live render</div>
+  <div class="demo">
+    <footer class="app-footer">
+      <div class="cols">
+        <div><p class="col-title">Invierte</p><ul><li><a class="footer-link" href="#">Explorar inversiones</a></li></ul></div>
+        <div><p class="col-title">Aprende</p><ul><li><a class="footer-link" href="#">Primeros pasos de inversión</a></li></ul></div>
+        <div><p class="col-title">Ayuda y soporte</p><ul><li><a class="footer-link" href="#">Centro de ayuda</a></li></ul></div>
+        <div><p class="col-title">Comunidad</p><ul><li><a class="footer-link" href="#">Comunidad</a></li></ul></div>
+        <div><p class="col-title">Síguenos</p><ul>
+          <li><a class="social-link" href="#">Facebook</a></li>
+          <li><a class="social-link" href="#">Instagram</a></li>
+          <li><a class="social-link" href="#">Youtube</a></li>
+          <li><a class="social-link" href="#">Twitter</a></li>
+          <li><a class="social-link" href="#">Linkedin</a></li>
+        </ul></div>
+      </div>
+      <div class="bottom-row">
+        <img src="../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
+        <div class="legal">
+          <p>Todas las rentabilidades y retornos mostrados en la página son referenciales, los
+            rendimientos pasados no garantizan retornos futuros.</p>
+          <p>©Capitalizarme 2026 • Condiciones de uso • Políticas de privacidad</p>
+          <p>Hendaya 60, OF. 901 Las Condes.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="meta">Copy — markup</div>
+  <pre><code>&lt;footer class="app-footer"&gt;
+  &lt;div class="cols"&gt;
+    &lt;div&gt;&lt;p class="col-title"&gt;Invierte&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a class="footer-link" href="#"&gt;Explorar inversiones&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;p class="col-title"&gt;Aprende&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a class="footer-link" href="#"&gt;Primeros pasos de inversión&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;p class="col-title"&gt;Ayuda y soporte&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a class="footer-link" href="#"&gt;Centro de ayuda&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;p class="col-title"&gt;Comunidad&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a class="footer-link" href="#"&gt;Comunidad&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;p class="col-title"&gt;Síguenos&lt;/p&gt;&lt;ul&gt;
+      &lt;li&gt;&lt;a class="social-link" href="#"&gt;Facebook&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="social-link" href="#"&gt;Instagram&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="social-link" href="#"&gt;Youtube&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="social-link" href="#"&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="social-link" href="#"&gt;Linkedin&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="bottom-row"&gt;
+    &lt;img src="assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" /&gt;
+    &lt;div class="legal"&gt;
+      &lt;p&gt;Todas las rentabilidades y retornos mostrados en la página son referenciales, los
+        rendimientos pasados no garantizan retornos futuros.&lt;/p&gt;
+      &lt;p&gt;©Capitalizarme 2026 • Condiciones de uso • Políticas de privacidad&lt;/p&gt;
+      &lt;p&gt;Hendaya 60, OF. 901 Las Condes.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</code></pre>
+
+  <div class="meta" style="margin-top: 24px;">Copy — CSS (add alongside <code>colors_and_type.css</code>)</div>
+  <pre><code>.app-footer { background: #fff; padding: 64px 24px 40px; border-top: 1px solid var(--border-subtle); }
+.app-footer .cols {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px;
+  padding-bottom: 40px; border-bottom: 1px solid var(--border-subtle);
+}
+.app-footer .col-title { font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px; margin-bottom: 12px; }
+.app-footer ul { list-style: none; margin: 0; padding: 0; }
+.app-footer li { margin-bottom: 6px; }
+.app-footer a.footer-link { color: var(--muted); font-size: 12px; text-decoration: none; }
+.app-footer a.social-link { color: var(--accent); font-size: 12px; text-decoration: none; }
+.app-footer .bottom-row { display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; padding-top: 32px; }
+.app-footer .bottom-row img { width: 140px; height: auto; }
+.app-footer .legal { max-width: 440px; font-size: 10px; line-height: 14px; color: var(--muted); }
+.app-footer .legal p { margin: 0; }
+.app-footer .legal p + p { margin-top: 4px; }</code></pre>
+</body>
+</html>

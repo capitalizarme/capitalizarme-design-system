@@ -1,0 +1,33 @@
+---
+import { content } from '../data/content';
+---
+<section id="contact" data-section="contact-form" class="mx-auto max-w-[1440px] px-6 lg:px-[140px] py-16">
+  <div class="rounded-2xl border border-gray-200 shadow-sm p-6 md:p-10">
+    <h2 class="text-black font-black text-3xl lg:text-4xl mb-2.5">{content.contactForm.title}</h2>
+    <p class="mb-5">{content.contactForm.description}</p>
+    <form>
+      {content.contactForm.fields.map((field) => (
+        <div>
+          <label for={field.name} class="block font-medium mt-3 mb-1">
+            {field.label}
+          </label>
+          <input
+            id={field.name}
+            name={field.name}
+            type={field.type}
+            required
+            class="w-full text-brand-blue bg-transparent border-b border-gray-300 focus:border-brand-blue outline-none transition-all duration-150 ease-in-out py-2"
+          />
+        </div>
+      ))}
+      <div class="flex justify-end mt-6">
+        <button
+          type="submit"
+          class="font-raleway bg-brand-blue text-white rounded-full uppercase px-8 py-3 tracking-wider hover:opacity-90 transition-all duration-300 ease-in-out"
+        >
+          {content.contactForm.submit}
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+Copyright (c) 2026 Capitalizarme. All Rights Reserved.
+
+This repository contains the "Capitalizarme Design System" package,
+including without limitation DESIGN.md, colors_and_type.css, the assets/,
+build/, fonts/, preview/, source_examples/, and ui_kits/ directories, and all
+brand marks, illustrations, and mascot renders contained within them
+(collectively, the "Materials").
+
+The Materials are the confidential and proprietary property of Capitalizarme.
+No license, express or implied, to any intellectual property rights is
+granted by this document except as follows:
+
+1. Capitalizarme employees, contractors, and authorized agencies or partners
+   acting on Capitalizarme's behalf may use, copy, and modify the Materials
+   solely for the purpose of designing, building, and maintaining
+   Capitalizarme products and marketing surfaces.
+2. Redistribution of the Materials, in whole or in part, to any third party
+   outside of that scope — including publishing them in a public repository,
+   a public design-system registry, or any other externally accessible
+   location — requires prior written permission from Capitalizarme.
+3. The "Capi" mascot character, the Capitalizarme wordmark, and all other
+   brand assets remain the exclusive property of Capitalizarme regardless of
+   how they are used or reproduced under this license.
+
+THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL
+CAPITALIZARME OR ITS CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY ARISING FROM, OUT OF, OR IN CONNECTION WITH THE MATERIALS OR THEIR
+USE.

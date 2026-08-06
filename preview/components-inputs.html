@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Form Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 640px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Form — ContactForm.astro</h1>
+    <p>Underline-only inputs, no boxed fields. Reproduced verbatim from
+    <code>source-evidence/capitalizarme-boilerplate-html/components/ContactForm.astro</code>.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-family: var(--font-display); font-weight: var(--weight-black); font-size: 28px; margin-bottom: 8px;">Descubre cómo funciona</h2>
+    <p style="margin-bottom: 20px; color: var(--fg);">Regístrate con tus datos de contacto y agenda una reunión con alguien de nuestro equipo de solo 45 minutos sin costo.</p>
+    <form onsubmit="return false;">
+      <label for="name">¿Cómo te llamas?</label>
+      <input id="name" class="input-underline" type="text" required />
+
+      <label for="lastname">¿Cuál es tu apellido?</label>
+      <input id="lastname" class="input-underline" type="text" required />
+
+      <label for="phone">¿Cuál es tu teléfono?</label>
+      <input id="phone" class="input-underline" type="tel" required />
+
+      <label for="email">¿Cuál es tu email?</label>
+      <input id="email" class="input-underline" type="email" required />
+
+      <div style="display: flex; justify-content: flex-end; margin-top: 24px;">
+        <button type="submit" class="btn btn-primary">Siguiente</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

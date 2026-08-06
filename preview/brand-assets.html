@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Brand Assets</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 1100px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 680px; }
+  h2 { font-size: 16px; margin: 40px 0 16px; color: var(--fg-emphasis); }
+  .logo-block { padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .logo-block img.wordmark { width: 260px; height: auto; }
+  .favicon-tile { width: 48px; height: 48px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+  .variant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .variant-tile { border-radius: var(--radius-md); border: 1px solid var(--border); padding: 24px 16px 14px; text-align: center; }
+  .variant-tile.on-light { background: var(--surface); }
+  .variant-tile.on-dark { background: var(--color-brand-navy); border-color: var(--color-brand-navy); }
+  .variant-tile img.horizontal { width: 100%; max-width: 180px; height: auto; }
+  .variant-tile img.isotype { width: 96px; height: auto; }
+  .variant-tile .label { font-size: 11px; font-family: ui-monospace, monospace; color: var(--muted); margin-top: 12px; }
+  .variant-tile.on-dark .label { color: rgba(255,255,255,0.65); }
+  .icons-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .icon-card { width: 160px; text-align: center; padding: 16px; background: var(--surface-tint); border-radius: var(--radius-md); }
+  .icon-card img { width: 64px; height: 64px; }
+  .icon-card .label { font-size: 11px; color: var(--muted); margin-top: 8px; }
+  .mascot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 16px; }
+  .mascot-tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px; text-align: center; }
+  .mascot-tile img { width: 100%; height: 120px; object-fit: contain; }
+  .mascot-tile .label { font-size: 10px; font-family: ui-monospace, monospace; color: var(--muted); margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Brand assets</h1>
+    <p>Real, preserved source files loaded directly from <code>assets/</code> — the primary wordmark
+    lockup, the full horizontal and isotype logo color families, favicon, the 4 step icons used in the
+    "how it works" section, and the full captured set of Capi mascot renders. Nothing on this page is
+    redrawn.</p>
+  </div>
+
+  <h2>Logo &amp; favicon — assets/logo/</h2>
+  <div class="logo-block">
+    <img class="wordmark" src="../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme wordmark" />
+    <div class="favicon-tile"><img src="../assets/logo/favicon.png" alt="Capitalizarme favicon, black isotype" style="width:100%; height:100%; object-fit: contain;" /></div>
+    <div style="font-size: 12px; color: var(--muted);">
+      horizontal/070726_logo-capitalizarme-negro-sin-com.png (1997×415, Negro/black, "sin com") — used directly as the default wordmark, no separate root copy<br>
+      favicon.png — current default favicon, byte-for-byte copy of the black isotype (assets/logo/isotypes/Isotipo Negro.png)<br>
+      favicon.svg — archived source's original favicon (brand-blue rounded square, white "C"), kept for provenance, no longer the default
+    </div>
+  </div>
+
+  <h2>Horizontal logo — assets/logo/horizontal/ (7 color variants)</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: -8px 0 16px; max-width: 680px;">The current
+    flat-color lockup batch (dated "070726"), including Verde and Azul Oscuro (dark navy). Filenames use
+    the current "sin com" naming — Capitalizarme's active wordmark drops the ".com" suffix used throughout
+    the archived 2020/2021 BrandBook. Blanco (white) is shown on a navy tile for legibility — always place
+    it on a dark or brand-blue surface, never on white. Note: embedded ink colors here are close to but not
+    identical to the §2.1 official tokens — treat as decorative logo colors, not a UI token source.</p>
+  <div class="variant-grid">
+    <div class="variant-tile on-light"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-azul-sin-com.png" alt="Capitalizarme horizontal logo, blue" /><div class="label">Azul — 070726_logo-capitalizarme-azul-sin-com.png</div></div>
+    <div class="variant-tile on-light"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-azul-oscuro-sin-com.png" alt="Capitalizarme horizontal logo, dark navy" /><div class="label">Azul Oscuro — 070726_logo-capitalizarme-azul-oscuro-sin-com.png</div></div>
+    <div class="variant-tile on-light"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-verde-sin-com.png" alt="Capitalizarme horizontal logo, green" /><div class="label">Verde — 070726_logo-capitalizarme-verde-sin-com.png</div></div>
+    <div class="variant-tile on-light"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-rojo-sin-com.png" alt="Capitalizarme horizontal logo, red" /><div class="label">Rojo — 070726_logo-capitalizarme-rojo-sin-com.png</div></div>
+    <div class="variant-tile on-light"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-amarillo-sin-com.png" alt="Capitalizarme horizontal logo, yellow" /><div class="label">Amarillo — 070726_logo-capitalizarme-amarillo-sin-com.png</div></div>
+    <div class="variant-tile on-light"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme horizontal logo, black" /><div class="label">Negro — 070726_logo-capitalizarme-negro-sin-com.png</div></div>
+    <div class="variant-tile on-dark"><img class="horizontal" src="../assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png" alt="Capitalizarme horizontal logo, white" /><div class="label">Blanco — 070726_logo-capitalizarme-blanco-sin-com.png</div></div>
+  </div>
+
+  <h2>Isotype — assets/logo/isotypes/ (7 color variants)</h2>
+  <p style="color: var(--muted); font-size: 13px; margin: -8px 0 16px; max-width: 680px;">The mark alone
+    (no wordmark), for favicon-scale, avatar, or watermark placements where the full lockup won't fit.
+    Same color rule as the horizontal lockup: Blanco needs a dark or brand-blue background.</p>
+  <div class="variant-grid">
+    <div class="variant-tile on-light"><img class="isotype" src="../assets/logo/isotypes/Isotipo Azul.png" alt="Capitalizarme isotype, blue" /><div class="label">Azul — Isotipo Azul.png</div></div>
+    <div class="variant-tile on-light"><img class="isotype" src="../assets/logo/isotypes/Isotipo Celeste.png" alt="Capitalizarme isotype, celeste" /><div class="label">Celeste — Isotipo Celeste.png</div></div>
+    <div class="variant-tile on-light"><img class="isotype" src="../assets/logo/isotypes/Isotipo Rojo.png" alt="Capitalizarme isotype, red" /><div class="label">Rojo — Isotipo Rojo.png</div></div>
+    <div class="variant-tile on-light"><img class="isotype" src="../assets/logo/isotypes/Isotipo Verde.png" alt="Capitalizarme isotype, green" /><div class="label">Verde — Isotipo Verde.png</div></div>
+    <div class="variant-tile on-light"><img class="isotype" src="../assets/logo/isotypes/Isotipo Amarillo.png" alt="Capitalizarme isotype, yellow" /><div class="label">Amarillo — Isotipo Amarillo.png</div></div>
+    <div class="variant-tile on-light"><img class="isotype" src="../assets/logo/isotypes/Isotipo Negro.png" alt="Capitalizarme isotype, black" /><div class="label">Negro — Isotipo Negro.png</div></div>
+    <div class="variant-tile on-dark"><img class="isotype" src="../assets/logo/isotypes/Isotipo Blanco.png" alt="Capitalizarme isotype, white" /><div class="label">Blanco — Isotipo Blanco.png</div></div>
+  </div>
+
+  <h2>Step icons — assets/icons/ (Features.astro)</h2>
+  <div class="icons-row">
+    <div class="icon-card"><img src="../assets/icons/step-1-evaluate.svg" alt="Evalúate en nuestro simulador" /><div class="label">step-1-evaluate.svg</div></div>
+    <div class="icon-card"><img src="../assets/icons/step-2-opciones.svg" alt="Conoce tus opciones" /><div class="label">step-2-opciones.svg</div></div>
+    <div class="icon-card"><img src="../assets/icons/step-3-elige.svg" alt="Elige las que te interesan" /><div class="label">step-3-elige.svg</div></div>
+    <div class="icon-card"><img src="../assets/icons/step-4-recibe.svg" alt="Recibe la información" /><div class="label">step-4-recibe.svg</div></div>
+  </div>
+
+  <h2>Mascot — Capi — assets/mascot/ (20 renders)</h2>
+  <div class="mascot-grid">
+    <div class="mascot-tile"><img src="../assets/mascot/capi-front-wave.png" alt="Capi front wave" /><div class="label">capi-front-wave.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-1-phone.png" alt="Capi on phone" /><div class="label">capi-1-phone.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-2-filing.png" alt="Capi filing documents" /><div class="label">capi-2-filing.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-3.png" alt="Capi thumbs up" /><div class="label">capi-3.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-4.png" alt="Capi" /><div class="label">capi-4.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-5.png" alt="Capi" /><div class="label">capi-5.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-6.png" alt="Capi" /><div class="label">capi-6.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-7.png" alt="Capi" /><div class="label">capi-7.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-searching.png" alt="Capi searching" /><div class="label">capi-searching.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-atareado-busy.png" alt="Capi busy" /><div class="label">capi-atareado-busy.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-subgerente-brand-manager.png" alt="Capi brand manager" /><div class="label">capi-subgerente-brand-manager.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-cohete-rocket.png" alt="Capi riding rocket" /><div class="label">capi-cohete-rocket.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-skate.png" alt="Capi skateboarding" /><div class="label">capi-skate.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-graduado.png" alt="Capi graduate" /><div class="label">capi-graduado.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-cines.png" alt="Capi at the movies" /><div class="label">capi-cines.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-celular-1.png" alt="Capi with phone" /><div class="label">capi-celular-1.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-celular-2.png" alt="Capi with phone" /><div class="label">capi-celular-2.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-portrait.png" alt="Capi portrait" /><div class="label">capi-portrait.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-scene-01.png" alt="Capi scene" /><div class="label">capi-scene-01.png</div></div>
+    <div class="mascot-tile"><img src="../assets/mascot/capi-scene-02.png" alt="Capi scene" /><div class="label">capi-scene-02.png</div></div>
+    <div class="mascot-tile" style="grid-column: 1 / -1; padding: 0; border: none; background: none;">
+      <img src="../assets/mascot/capi-rot-lineup.png" alt="Capi rotation lineup" style="height: auto; max-height: 200px; object-fit: contain;" />
+      <div class="label">capi-rot-lineup.png (multi-angle reference sheet)</div>
+    </div>
+  </div>
+</body>
+</html>

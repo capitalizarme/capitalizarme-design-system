@@ -1,0 +1,21 @@
+---
+// InputBar — the chat composer. Pill-shaped container matches this system's button radius
+// language. Send behavior is wired by the client script in pages/index.astro (#chat-input /
+// #chat-send), since Astro components render server-side and hold no client state.
+---
+<div class="flex items-center gap-2 border border-gray-200 rounded-full px-4 py-2 m-4">
+  <input
+    id="chat-input"
+    type="text"
+    placeholder="Escribe tu mensaje…"
+    class="flex-1 border-0 bg-transparent focus:outline-none text-sm"
+  />
+  <button
+    id="chat-send"
+    type="button"
+    aria-label="Enviar"
+    class="w-9 h-9 rounded-full bg-brand-blue text-white flex items-center justify-center shrink-0"
+  >
+    →
+  </button>
+</div>

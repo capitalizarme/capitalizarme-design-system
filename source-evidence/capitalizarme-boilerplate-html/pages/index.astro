@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import ImageTextPanel from '../components/ImageTextPanel.astro';
+import FeaturedWork from '../components/FeaturedWork.astro';
+import Features from '../components/Features.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
+import { content } from '../data/content';
+---
+<Layout>
+  <Header />
+  <main class="pt-16">
+    <Hero />
+    <ContactForm />
+    <ImageTextPanel
+      dataSection="partners-primary"
+      heading={content.partnersPrimary.heading}
+      description={content.partnersPrimary.description}
+    />
+    <ImageTextPanel
+      dataSection="partners-secondary"
+      heading={content.partnersSecondary.heading}
+      description={content.partnersSecondary.description}
+      reverse
+    />
+    <ImageTextPanel
+      dataSection="social-proof"
+      heading={content.socialProof.heading}
+      description={content.socialProof.description}
+    />
+    <FeaturedWork />
+    <Features />
+  </main>
+  <CTABanner />
+  <Footer />
+</Layout>

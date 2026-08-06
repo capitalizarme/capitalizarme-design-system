@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Radius</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .row { display: flex; gap: 24px; flex-wrap: wrap; }
+  .card-demo { width: 200px; padding: 20px; background: var(--surface-tint-alt); text-align: center; }
+  .meta { margin-top: 10px; font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Radius scale</h1>
+    <p>Three radii cover the entire system — no in-between values evidenced. Buttons are always fully
+    pill-shaped; there is no "slightly rounded" button variant.</p>
+  </div>
+  <div class="row">
+    <div>
+      <div class="card-demo" style="border-radius: var(--radius-sm); background: white; border: 1px solid var(--border);">rounded-lg</div>
+      <div class="meta">--radius-sm · 8px<br>hero/panel illustration corners</div>
+    </div>
+    <div>
+      <div class="card-demo" style="border-radius: var(--radius-md); background: white; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">rounded-2xl</div>
+      <div class="meta">--radius-md · 16px<br>ContactForm card, Features step cards</div>
+    </div>
+    <div>
+      <div class="card-demo" style="border-radius: var(--radius-pill); background: var(--accent); color: white; padding: 20px 32px; width: auto; display: inline-flex; align-items: center; justify-content: center;">rounded-full</div>
+      <div class="meta">--radius-pill · 9999px<br>every button, icon roundel</div>
+    </div>
+  </div>
+</body>
+</html>

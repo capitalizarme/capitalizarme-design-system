@@ -1,0 +1,24 @@
+---
+import { content } from '../data/content';
+---
+<section data-section="hero" class="mx-auto max-w-[1440px] px-6 lg:px-[140px] py-16">
+  <div class="flex flex-col lg:flex-row items-center gap-6">
+    <div class="lg:w-[561px] shrink-0">
+      <h1 class="text-brand-blue font-extrabold text-5xl lg:text-6xl leading-tight">
+        {content.hero.title}
+      </h1>
+      <p class="text-black mt-4">{content.hero.subtitle}</p>
+      <p class="text-black mt-2.5">{content.hero.description}</p>
+    </div>
+    <div class="flex-1 flex justify-center">
+      <svg viewBox="0 0 400 320" class="w-full max-w-[470px] h-auto" role="img" aria-label="Ilustración">
+        <rect x="20" y="40" width="360" height="240" rx="16" fill="#EAF5FD" />
+        <circle cx="120" cy="160" r="50" fill="#0169CB" opacity="0.85" />
+        <rect x="200" y="110" width="160" height="100" rx="12" fill="#11224C" opacity="0.15" />
+        <rect x="220" y="130" width="120" height="14" rx="7" fill="#0169CB" />
+        <rect x="220" y="156" width="90" height="14" rx="7" fill="#0169CB" opacity="0.6" />
+        <rect x="220" y="182" width="60" height="14" rx="7" fill="#0169CB" opacity="0.3" />
+      </svg>
+    </div>
+  </div>
+</section>

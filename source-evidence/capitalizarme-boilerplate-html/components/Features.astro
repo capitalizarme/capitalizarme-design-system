@@ -1,0 +1,27 @@
+---
+import { content } from '../data/content';
+---
+<section id="features" data-section="features" class="py-16 lg:py-20" style="background-color: #EAF5FD;">
+  <div class="mx-auto max-w-[1440px] px-6 lg:px-[140px] text-center">
+    <h2 class="text-brand-navy font-black text-3xl lg:text-4xl mb-1">{content.features.heading}</h2>
+    <p class="text-brand-navy/75 mb-12">{content.features.subtitle}</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+      {content.features.steps.map((step) => (
+        <div class="flex flex-col items-center bg-white rounded-2xl p-6 shadow-sm">
+          <div class="w-[100px] h-[100px] mb-4 rounded-full flex items-center justify-center bg-[#E8F0FC]">
+            <img src={`images/${step.icon}`} alt={step.title} class="w-[70px] h-[70px]" />
+          </div>
+          <p class="text-brand-navy font-bold mt-3">{step.title}</p>
+        </div>
+      ))}
+    </div>
+    <div class="mt-12">
+      <a
+        href="#contact"
+        class="font-raleway inline-block rounded-full uppercase text-brand-blue bg-white hover:bg-brand-blue hover:text-white transition-all duration-300 ease-in-out px-6 py-2 border-2 border-brand-blue tracking-wider"
+      >
+        {content.features.cta}
+      </a>
+    </div>
+  </div>
+</section>

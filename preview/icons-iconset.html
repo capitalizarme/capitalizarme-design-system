@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Official Iconset</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 1400px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 760px; }
+  .intro .note { margin-top: 12px; padding: 12px 16px; background: var(--surface-tint); border-radius: var(--radius-md); font-size: 13px; color: var(--fg); max-width: 760px; }
+  .color-switcher, .cat-filter { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0; }
+  .color-switcher button, .cat-btn { font: 12px ui-monospace, monospace; letter-spacing: 0.04em; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); cursor: pointer; display: flex; align-items: center; gap: 8px; }
+  .color-switcher button .swatch { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .color-switcher button[aria-pressed="true"], .cat-btn[aria-pressed="true"] { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+  h2.section-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 28px 0 8px; }
+  .icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+  .icon-tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px 8px 10px; text-align: center; }
+  .icon-tile.accent { border-color: var(--color-brand-gold); }
+  .icon-tile.is-hidden { display: none; }
+  .icon-tile img { width: 48px; height: 48px; object-fit: contain; }
+  .icon-tile .label { display: block; font-size: 10.5px; font-family: ui-monospace, monospace; color: var(--fg); margin-top: 8px; line-height: 1.4; }
+  .icon-tile .dims { display: block; font-size: 9px; color: var(--muted); opacity: 0.7; margin-top: 2px; }
+  .unsure { color: var(--color-brand-gold); font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Official iconset — assets/icons/iconset/</h1>
+    <p><strong>This 124-glyph set is Capitalizarme's official iconset</strong> for product UI — the
+    default icon source for any new design work, ahead of ad-hoc or AI-generated icons. Auto-extracted
+    from a Figma frame exported in <strong>6 color layers</strong>: the original grayscale/ink export
+    (4123×1773, 311 raw paths) plus 5 flat-color re-exports of the identical frame — Verdes, Azules,
+    Rojos, Amarillo, Celestes (each also 311 raw paths). Every color layer was clustered and
+    bounding-box matched back to the grayscale reference, so
+    <strong>icon-NNN is the same shape/position in every color</strong> — only the fill changes.</p>
+    <div class="note"><strong>Every glyph now carries a semantic label</strong> — each was visually
+    reviewed and named by content (e.g. <code>icon-116</code> "Property / apartment", <code>icon-079</code>
+    "Cart / purchase"), grouped into 8 categories below, and recorded in
+    <code>assets/icons/iconset/labels.json</code>. Labels marked with a gold <span class="unsure">?</span>
+    are a best visual guess on an abstract glyph — confirm the read before adopting one of those for a
+    specific recurring use. Pick a glyph by label or category filter, not by memorizing grid position; when
+    a glyph is adopted for a specific recurring use, promote it into a named file mirroring
+    <code>assets/icons/step-*.svg</code>. Use the color switcher to preview any icon in any of the 6
+    available colors — see <code>manifest.json</code> (grayscale) and <code>manifest-colors.json</code>
+    (5 color families) for path-count and fill metadata.</div>
+  </div>
+
+  <h2 class="section-label">Color</h2>
+  <div class="color-switcher" role="group" aria-label="Icon color family">
+    <button type="button" data-color="" aria-pressed="true"><span class="swatch" style="background:#010202"></span>Grayscale (ink)</button>
+    <button type="button" data-color="verde" aria-pressed="false"><span class="swatch" style="background:#006939"></span>Verde</button>
+    <button type="button" data-color="azul" aria-pressed="false"><span class="swatch" style="background:#106CB5"></span>Azul</button>
+    <button type="button" data-color="rojo" aria-pressed="false"><span class="swatch" style="background:#ED1847"></span>Rojo</button>
+    <button type="button" data-color="amarillo" aria-pressed="false"><span class="swatch" style="background:#FBAF17"></span>Amarillo</button>
+    <button type="button" data-color="celeste" aria-pressed="false"><span class="swatch" style="background:#0169CB"></span>Celeste</button>
+  </div>
+
+  <h2 class="section-label">Category</h2>
+  <div class="cat-filter" role="group" aria-label="Icon category filter">
+    <button type="button" class="cat-btn" data-cat="" aria-pressed="true">All (124)</button>
+    <button type="button" class="cat-btn" data-cat="communication" aria-pressed="false">Communication (37)</button>
+    <button type="button" class="cat-btn" data-cat="action" aria-pressed="false">Action (23)</button>
+    <button type="button" class="cat-btn" data-cat="navigation" aria-pressed="false">Navigation (15)</button>
+    <button type="button" class="cat-btn" data-cat="status" aria-pressed="false">Status (26)</button>
+    <button type="button" class="cat-btn" data-cat="people" aria-pressed="false">People (9)</button>
+    <button type="button" class="cat-btn" data-cat="commerce" aria-pressed="false">Commerce (3)</button>
+    <button type="button" class="cat-btn" data-cat="real-estate" aria-pressed="false">Real estate (8)</button>
+    <button type="button" class="cat-btn" data-cat="misc" aria-pressed="false">Misc (3)</button>
+  </div>
+
+  <div class="icon-grid" id="icon-grid">
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-001.svg" src="../assets/icons/iconset/icon-001.svg" alt="Mail" />
+      <div class="label">001 — Mail<span class="dims">60×46 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-002.svg" src="../assets/icons/iconset/icon-002.svg" alt="Message preview" />
+      <div class="label">002 — Message preview<span class="dims">60×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-003.svg" src="../assets/icons/iconset/icon-003.svg" alt="Happy chat / feedback" />
+      <div class="label">003 — Happy chat / feedback <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-004.svg" src="../assets/icons/iconset/icon-004.svg" alt="Call app" />
+      <div class="label">004 — Call app<span class="dims">62×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-005.svg" src="../assets/icons/iconset/icon-005.svg" alt="Send" />
+      <div class="label">005 — Send<span class="dims">63×58 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-006.svg" src="../assets/icons/iconset/icon-006.svg" alt="Email / mention" />
+      <div class="label">006 — Email / mention<span class="dims">60×60 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-007.svg" src="../assets/icons/iconset/icon-007.svg" alt="Cancel / remove" />
+      <div class="label">007 — Cancel / remove<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-008.svg" src="../assets/icons/iconset/icon-008.svg" alt="Info" />
+      <div class="label">008 — Info<span class="dims">65×65 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-009.svg" src="../assets/icons/iconset/icon-009.svg" alt="Success / confirmed" />
+      <div class="label">009 — Success / confirmed<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-010.svg" src="../assets/icons/iconset/icon-010.svg" alt="Alert / important" />
+      <div class="label">010 — Alert / important<span class="dims">65×65 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-011.svg" src="../assets/icons/iconset/icon-011.svg" alt="Decrease / remove" />
+      <div class="label">011 — Decrease / remove<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-012.svg" src="../assets/icons/iconset/icon-012.svg" alt="Add / increase" />
+      <div class="label">012 — Add / increase<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile accent" data-category="people">
+      <img data-base="icon-013.svg" src="../assets/icons/iconset/icon-013.svg" alt="Team / partners" />
+      <div class="label">013 — Team / partners <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">76×60 · 4p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-014.svg" src="../assets/icons/iconset/icon-014.svg" alt="Add contact" />
+      <div class="label">014 — Add contact<span class="dims">73×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-015.svg" src="../assets/icons/iconset/icon-015.svg" alt="Remove contact" />
+      <div class="label">015 — Remove contact<span class="dims">70×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-016.svg" src="../assets/icons/iconset/icon-016.svg" alt="Menu grid / apps" />
+      <div class="label">016 — Menu grid / apps<span class="dims">54×54 · 9p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-017.svg" src="../assets/icons/iconset/icon-017.svg" alt="Incoming call" />
+      <div class="label">017 — Incoming call<span class="dims">54×53 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-018.svg" src="../assets/icons/iconset/icon-018.svg" alt="Outgoing call" />
+      <div class="label">018 — Outgoing call<span class="dims">54×53 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-019.svg" src="../assets/icons/iconset/icon-019.svg" alt="Missed / declined call" />
+      <div class="label">019 — Missed / declined call<span class="dims">56×53 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-020.svg" src="../assets/icons/iconset/icon-020.svg" alt="Ringing call" />
+      <div class="label">020 — Ringing call<span class="dims">63×61 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-021.svg" src="../assets/icons/iconset/icon-021.svg" alt="Call / phone" />
+      <div class="label">021 — Call / phone<span class="dims">54×53 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-022.svg" src="../assets/icons/iconset/icon-022.svg" alt="Shortcut / command" />
+      <div class="label">022 — Shortcut / command <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">54×54 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-023.svg" src="../assets/icons/iconset/icon-023.svg" alt="Upload / export" />
+      <div class="label">023 — Upload / export <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">68×58 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-024.svg" src="../assets/icons/iconset/icon-024.svg" alt="Route / workflow branch" />
+      <div class="label">024 — Route / workflow branch <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">70×41 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-025.svg" src="../assets/icons/iconset/icon-025.svg" alt="Collapse up" />
+      <div class="label">025 — Collapse up<span class="dims">66×39 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-026.svg" src="../assets/icons/iconset/icon-026.svg" alt="Redirect / move" />
+      <div class="label">026 — Redirect / move <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">60×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-027.svg" src="../assets/icons/iconset/icon-027.svg" alt="Process step (2-node)" />
+      <div class="label">027 — Process step (2-node) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">33×70 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-028.svg" src="../assets/icons/iconset/icon-028.svg" alt="Process steps (4-node network)" />
+      <div class="label">028 — Process steps (4-node network) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×70 · 6p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-029.svg" src="../assets/icons/iconset/icon-029.svg" alt="Org chart / hierarchy branch" />
+      <div class="label">029 — Org chart / hierarchy branch <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×70 · 4p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-030.svg" src="../assets/icons/iconset/icon-030.svg" alt="Workflow branch (asymmetric)" />
+      <div class="label">030 — Workflow branch (asymmetric) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×73 · 5p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-031.svg" src="../assets/icons/iconset/icon-031.svg" alt="Mail verified / sent confirmation" />
+      <div class="label">031 — Mail verified / sent confirmation<span class="dims">65×54 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-032.svg" src="../assets/icons/iconset/icon-032.svg" alt="Mail queue / list" />
+      <div class="label">032 — Mail queue / list <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">76×44 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-033.svg" src="../assets/icons/iconset/icon-033.svg" alt="Mail unlocked / public message" />
+      <div class="label">033 — Mail unlocked / public message<span class="dims">70×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-034.svg" src="../assets/icons/iconset/icon-034.svg" alt="Mail locked / private message" />
+      <div class="label">034 — Mail locked / private message<span class="dims">65×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-035.svg" src="../assets/icons/iconset/icon-035.svg" alt="Mail urgent / instant message" />
+      <div class="label">035 — Mail urgent / instant message<span class="dims">60×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-036.svg" src="../assets/icons/iconset/icon-036.svg" alt="Mail favorite / newsletter" />
+      <div class="label">036 — Mail favorite / newsletter <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">60×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-037.svg" src="../assets/icons/iconset/icon-037.svg" alt="Mail unread notification" />
+      <div class="label">037 — Mail unread notification<span class="dims">62×49 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-038.svg" src="../assets/icons/iconset/icon-038.svg" alt="Mail important alert" />
+      <div class="label">038 — Mail important alert<span class="dims">60×54 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-039.svg" src="../assets/icons/iconset/icon-039.svg" alt="Call button" />
+      <div class="label">039 — Call button<span class="dims">65×65 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-040.svg" src="../assets/icons/iconset/icon-040.svg" alt="Continue / next" />
+      <div class="label">040 — Continue / next <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">57×50 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-041.svg" src="../assets/icons/iconset/icon-041.svg" alt="Blocked / restricted" />
+      <div class="label">041 — Blocked / restricted<span class="dims">65×65 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-042.svg" src="../assets/icons/iconset/icon-042.svg" alt="Drag / rearrange" />
+      <div class="label">042 — Drag / rearrange <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">64×64 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-043.svg" src="../assets/icons/iconset/icon-043.svg" alt="Settings" />
+      <div class="label">043 — Settings<span class="dims">60×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-044.svg" src="../assets/icons/iconset/icon-044.svg" alt="Privacy / anonymous" />
+      <div class="label">044 — Privacy / anonymous <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">54×62 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-045.svg" src="../assets/icons/iconset/icon-045.svg" alt="Refresh / sync" />
+      <div class="label">045 — Refresh / sync<span class="dims">54×54 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-046.svg" src="../assets/icons/iconset/icon-046.svg" alt="Code / development" />
+      <div class="label">046 — Code / development<span class="dims">71×53 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-047.svg" src="../assets/icons/iconset/icon-047.svg" alt="Toggle / adjust" />
+      <div class="label">047 — Toggle / adjust <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">76×38 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-048.svg" src="../assets/icons/iconset/icon-048.svg" alt="History / recent" />
+      <div class="label">048 — History / recent<span class="dims">68×70 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-049.svg" src="../assets/icons/iconset/icon-049.svg" alt="Receive mail / inbox in" />
+      <div class="label">049 — Receive mail / inbox in<span class="dims">60×69 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-050.svg" src="../assets/icons/iconset/icon-050.svg" alt="Send mail / outbox out" />
+      <div class="label">050 — Send mail / outbox out<span class="dims">60×70 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-051.svg" src="../assets/icons/iconset/icon-051.svg" alt="Reply message" />
+      <div class="label">051 — Reply message<span class="dims">60×52 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-052.svg" src="../assets/icons/iconset/icon-052.svg" alt="Attachment" />
+      <div class="label">052 — Attachment<span class="dims">60×57 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-053.svg" src="../assets/icons/iconset/icon-053.svg" alt="Secure chat / private message" />
+      <div class="label">053 — Secure chat / private message <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×64 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-054.svg" src="../assets/icons/iconset/icon-054.svg" alt="Message / comment" />
+      <div class="label">054 — Message / comment<span class="dims">65×61 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-055.svg" src="../assets/icons/iconset/icon-055.svg" alt="Profile / avatar" />
+      <div class="label">055 — Profile / avatar<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-056.svg" src="../assets/icons/iconset/icon-056.svg" alt="Contact card" />
+      <div class="label">056 — Contact card<span class="dims">60×65 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-057.svg" src="../assets/icons/iconset/icon-057.svg" alt="Contact profile (alt)" />
+      <div class="label">057 — Contact profile (alt) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">62×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-058.svg" src="../assets/icons/iconset/icon-058.svg" alt="Integration / plugin" />
+      <div class="label">058 — Integration / plugin <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×65 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-059.svg" src="../assets/icons/iconset/icon-059.svg" alt="Delete / backspace" />
+      <div class="label">059 — Delete / backspace<span class="dims">72×54 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-060.svg" src="../assets/icons/iconset/icon-060.svg" alt="Help / FAQ" />
+      <div class="label">060 — Help / FAQ<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-061.svg" src="../assets/icons/iconset/icon-061.svg" alt="Warning / caution" />
+      <div class="label">061 — Warning / caution<span class="dims">64×57 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-062.svg" src="../assets/icons/iconset/icon-062.svg" alt="Locked / secure" />
+      <div class="label">062 — Locked / secure<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-063.svg" src="../assets/icons/iconset/icon-063.svg" alt="Auto-sync lock" />
+      <div class="label">063 — Auto-sync lock <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">68×70 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-064.svg" src="../assets/icons/iconset/icon-064.svg" alt="Back / previous" />
+      <div class="label">064 — Back / previous<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-065.svg" src="../assets/icons/iconset/icon-065.svg" alt="Forward / next" />
+      <div class="label">065 — Forward / next<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-066.svg" src="../assets/icons/iconset/icon-066.svg" alt="Fast / instant" />
+      <div class="label">066 — Fast / instant <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-067.svg" src="../assets/icons/iconset/icon-067.svg" alt="Secure message / locked chat" />
+      <div class="label">067 — Secure message / locked chat <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×62 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-068.svg" src="../assets/icons/iconset/icon-068.svg" alt="Approved message" />
+      <div class="label">068 — Approved message<span class="dims">65×59 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-069.svg" src="../assets/icons/iconset/icon-069.svg" alt="Important message alert" />
+      <div class="label">069 — Important message alert<span class="dims">65×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-070.svg" src="../assets/icons/iconset/icon-070.svg" alt="Message preview (small)" />
+      <div class="label">070 — Message preview (small) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">68×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-071.svg" src="../assets/icons/iconset/icon-071.svg" alt="Typing / message dots" />
+      <div class="label">071 — Typing / message dots<span class="dims">62×59 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-072.svg" src="../assets/icons/iconset/icon-072.svg" alt="Happy mail / satisfaction" />
+      <div class="label">072 — Happy mail / satisfaction <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×59 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-073.svg" src="../assets/icons/iconset/icon-073.svg" alt="Active chat / typing indicator" />
+      <div class="label">073 — Active chat / typing indicator<span class="dims">65×64 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-074.svg" src="../assets/icons/iconset/icon-074.svg" alt="Message (solid)" />
+      <div class="label">074 — Message (solid)<span class="dims">65×64 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-075.svg" src="../assets/icons/iconset/icon-075.svg" alt="Flag / milestone" />
+      <div class="label">075 — Flag / milestone<span class="dims">62×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-076.svg" src="../assets/icons/iconset/icon-076.svg" alt="Trending / hot" />
+      <div class="label">076 — Trending / hot <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">59×74 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="commerce">
+      <img data-base="icon-077.svg" src="../assets/icons/iconset/icon-077.svg" alt="Discount / promo" />
+      <div class="label">077 — Discount / promo<span class="dims">85×88 · 12p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-078.svg" src="../assets/icons/iconset/icon-078.svg" alt="Favorite / rating" />
+      <div class="label">078 — Favorite / rating<span class="dims">65×62 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="commerce">
+      <img data-base="icon-079.svg" src="../assets/icons/iconset/icon-079.svg" alt="Cart / purchase" />
+      <div class="label">079 — Cart / purchase<span class="dims">76×73 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-080.svg" src="../assets/icons/iconset/icon-080.svg" alt="Delete / trash" />
+      <div class="label">080 — Delete / trash<span class="dims">71×75 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-081.svg" src="../assets/icons/iconset/icon-081.svg" alt="Filter" />
+      <div class="label">081 — Filter<span class="dims">63×68 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-082.svg" src="../assets/icons/iconset/icon-082.svg" alt="Trend / analytics chart" />
+      <div class="label">082 — Trend / analytics chart<span class="dims">122×78 · 7p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-083.svg" src="../assets/icons/iconset/icon-083.svg" alt="Filter controls / adjust" />
+      <div class="label">083 — Filter controls / adjust<span class="dims">101×74 · 9p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-084.svg" src="../assets/icons/iconset/icon-084.svg" alt="Receive / inbox download" />
+      <div class="label">084 — Receive / inbox download<span class="dims">65×72 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-085.svg" src="../assets/icons/iconset/icon-085.svg" alt="Send / inbox upload" />
+      <div class="label">085 — Send / inbox upload<span class="dims">65×73 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-086.svg" src="../assets/icons/iconset/icon-086.svg" alt="Archive / inbox (solid)" />
+      <div class="label">086 — Archive / inbox (solid) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×52 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="communication">
+      <img data-base="icon-087.svg" src="../assets/icons/iconset/icon-087.svg" alt="Send message (alt)" />
+      <div class="label">087 — Send message (alt) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">73×48 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-088.svg" src="../assets/icons/iconset/icon-088.svg" alt="Back / undo" />
+      <div class="label">088 — Back / undo<span class="dims">72×53 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-089.svg" src="../assets/icons/iconset/icon-089.svg" alt="Reply / undo (curved)" />
+      <div class="label">089 — Reply / undo (curved) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">61×53 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-090.svg" src="../assets/icons/iconset/icon-090.svg" alt="Forward / next (thick)" />
+      <div class="label">090 — Forward / next (thick)<span class="dims">59×52 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="navigation">
+      <img data-base="icon-091.svg" src="../assets/icons/iconset/icon-091.svg" alt="Back / previous (thick)" />
+      <div class="label">091 — Back / previous (thick)<span class="dims">59×52 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-092.svg" src="../assets/icons/iconset/icon-092.svg" alt="Protection / guarantee" />
+      <div class="label">092 — Protection / guarantee<span class="dims">54×66 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-093.svg" src="../assets/icons/iconset/icon-093.svg" alt="Land / nature (tree)" />
+      <div class="label">093 — Land / nature (tree) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">60×79 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-094.svg" src="../assets/icons/iconset/icon-094.svg" alt="Schedule / appointment" />
+      <div class="label">094 — Schedule / appointment<span class="dims">60×62 · 4p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-095.svg" src="../assets/icons/iconset/icon-095.svg" alt="Network / connections" />
+      <div class="label">095 — Network / connections <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">65×67 · 8p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-096.svg" src="../assets/icons/iconset/icon-096.svg" alt="ID card / profile details" />
+      <div class="label">096 — ID card / profile details<span class="dims">90×68 · 8p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-097.svg" src="../assets/icons/iconset/icon-097.svg" alt="Copy / duplicate document" />
+      <div class="label">097 — Copy / duplicate document<span class="dims">66×70 · 6p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-098.svg" src="../assets/icons/iconset/icon-098.svg" alt="Goal / target" />
+      <div class="label">098 — Goal / target<span class="dims">76×76 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="misc">
+      <img data-base="icon-099.svg" src="../assets/icons/iconset/icon-099.svg" alt="Gallery / photos" />
+      <div class="label">099 — Gallery / photos<span class="dims">85×72 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-100.svg" src="../assets/icons/iconset/icon-100.svg" alt="Location / address" />
+      <div class="label">100 — Location / address<span class="dims">63×72 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-101.svg" src="../assets/icons/iconset/icon-101.svg" alt="Time / schedule" />
+      <div class="label">101 — Time / schedule<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-102.svg" src="../assets/icons/iconset/icon-102.svg" alt="Edit / compose" />
+      <div class="label">102 — Edit / compose<span class="dims">66×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-103.svg" src="../assets/icons/iconset/icon-103.svg" alt="Share / forward" />
+      <div class="label">103 — Share / forward<span class="dims">71×67 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-104.svg" src="../assets/icons/iconset/icon-104.svg" alt="Board / list" />
+      <div class="label">104 — Board / list <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">60×60 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-105.svg" src="../assets/icons/iconset/icon-105.svg" alt="Reject / cancel task" />
+      <div class="label">105 — Reject / cancel task <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">60×60 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="people">
+      <img data-base="icon-106.svg" src="../assets/icons/iconset/icon-106.svg" alt="Verified / protected user" />
+      <div class="label">106 — Verified / protected user<span class="dims">54×66 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-107.svg" src="../assets/icons/iconset/icon-107.svg" alt="Pin / save location" />
+      <div class="label">107 — Pin / save location<span class="dims">62×62 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-108.svg" src="../assets/icons/iconset/icon-108.svg" alt="Signal / connectivity" />
+      <div class="label">108 — Signal / connectivity<span class="dims">64×64 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-109.svg" src="../assets/icons/iconset/icon-109.svg" alt="Approved / task complete" />
+      <div class="label">109 — Approved / task complete<span class="dims">54×70 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-110.svg" src="../assets/icons/iconset/icon-110.svg" alt="Checklist" />
+      <div class="label">110 — Checklist<span class="dims">54×70 · 8p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-111.svg" src="../assets/icons/iconset/icon-111.svg" alt="Certification / award" />
+      <div class="label">111 — Certification / award<span class="dims">71×85 · 3p</span></div>
+    </div>
+    <div class="icon-tile" data-category="misc">
+      <img data-base="icon-112.svg" src="../assets/icons/iconset/icon-112.svg" alt="Layers / portfolio" />
+      <div class="label">112 — Layers / portfolio <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">73×70 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-113.svg" src="../assets/icons/iconset/icon-113.svg" alt="Parking / vehicle (estacionamiento)" />
+      <div class="label">113 — Parking / vehicle (estacionamiento)<span class="dims">81×64 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="commerce">
+      <img data-base="icon-114.svg" src="../assets/icons/iconset/icon-114.svg" alt="Money / price" />
+      <div class="label">114 — Money / price<span class="dims">65×65 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-115.svg" src="../assets/icons/iconset/icon-115.svg" alt="Investment / payment received" />
+      <div class="label">115 — Investment / payment received<span class="dims">82×73 · 4p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-116.svg" src="../assets/icons/iconset/icon-116.svg" alt="Property / apartment (departamento)" />
+      <div class="label">116 — Property / apartment (departamento)<span class="dims">88×83 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-117.svg" src="../assets/icons/iconset/icon-117.svg" alt="Growth / investment returns" />
+      <div class="label">117 — Growth / investment returns <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">87×87 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-118.svg" src="../assets/icons/iconset/icon-118.svg" alt="Construction / developer (inmobiliaria)" />
+      <div class="label">118 — Construction / developer (inmobiliaria)<span class="dims">77×54 · 1p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-119.svg" src="../assets/icons/iconset/icon-119.svg" alt="Broker / advisor" />
+      <div class="label">119 — Broker / advisor <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">29×60 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="real-estate">
+      <img data-base="icon-120.svg" src="../assets/icons/iconset/icon-120.svg" alt="Contract / document (promesa)" />
+      <div class="label">120 — Contract / document (promesa) <span class="unsure" title="Uncertain — confirm before using">?</span><span class="dims">62×65 · 4p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-121.svg" src="../assets/icons/iconset/icon-121.svg" alt="View / visibility" />
+      <div class="label">121 — View / visibility<span class="dims">77×49 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="misc">
+      <img data-base="icon-122.svg" src="../assets/icons/iconset/icon-122.svg" alt="Education / learn" />
+      <div class="label">122 — Education / learn<span class="dims">118×82 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="action">
+      <img data-base="icon-123.svg" src="../assets/icons/iconset/icon-123.svg" alt="New document / add file" />
+      <div class="label">123 — New document / add file<span class="dims">98×97 · 2p</span></div>
+    </div>
+    <div class="icon-tile" data-category="status">
+      <img data-base="icon-124.svg" src="../assets/icons/iconset/icon-124.svg" alt="New (badge)" />
+      <div class="label">124 — New (badge)<span class="dims">95×92 · 6p</span></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var buttons = document.querySelectorAll('.color-switcher button');
+      var imgs = document.querySelectorAll('#icon-grid img');
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var color = btn.getAttribute('data-color');
+          buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+          imgs.forEach(function (img) {
+            var base = img.getAttribute('data-base');
+            img.src = color
+              ? '../assets/icons/iconset/' + color + '/' + base
+              : '../assets/icons/iconset/' + base;
+          });
+        });
+      });
+
+      var catButtons = document.querySelectorAll('.cat-btn');
+      var tiles = document.querySelectorAll('#icon-grid .icon-tile');
+      catButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var cat = btn.getAttribute('data-cat');
+          catButtons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+          tiles.forEach(function (tile) {
+            var show = !cat || tile.getAttribute('data-category') === cat;
+            tile.classList.toggle('is-hidden', !show);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Applied UI kits</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 64px 24px; }
+  h1 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 32px; margin: 0 0 12px; color: var(--fg-emphasis); }
+  .intro { color: var(--muted); max-width: 620px; line-height: 1.5; margin-bottom: 40px; }
+  .kits { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .kit-card {
+    display: block; text-decoration: none; color: inherit;
+    border: 1px solid var(--border); border-radius: var(--radius-md);
+    background: var(--surface); padding: 24px;
+  }
+  .kit-card:hover { border-color: var(--accent); }
+  .kit-card .stack {
+    display: inline-block; font: 11px ui-monospace, monospace; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .kit-card h2 { font-family: var(--font-display); font-weight: var(--weight-bold); font-size: 18px; margin: 0 0 8px; }
+  .kit-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+  .note { margin-top: 40px; font-size: 12px; color: var(--muted); line-height: 1.6; max-width: 620px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Applied UI kits</h1>
+    <p class="intro">
+      Three build variants of the same <strong>applied, invented</strong> "browse properties /
+      mensajes" product concept — same tokens, same copy, same product surfaces, each rebuilt in a
+      different stack. None of these are extracted product fact; see each kit's README and
+      <code>DESIGN.md</code> §9 for that caveat.
+    </p>
+    <div class="kits">
+      <a class="kit-card" href="../app-react/index.html">
+        <span class="stack">React</span>
+        <h2>app-react/</h2>
+        <p>CDN React + ReactDOM + Babel standalone, no build step — opens directly in a browser. The fastest way to preview the applied concept.</p>
+      </a>
+      <a class="kit-card" href="../app-astro/README.md">
+        <span class="stack">Astro + Tailwind</span>
+        <h2>app-astro/</h2>
+        <p>Real <code>.astro</code> components matching the archived source's actual stack. Requires a Node/Astro build step (<code>npm run dev</code>).</p>
+      </a>
+      <a class="kit-card" href="../app-svelte/README.md">
+        <span class="stack">Svelte + Tailwind</span>
+        <h2>app-svelte/</h2>
+        <p>Real <code>.svelte</code> components with idiomatic Svelte reactivity. Requires a Node/Vite build step (<code>npm run dev</code>).</p>
+      </a>
+    </div>
+    <p class="note">
+      This page is a hub, not a fourth kit — it has no components of its own. Pick a card above
+      based on your target stack; each kit's README documents its structure, usage, and design
+      notes.
+    </p>
+  </div>
+</body>
+</html>

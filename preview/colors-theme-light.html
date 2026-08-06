@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Light Theme Surfaces</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 1000px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .tile { width: 260px; border-radius: var(--radius-md); border: 1px solid var(--border); overflow: hidden; }
+  .tile-body { padding: 20px; min-height: 90px; display: flex; flex-direction: column; justify-content: center; }
+  .tile-label { font-size: 12px; font-family: ui-monospace, monospace; opacity: 0.7; }
+  .tile-text { font-weight: var(--weight-bold); margin-top: 6px; }
+  h2 { font-size: 16px; margin-bottom: 12px; color: var(--fg-emphasis); }
+  .hairline-demo { padding: 16px 20px; background: white; border-bottom: 1px solid var(--border-subtle); font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Light theme — surfaces &amp; text roles</h1>
+    <p>Capitalizarme's source has no dark theme — every surface evidenced is white or a pale blue
+    tint. This card documents the semantic roles derived from that: background, card surface, tint
+    panel, and the three text colors in play (pure black body copy, navy emphasis, muted secondary).</p>
+  </div>
+
+  <h2>Surfaces</h2>
+  <div class="row">
+    <div class="tile">
+      <div class="tile-body" style="background: var(--bg);">
+        <span class="tile-label">--bg</span>
+        <span class="tile-text">Page background</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-body" style="background: var(--surface); border-top: 1px solid var(--border);">
+        <span class="tile-label">--surface</span>
+        <span class="tile-text">Card surface (ContactForm)</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-body" style="background: var(--surface-tint);">
+        <span class="tile-label">--surface-tint</span>
+        <span class="tile-text">Features section background</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-body" style="background: var(--surface-tint-alt);">
+        <span class="tile-label">--surface-tint-alt</span>
+        <span class="tile-text">Icon roundel / illustration fill</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Text roles</h2>
+  <div class="row">
+    <div class="tile">
+      <div class="tile-body" style="background: white;">
+        <span class="tile-label">--fg</span>
+        <span class="tile-text" style="color: var(--fg);">Body copy — Hero description</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-body" style="background: white;">
+        <span class="tile-label">--fg-emphasis</span>
+        <span class="tile-text" style="color: var(--fg-emphasis);">Nav links, section headings</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-body" style="background: white;">
+        <span class="tile-label">--muted</span>
+        <span class="tile-text" style="color: var(--muted);">Footer links, legal text</span>
+      </div>
+    </div>
+    <div class="tile">
+      <div class="tile-body" style="background: var(--accent);">
+        <span class="tile-label" style="color: rgba(255,255,255,0.7);">--accent-contrast</span>
+        <span class="tile-text" style="color: var(--accent-contrast);">On-accent text (CTA banner)</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Hairline borders</h2>
+  <div class="tile" style="width: 100%;">
+    <div class="hairline-demo" style="border-bottom-color: var(--border-subtle);">--border-subtle (#F3F4F6) — Header sticky bottom rule, Footer top rule</div>
+    <div class="hairline-demo" style="border-bottom: none;">--border (#E5E7EB) — ContactForm card border, input underline</div>
+  </div>
+</body>
+</html>

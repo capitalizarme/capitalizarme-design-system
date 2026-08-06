@@ -1,0 +1,320 @@
+/*
+  Capitalizarme Design System — colors_and_type.css
+  Source-backed tokens extracted from:
+    - a one-page 2021 Capitalizarme branding-guidelines cover ("Uso de color"), pixel-sampled directly
+      from its color bars. Per company decision, this is the ONLY official brand palette source
+      (navy/blue/gold/green/red) — see DESIGN.md §2.1.
+    - the archived capitalizarme-boilerplate-html landing-page codebase's global.css (Tailwind v4
+      @theme block) — the *landing-page campaign* palette used by the themed marketing codebase
+      (still Capitalizarme's live production repo, functionally surpassed by this design system).
+      Its blue (#0169CB) and navy (#11224C) are a distinct campaign variant,
+      kept as campaign-tint tokens below — do not use them as the primary brand accent.
+    - source-evidence/capitalizarme-boilerplate-html/layouts/Layout.astro (Google Fonts <link>)
+    - source-evidence/capitalizarme-boilerplate-html/components/*.astro (inline utility classes: text-brand-blue, bg-brand-blue,
+      rounded-2xl, rounded-full, shadow-sm, border-gray-100/200, EAF5FD / E8F0FC tint fills)
+  --color-brand-purple, --color-off-white, --color-blue-light, and --color-slate have no 2021 equivalent
+  (the PDF's cover only pictured 5 color bars) — they're unverified functional placeholders kept only
+  because the system needs neutrals/a secondary hue the 2021 cover didn't provide. --color-brand-blue-dark
+  and --color-brand-red-dark are DERIVED via oklch color-mix() off the official blue/red. Status colors
+  map to the official evidenced Red/Green; --status-warning remains DERIVED (no dedicated warning color
+  was evidenced — Gold is reserved for AI/premium, not warning, per source). Elevation levels beyond
+  shadow-sm are DERIVED, tuned against the official navy.
+
+  Space Grotesk is self-hosted from fonts/ (real brand font files, uploaded directly to the project —
+  see fonts/ below). Raleway (buttons/CTAs only) still loads from Google Fonts; no local file was
+  provided for it.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Brand — OFFICIAL palette (source-backed: 2021 branding guidelines cover page —
+     DESIGN.md §2.1) ---- */
+  --color-brand-navy: #25397f;       /* Fondos, títulos, primario */
+  --color-brand-blue: #106cb5;       /* Acento primario, links, badges */
+  --color-brand-blue-dark: color-mix(in oklch, var(--color-brand-blue) 78%, black); /* CTAs secundarios, datos — DERIVED */
+  --color-brand-red: #ed1847;        /* Alertas, acciones críticas */
+  --color-brand-red-dark: color-mix(in oklch, var(--color-brand-red) 78%, black);   /* Hover rojo, texto de alerta — DERIVED */
+  --color-brand-gold: #fbaf17;       /* IA, elementos premium — not a warning color, use as-is */
+  --color-brand-purple: #8e27c6;     /* Elementos secundarios — no 2021 equivalent, unverified placeholder */
+  --color-brand-green: #006939;      /* Éxito */
+  --color-off-white: #f8f9fb;        /* Fondo — no 2021 equivalent, unverified placeholder */
+  --color-blue-light: #dde6ff;       /* Bordes, paneles tintados — no 2021 equivalent, unverified placeholder */
+  --color-slate: #64748b;            /* Texto secundario — no 2021 equivalent, unverified placeholder */
+  --color-brand-muted: var(--color-slate);
+
+  /* ---- Legacy landing-campaign tints (source-backed: inline fills in Hero.astro, Features.astro,
+     ImageTextPanel.astro, FeaturedWork.astro — the themed marketing codebase, archived here as a frozen
+     snapshot, not the official product palette above). Kept for landing-page component fidelity; prefer
+     --color-blue-light for new product surfaces. ---- */
+  --color-brand-blue-tint-50: #eaf5fd;   /* Features section background */
+  --color-brand-blue-tint-100: #e8f0fc;  /* icon roundels / illustration panels */
+  --color-brand-navy-tint-10: color-mix(in oklch, var(--color-brand-navy) 10%, white);
+  --color-brand-navy-tint-15: color-mix(in oklch, var(--color-brand-navy) 15%, white);
+  --color-brand-blue-85: color-mix(in oklch, var(--color-brand-blue) 85%, transparent);
+  --color-brand-blue-60: color-mix(in oklch, var(--color-brand-blue) 60%, transparent);
+  --color-brand-blue-30: color-mix(in oklch, var(--color-brand-blue) 30%, transparent);
+
+  /* ---- Semantic surface / text roles ---- */
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-tint: var(--color-blue-light);
+  --surface-tint-alt: var(--color-brand-blue-tint-100);
+  --fg: #000000;                 /* text-black — used for body copy & several headings */
+  --fg-emphasis: var(--color-brand-navy); /* text-brand-navy — nav links, Features/FeaturedWork headings */
+  --muted: var(--color-brand-muted);      /* footer legal text, secondary nav */
+  --border: #e5e7eb;             /* border-gray-200 (ContactForm card, Footer column rule) */
+  --border-subtle: #f3f4f6;      /* border-gray-100 (Header bottom hairline, Footer top hairline) */
+
+  /* ---- Interactive ---- */
+  --accent: var(--color-brand-blue);
+  --accent-contrast: #ffffff;
+  --accent-secondary: var(--color-brand-navy);
+  --accent-cta-secondary: var(--color-brand-blue-dark);
+
+  /* ---- Status (Success/Danger source-backed to official Green/Red; Warning remains DERIVED — no
+     dedicated warning color was evidenced) ---- */
+  --status-success: var(--color-brand-green);
+  --status-success-bg: color-mix(in oklch, var(--color-brand-green) 12%, white);
+  --status-warning: oklch(72% 0.15 75);
+  --status-warning-bg: oklch(96% 0.04 75);
+  --status-danger: var(--color-brand-red);
+  --status-danger-bg: color-mix(in oklch, var(--color-brand-red) 10%, white);
+
+  /* ---- Typography ---- */
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: "Raleway", Arial, sans-serif; /* buttons / CTAs only — font-raleway class */
+
+  --text-xs: 10px;    /* footer legal copy */
+  --text-sm: 14px;    /* nav links, form labels */
+  --text-base: 16px;
+  --text-lg: 20px;    /* FeaturedWork subtitle */
+  --text-xl: 24px;
+  --text-2xl: 30px;   /* section h2 mobile (text-3xl) */
+  --text-3xl: 36px;   /* section h2 desktop (lg:text-4xl) */
+  --text-4xl: 48px;   /* hero h1 mobile (text-5xl) */
+  --text-5xl: 60px;   /* hero h1 desktop (lg:text-6xl) */
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-extrabold: 800; /* hero h1: font-extrabold */
+  --weight-black: 900;     /* section h2: font-black */
+
+  /* ---- Spacing / layout rhythm (source-backed: max-w-[1440px] px-6 lg:px-[140px] py-16) ---- */
+  --container-max: 1440px;
+  --container-pad: 24px;
+  --container-pad-lg: 140px;
+  --section-py: 64px;      /* py-16 */
+  --section-py-lg: 80px;   /* lg:py-20 (Features) */
+  --section-py-xl: 96px;   /* lg:py-24 (CTA banner) */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---- Radius (source-backed: rounded-lg / rounded-2xl / rounded-full) ---- */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-pill: 9999px;
+
+  /* ---- Elevation (shadow-sm is source-backed; -md/-lg are DERIVED for hover/modal states; tinted
+     against the official navy #25397F = rgb(37, 57, 127)) ---- */
+  --shadow-sm: 0 1px 2px rgba(37, 57, 127, 0.06), 0 1px 1px rgba(37, 57, 127, 0.04);
+  --shadow-md: 0 8px 24px rgba(37, 57, 127, 0.10);
+  --shadow-lg: 0 20px 48px rgba(37, 57, 127, 0.16);
+
+  /* ---- Motion ---- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 300ms;
+}
+
+/* ---------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------- */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-raleway { font-family: var(--font-accent); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: inherit;
+}
+
+/* ---------------------------------------------------------------------
+   Layout helpers
+--------------------------------------------------------------------- */
+.container {
+  margin-inline: auto;
+  max-width: var(--container-max);
+  padding-inline: var(--container-pad);
+}
+@media (min-width: 1024px) {
+  .container { padding-inline: var(--container-pad-lg); }
+}
+
+.section { padding-block: var(--section-py); }
+.section-lg { padding-block: var(--section-py-lg); }
+.section-xl { padding-block: var(--section-py-xl); }
+
+/* ---------------------------------------------------------------------
+   Buttons — pill shape, Raleway uppercase, tracked-out (ContactForm submit,
+   CTABanner button, Features cta, FeaturedWork cta)
+--------------------------------------------------------------------- */
+.btn {
+  font-family: var(--font-accent);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-pill);
+  padding: 12px 32px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  transition: opacity var(--duration-slow) var(--ease-standard),
+              background-color var(--duration-slow) var(--ease-standard),
+              color var(--duration-slow) var(--ease-standard);
+}
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+.btn-primary:hover { opacity: 0.9; }
+
+.btn-on-accent {
+  background: #ffffff;
+  color: var(--accent);
+}
+.btn-on-accent:hover { opacity: 0.9; }
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.btn-cta-secondary {
+  background: var(--accent-cta-secondary);
+  color: var(--accent-contrast);
+}
+.btn-cta-secondary:hover { opacity: 0.9; }
+
+/* ---------------------------------------------------------------------
+   Cards / panels
+--------------------------------------------------------------------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+}
+
+.icon-roundel {
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-tint-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------------------
+   Forms — underline inputs (ContactForm.astro)
+--------------------------------------------------------------------- */
+label {
+  display: block;
+  font-weight: var(--weight-medium);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+.input-underline {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+  padding: var(--space-2) 0;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  transition: border-color var(--duration-fast) ease-in-out;
+}
+.input-underline:focus { border-bottom-color: var(--accent); }
+
+/* ---------------------------------------------------------------------
+   Nav links (Header.astro)
+--------------------------------------------------------------------- */
+.nav-link {
+  color: var(--fg-emphasis);
+  text-decoration: none;
+  transition: color var(--duration-base) ease;
+}
+.nav-link:hover { color: var(--accent); }

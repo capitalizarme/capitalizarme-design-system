@@ -1,0 +1,21 @@
+---
+import { content } from '../data/content';
+---
+<header data-section="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <div class="mx-auto max-w-[1440px] px-6 lg:px-[140px] flex items-center justify-between h-16">
+    <a href="#">
+      <img src="images/Logo-Capitalizarme-Bicolor-Horizontal-05.png" alt={content.header.logoAlt} class="w-[180px] h-auto" />
+    </a>
+    <nav>
+      <ul class="flex items-center gap-6 list-none m-0 p-0">
+        {content.header.nav.map((item) => (
+          <li>
+            <a href={item.href} class="text-brand-navy hover:text-brand-blue transition-colors duration-200">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>

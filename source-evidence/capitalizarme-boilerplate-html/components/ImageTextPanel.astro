@@ -1,0 +1,23 @@
+---
+interface Props {
+  heading: string;
+  description: string;
+  reverse?: boolean;
+  dataSection: string;
+}
+const { heading, description, reverse = false, dataSection } = Astro.props;
+---
+<section data-section={dataSection} class="mx-auto max-w-[1440px] px-6 lg:px-[140px] py-16">
+  <div class={`flex flex-col lg:flex-row items-center gap-10 lg:gap-16 ${reverse ? 'lg:flex-row-reverse' : ''}`}>
+    <div class="w-full lg:flex-1 flex justify-center">
+      <svg viewBox="0 0 300 220" class="w-full max-w-[350px] h-auto" role="img" aria-hidden="true">
+        <rect x="10" y="10" width="280" height="200" rx="16" fill="#E8F0FC" />
+        <circle cx="150" cy="110" r="60" fill="#0169CB" opacity="0.5" />
+      </svg>
+    </div>
+    <div class="w-full lg:max-w-[480px] shrink-0">
+      <h2 class="text-black font-black text-3xl lg:text-4xl mb-2.5">{heading}</h2>
+      <p>{description}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Typography Specimens</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .spec { padding: 24px 0; border-bottom: 1px solid var(--border-subtle); }
+  .spec:last-child { border-bottom: none; }
+  .spec-meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .spec-sample { color: var(--fg); }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Typography</h1>
+    <p>Space Grotesk (400/500/700/800) carries every structural role. Raleway is loaded at a single
+    weight — 700 — and used exclusively for button/CTA labels. Source: Google Fonts link in
+    <code>Layout.astro</code>.</p>
+  </div>
+
+  <div class="spec">
+    <div class="spec-meta">Hero display · Space Grotesk 800 · text-5xl → lg:text-6xl (48–60px) · text-brand-blue</div>
+    <div class="spec-sample" style="font-family: var(--font-display); font-weight: var(--weight-extrabold); font-size: 56px; line-height: 1.1; color: var(--accent);">Agenda tu reunión y averigua tu capacidad de inversión</div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-meta">Section heading · Space Grotesk 900 · text-3xl → lg:text-4xl (30–36px) · text-brand-navy</div>
+    <div class="spec-sample" style="font-family: var(--font-display); font-weight: var(--weight-black); font-size: 34px; color: var(--fg-emphasis);">Invertir es simple con Capitalizarme.com</div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-meta">Body copy · Space Grotesk 400 · 16px · text-black</div>
+    <div class="spec-sample" style="font-family: var(--font-body); font-size: 16px;">Descubre hasta qué monto puedes invertir acorde a tu situación financiera y para qué propiedades te alcanza.</div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-meta">Button / CTA label · Raleway 700 · uppercase · tracking-wider · 14px</div>
+    <div class="spec-sample"><a class="btn btn-primary" href="#">Agenda tu reunión</a></div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-meta">Footer column title · Space Grotesk 700 · uppercase · tracking-wider · 14px</div>
+    <div class="spec-sample" style="font-family: var(--font-display); font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.06em; font-size: 14px;">Invierte</div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-meta">Footer legal · Space Grotesk 400 · 10px · text-brand-muted</div>
+    <div class="spec-sample" style="font-family: var(--font-body); font-size: 10px; color: var(--muted); max-width: 440px;">Todas las rentabilidades y retornos mostrados en la página son referenciales, los rendimientos pasados no garantizan retornos futuros.</div>
+  </div>
+</body>
+</html>

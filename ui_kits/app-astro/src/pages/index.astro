@@ -1,0 +1,95 @@
+---
+// App shell — composes Header, Sidebar, SimulatorBanner, FilterBar, PropertyGrid, AdvisorList,
+// and ChatArea into the two-view "browse properties" / "mensajes" product surface. Astro pages
+// render server-side with zero client JS by default; interactive state (view switch, filter
+// toggle, chat send) is handled by the plain <script> below instead of a framework island —
+// matching this system's evidenced static-Astro stack rather than reintroducing React here
+// (see ui_kits/app-react/ for the React version of this same applied kit).
+import AppLayout from '../layouts/AppLayout.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import SimulatorBanner from '../components/SimulatorBanner.astro';
+import FilterBar from '../components/FilterBar.astro';
+import PropertyGrid from '../components/PropertyGrid.astro';
+import AdvisorList from '../components/AdvisorList.astro';
+import ChatArea from '../components/ChatArea.astro';
+import Footer from '../components/Footer.astro';
+---
+<AppLayout title="Capitalizarme — Explorar propiedades">
+  <Header />
+  <div class="flex pt-16">
+    <Sidebar />
+    <div data-view-panel="explorar" class="flex-1 min-w-0">
+      <SimulatorBanner />
+      <div class="mt-6"><FilterBar /></div>
+      <PropertyGrid />
+    </div>
+    <div data-view-panel="mensajes" class="flex-1 min-w-0 hidden">
+      <div class="flex h-[calc(100vh-4rem)]">
+        <AdvisorList />
+        <ChatArea />
+      </div>
+    </div>
+  </div>
+  <Footer />
+
+  <script>
+    const navButtons = document.querySelectorAll('[data-nav-item]');
+    const viewPanels = document.querySelectorAll('[data-view-panel]');
+
+    navButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-nav-item') === 'mensajes' ? 'mensajes' : 'explorar';
+        navButtons.forEach((b) => b.setAttribute('data-active', String(b === btn)));
+        viewPanels.forEach((panel) => {
+          panel.classList.toggle('hidden', panel.getAttribute('data-view-panel') !== key);
+        });
+      });
+    });
+
+    const typeButtons = document.querySelectorAll('[data-type-filter]');
+    typeButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        typeButtons.forEach((b) => b.setAttribute('data-active', String(b === btn)));
+      });
+    });
+
+    const advisorButtons = document.querySelectorAll('[data-advisor]');
+    const chatPanels = document.querySelectorAll('[data-chat-panel]');
+    advisorButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-advisor');
+        advisorButtons.forEach((b) => b.setAttribute('data-active', String(b === btn)));
+        chatPanels.forEach((panel) => {
+          panel.style.display = panel.getAttribute('data-chat-panel') === id ? 'flex' : 'none';
+        });
+      });
+    });
+
+    const chatInput = document.querySelector('#chat-input');
+    const chatSend = document.querySelector('#chat-send');
+    function sendMessage() {
+      const text = chatInput && chatInput.value.trim();
+      if (!text) return;
+      const activePanel = Array.from(chatPanels).find((p) => p.style.display !== 'none');
+      const messagesEl = activePanel && activePanel.querySelector('[data-chat-messages]');
+      if (messagesEl) {
+        const row = document.createElement('div');
+        row.className = 'flex mb-3 justify-end';
+        const bubble = document.createElement('div');
+        bubble.className = 'max-w-[75%] rounded-2xl px-4 py-3 text-sm bg-brand-blue text-white';
+        bubble.textContent = text;
+        row.appendChild(bubble);
+        messagesEl.appendChild(row);
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+      if (chatInput) chatInput.value = '';
+    }
+    if (chatSend) chatSend.addEventListener('click', sendMessage);
+    if (chatInput) {
+      chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') sendMessage();
+      });
+    }
+  </script>
+</AppLayout>

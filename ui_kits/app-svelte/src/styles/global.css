@@ -1,0 +1,9 @@
+/* Loads this design system's self-hosted fonts + CSS custom properties (colors_and_type.css),
+   then layers Tailwind on top per DESIGN.md §13. Path assumes this kit stays nested inside the
+   design-system package; when copying into a real project, copy colors_and_type.css alongside
+   this file (or adjust the import path) instead of reaching back into a sibling package. */
+@import "../../../../colors_and_type.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Shadows</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 900px; background: var(--surface-tint); }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .row { display: flex; gap: 32px; flex-wrap: wrap; }
+  .card-demo { width: 200px; height: 100px; background: white; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); }
+  .meta { margin-top: 12px; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Elevation</h1>
+    <p><code>shadow-sm</code> is the only elevation level evidenced in source (ContactForm card,
+    Features step cards). <code>--shadow-md</code> / <code>--shadow-lg</code> are derived for
+    hover/modal states this system doesn't yet have components for.</p>
+  </div>
+  <div class="row">
+    <div>
+      <div class="card-demo" style="box-shadow: var(--shadow-sm);">--shadow-sm</div>
+      <div class="meta">Source-backed — ContactForm, Features cards</div>
+    </div>
+    <div>
+      <div class="card-demo" style="box-shadow: var(--shadow-md);">--shadow-md (derived)</div>
+      <div class="meta">Hover/raised state — not evidenced</div>
+    </div>
+    <div>
+      <div class="card-demo" style="box-shadow: var(--shadow-lg);">--shadow-lg (derived)</div>
+      <div class="meta">Modal/overlay state — not evidenced</div>
+    </div>
+  </div>
+</body>
+</html>

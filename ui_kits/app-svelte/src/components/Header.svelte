@@ -1,0 +1,41 @@
+<!--
+  Header — applied from source-evidence/capitalizarme-boilerplate-html/components/Header.astro (sticky, translucent,
+  wordmark + nav), extended with the pill CTA button per DESIGN.md §6/§8.
+-->
+<script>
+  const navItems = [
+    { label: 'Explorar propiedades', href: '#' },
+    { label: 'Cómo funciona', href: '#' },
+  ];
+</script>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+  <div class="mx-auto max-w-[1440px] px-6 lg:px-[140px] flex items-center justify-between h-16">
+    <div class="flex items-center gap-8">
+      <a href="/">
+        <img
+          src="/assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png"
+          alt="Capitalizarme"
+          class="w-[180px] h-auto"
+        />
+      </a>
+      <nav>
+        <ul class="flex items-center gap-6 list-none m-0 p-0">
+          {#each navItems as item}
+            <li>
+              <a href={item.href} class="font-body text-brand-navy hover:text-brand-blue transition-colors duration-200">
+                {item.label}
+              </a>
+            </li>
+          {/each}
+        </ul>
+      </nav>
+    </div>
+    <a
+      href="#"
+      class="font-cta font-bold uppercase tracking-wider text-sm rounded-full bg-brand-blue text-white px-8 py-3 hover:opacity-90 transition-all duration-300 ease-in-out"
+    >
+      Agenda tu reunión
+    </a>
+  </div>
+</header>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Spacing Tokens</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .row { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+  .bar { background: var(--accent); height: 20px; border-radius: 3px; }
+  .label { font-family: ui-monospace, monospace; font-size: 12px; width: 220px; color: var(--muted); }
+  h2 { font-size: 16px; margin: 32px 0 12px; color: var(--fg-emphasis); }
+  .container-demo { border: 1px dashed var(--border); }
+  .container-inner { background: var(--surface-tint); padding-block: 16px; text-align: center; font-size: 12px; font-family: ui-monospace, monospace; color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Spacing scale</h1>
+    <p>Base 4/8px rhythm read off Tailwind utility classes in every section component
+    (<code>py-16</code>, <code>gap-6</code>, <code>p-6 md:p-10</code>, etc.)</p>
+  </div>
+
+  <h2>Scale</h2>
+  <div class="row"><span class="label">--space-1 · 4px</span><div class="bar" style="width: 4px;"></div></div>
+  <div class="row"><span class="label">--space-2 · 8px</span><div class="bar" style="width: 8px;"></div></div>
+  <div class="row"><span class="label">--space-3 · 12px</span><div class="bar" style="width: 12px;"></div></div>
+  <div class="row"><span class="label">--space-4 · 16px</span><div class="bar" style="width: 16px;"></div></div>
+  <div class="row"><span class="label">--space-6 · 24px (container pad mobile)</span><div class="bar" style="width: 24px;"></div></div>
+  <div class="row"><span class="label">--space-8 · 32px</span><div class="bar" style="width: 32px;"></div></div>
+  <div class="row"><span class="label">--space-10 · 40px</span><div class="bar" style="width: 40px;"></div></div>
+  <div class="row"><span class="label">--space-12 · 48px</span><div class="bar" style="width: 48px;"></div></div>
+  <div class="row"><span class="label">--space-16 · 64px (section-py)</span><div class="bar" style="width: 64px;"></div></div>
+
+  <h2>Container &amp; section rhythm</h2>
+  <div class="container-demo">
+    <div class="container-inner">max-width: 1440px · padding-inline: 24px (mobile) → 140px (lg:)</div>
+  </div>
+  <div class="row" style="margin-top: 16px;">
+    <span class="label">--section-py · 64px</span>
+    <div class="bar" style="width: 64px; height: 40px;"></div>
+    <span style="font-size: 12px; color: var(--muted);">Hero, ContactForm, ImageTextPanel ×3, FeaturedWork</span>
+  </div>
+  <div class="row">
+    <span class="label">--section-py-lg · 80px</span>
+    <div class="bar" style="width: 80px; height: 40px;"></div>
+    <span style="font-size: 12px; color: var(--muted);">Features</span>
+  </div>
+  <div class="row">
+    <span class="label">--section-py-xl · 96px</span>
+    <div class="bar" style="width: 96px; height: 40px;"></div>
+    <span style="font-size: 12px; color: var(--muted);">CTABanner (closing emphasis)</span>
+  </div>
+</body>
+</html>

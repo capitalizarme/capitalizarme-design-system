@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Capitalizarme — Explorar propiedades' } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/logo/favicon.png" />
+    <title>{title}</title>
+  </head>
+  <body class="font-body text-brand-navy bg-white">
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Browse Properties (applied UI kit)</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); }
+
+  /* ---- Header (applied from Header.astro) ---- */
+  .app-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .app-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .app-header .header-left { display: flex; align-items: center; gap: 40px; }
+  .app-header img { width: 160px; height: auto; }
+  .app-header nav ul { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .app-header .btn-header-cta { padding: 10px 24px; font-size: 12px; }
+
+  /* ---- App shell layout ---- */
+  .app-shell { display: flex; min-height: 600px; }
+
+  /* ---- Sidebar (logged-in nav) ---- */
+  .app-sidebar {
+    width: 220px; flex-shrink: 0;
+    border-right: 1px solid var(--border-subtle);
+    padding: 24px 12px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .app-sidebar img.mascot { width: 48px; height: 48px; object-fit: contain; margin: 0 auto 16px; }
+  .app-sidebar button {
+    text-align: left; border: none; cursor: pointer;
+    font-family: var(--font-body); font-size: 14px; font-weight: var(--weight-regular);
+    color: var(--fg-emphasis); background: transparent;
+    border-radius: var(--radius-pill); padding: 10px 16px;
+  }
+  .app-sidebar button.active { font-weight: var(--weight-bold); color: var(--accent); background: var(--surface-tint); }
+
+  /* ---- Simulator banner (applied from Hero.astro + ContactForm.astro copy) ---- */
+  .simulator-banner { padding-bottom: 32px; }
+  .simulator-banner .row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .simulator-banner .copy { flex: 1 1 420px; min-width: 320px; }
+  .simulator-banner h1 {
+    font-family: var(--font-display); font-weight: var(--weight-extrabold);
+    font-size: 44px; line-height: 1.1; color: var(--accent); margin: 0;
+  }
+  .simulator-banner p { margin-top: 16px; color: var(--fg); }
+  .simulator-banner .btn { margin-top: 20px; display: inline-block; }
+  .simulator-banner img { width: 220px; height: auto; flex: 0 0 auto; }
+
+  /* ---- Filter bar (applied from ContactForm.astro underline-input pattern) ---- */
+  .filter-bar { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+  .filter-bar .field { flex: 1 1 160px; }
+  .filter-bar .field label { display: block; margin-bottom: 4px; font-size: 12px; color: var(--muted); }
+  .filter-bar .types { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-bar .types button { padding: 8px 18px; font-size: 12px; }
+
+  /* ---- Property grid + card (applied from Features.astro / FeaturedWork.astro) ---- */
+  .property-grid-heading {
+    font-family: var(--font-display); font-weight: var(--weight-black);
+    font-size: 30px; color: var(--fg-emphasis); margin-bottom: 20px;
+  }
+  .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .property-card { padding: 0; overflow: hidden; }
+  .property-card .photo {
+    height: 140px; background: var(--surface-tint-alt);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .property-card .photo span { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+  .property-card .body { padding: 20px; }
+  .property-card .label {
+    margin: 0; font-size: 11px; font-weight: var(--weight-bold);
+    text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-emphasis);
+  }
+  .property-card h3 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 20px; margin: 4px 0 2px; }
+  .property-card .subtitle { margin: 0 0 12px; color: var(--fg); }
+  .property-card ul.checks { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .property-card .check-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .property-card .check-item svg { flex-shrink: 0; }
+  .property-card .btn { padding: 8px 20px; font-size: 11px; display: inline-block; }
+
+  /* ---- Mensajes view (advisor list + chat) ---- */
+  .messages-view { display: flex; flex: 1; min-width: 0; }
+  .advisor-list { width: 260px; flex-shrink: 0; border-right: 1px solid var(--border-subtle); }
+  .advisor-list h2 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 18px; margin: 0; padding: 20px 16px 12px; }
+  .advisor-list ul { list-style: none; margin: 0; padding: 0; }
+  .advisor-list button {
+    width: 100%; display: flex; gap: 12px; align-items: center;
+    border: none; cursor: pointer; text-align: left; padding: 12px 16px; background: transparent;
+  }
+  .advisor-list button.selected { background: var(--surface-tint); }
+  .advisor-list .avatar {
+    width: 36px; height: 36px; border-radius: var(--radius-pill); background: var(--accent);
+    color: #fff; font-family: var(--font-display); font-weight: var(--weight-bold); font-size: 13px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .advisor-list .meta { min-width: 0; }
+  .advisor-list .name { display: block; font-size: 13px; font-weight: var(--weight-bold); color: var(--fg-emphasis); }
+  .advisor-list .last-message { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .chat-area { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .chat-area .chat-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .chat-area .chat-header p { margin: 0; }
+  .chat-area .chat-header .advisor-name { font-weight: var(--weight-bold); font-size: 14px; }
+  .chat-area .chat-header .advisor-role { font-size: 12px; color: var(--muted); }
+  .chat-area .chat-header .btn { padding: 8px 18px; font-size: 11px; }
+  .chat-messages { flex: 1; overflow-y: auto; padding: 20px; }
+
+  .message-row { display: flex; margin-bottom: 10px; }
+  .message-row.from-user { justify-content: flex-end; }
+  .message-row.from-advisor { justify-content: flex-start; }
+  .message-bubble { max-width: 70%; padding: 10px 16px; border-radius: var(--radius-md); font-size: 14px; line-height: 1.4; }
+  .message-row.from-user .message-bubble { background: var(--accent); color: #fff; }
+  .message-row.from-advisor .message-bubble { background: var(--surface); color: var(--fg); border: 1px solid var(--border); }
+
+  .input-bar {
+    display: flex; align-items: center; gap: 8px; padding: 8px;
+    border: 1px solid var(--border); border-radius: var(--radius-pill); margin: 16px;
+  }
+  .input-bar input {
+    flex: 1; border: none; outline: none; background: transparent;
+    font-family: var(--font-body); font-size: 14px; padding: 8px 12px;
+  }
+  .input-bar button {
+    width: 36px; height: 36px; border-radius: var(--radius-pill); border: none;
+    background: var(--accent); color: #fff; cursor: pointer; flex-shrink: 0;
+  }
+
+  /* ---- Footer (applied verbatim from Footer.astro) ---- */
+  .app-footer { background: #fff; padding-top: 64px; padding-bottom: 40px; border-top: 1px solid var(--border-subtle); }
+  .app-footer .cols {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px;
+    padding-bottom: 40px; border-bottom: 1px solid var(--border-subtle);
+  }
+  .app-footer .col-title { font-weight: var(--weight-bold); text-transform: uppercase; letter-spacing: 0.06em; font-size: 13px; margin-bottom: 12px; }
+  .app-footer ul { list-style: none; margin: 0; padding: 0; }
+  .app-footer li { margin-bottom: 6px; }
+  .app-footer a.footer-link { color: var(--muted); font-size: 12px; text-decoration: none; }
+  .app-footer a.social-link { color: var(--accent); font-size: 12px; text-decoration: none; }
+  .app-footer .bottom-row { display: flex; gap: 24px; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; padding-top: 32px; }
+  .app-footer .bottom-row img { width: 140px; height: auto; }
+  .app-footer .legal { max-width: 440px; font-size: 10px; line-height: 14px; color: var(--muted); }
+  .app-footer .legal p { margin: 0; }
+  .app-footer .legal p + p { margin-top: 4px; }
+</style>
+</head>
+<body>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <div id="root"></div>
+
+  <!-- Modular React components — each file is a real .jsx component, exposed as a window global
+       so plain <script type="text/babel"> tags can compose them without a build step. -->
+  <script type="text/babel" src="components/Header.jsx"></script>
+  <script type="text/babel" src="components/Sidebar.jsx"></script>
+  <script type="text/babel" src="components/SimulatorBanner.jsx"></script>
+  <script type="text/babel" src="components/FilterBar.jsx"></script>
+  <script type="text/babel" src="components/PropertyGrid.jsx"></script>
+  <script type="text/babel" src="components/AdvisorList.jsx"></script>
+  <script type="text/babel" src="components/MessageBubble.jsx"></script>
+  <script type="text/babel" src="components/InputBar.jsx"></script>
+  <script type="text/babel" src="components/ChatArea.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+  <script type="text/babel" src="components/App.jsx"></script>
+  <script type="text/babel">
+    const { App } = window;
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>

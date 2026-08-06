@@ -1,0 +1,25 @@
+---
+// Sidebar — logged-in product nav. Capi appears as a small, uncropped brand mark above the nav
+// items, never recolored or vectorized — see DESIGN.md §6. Active-state toggling is handled by
+// the client script in pages/index.astro (data-nav-item / data-active), not by this component —
+// Astro components render server-side and hold no client state of their own.
+const items = [
+  { key: 'explorar', label: 'Explorar propiedades' },
+  { key: 'favoritos', label: 'Mis favoritos' },
+  { key: 'mensajes', label: 'Mensajes' },
+  { key: 'simulador', label: 'Mi simulador' },
+];
+---
+<aside class="w-64 shrink-0 border-r border-gray-100 pt-6 px-4 flex flex-col gap-1">
+  <img class="w-14 h-14 mx-auto mb-4" src="/assets/mascot/capi-3.png" alt="Capi" />
+  {items.map((item, i) => (
+    <button
+      type="button"
+      data-nav-item={item.key}
+      data-active={i === 0 ? 'true' : 'false'}
+      class="text-left px-4 py-3 rounded-full font-body text-brand-navy hover:bg-blue-50 transition-colors duration-200 data-[active=true]:bg-brand-blue data-[active=true]:text-white"
+    >
+      {item.label}
+    </button>
+  ))}
+</aside>

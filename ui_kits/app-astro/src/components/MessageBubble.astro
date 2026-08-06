@@ -1,0 +1,19 @@
+---
+// MessageBubble — one chat row. User bubbles reuse the CTA banner's blue-fill/white-text
+// pairing; advisor bubbles reuse the .card border language.
+interface Props {
+  from: 'user' | 'advisor';
+  text: string;
+}
+const { from, text } = Astro.props;
+---
+<div class:list={['flex mb-3', from === 'user' ? 'justify-end' : 'justify-start']}>
+  <div
+    class:list={[
+      'max-w-[75%] rounded-2xl px-4 py-3 text-sm',
+      from === 'user' ? 'bg-brand-blue text-white' : 'bg-white border border-gray-200 text-brand-navy',
+    ]}
+  >
+    {text}
+  </div>
+</div>

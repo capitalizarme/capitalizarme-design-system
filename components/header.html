@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Header component</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .demo { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px; }
+
+  /* ---- Header — applied verbatim from ui_kits/app-react/components/Header.jsx (Header.astro source) ---- */
+  .app-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .app-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
+  .app-header .header-left { display: flex; align-items: center; gap: 40px; }
+  .app-header img { width: 160px; height: auto; }
+  .app-header nav ul { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .app-header .nav-link { color: var(--fg-emphasis); text-decoration: none; font-size: 14px; }
+  .app-header .nav-link:hover { color: var(--accent); }
+  .app-header .btn-header-cta { padding: 10px 24px; font-size: 12px; }
+
+  pre { background: var(--surface-tint); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; overflow-x: auto; font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Header component</h1>
+    <p>Sticky, translucent top nav — wordmark + 2 nav links + a pill CTA button ("Agenda tu reunión"),
+    the system's persistent single call-to-action (DESIGN.md §8 Voice &amp; Brand). Copied from
+    <code>ui_kits/app-react/components/Header.jsx</code>, itself applied from <code>Header.astro</code>
+    (see <code>source-evidence/capitalizarme-boilerplate-html/components/Header.astro</code>, which used a plain text link — the CTA
+    is promoted to a real button here to match how the CTA is treated everywhere else in the system).
+    Copy the markup below as-is; it only depends on <code>colors_and_type.css</code> tokens (including
+    <code>.btn</code>/<code>.btn-primary</code>) and the classes defined in the <code>&lt;style&gt;</code>
+    block above.</p>
+  </div>
+
+  <div class="meta">Live render</div>
+  <div class="demo">
+    <header class="app-header">
+      <div class="container">
+        <div class="header-left">
+          <a href="#">
+            <img src="../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
+          </a>
+          <nav>
+            <ul>
+              <li><a class="nav-link" href="#">Explorar propiedades</a></li>
+              <li><a class="nav-link" href="#">Cómo funciona</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a class="btn btn-primary btn-header-cta" href="#">Agenda tu reunión</a>
+      </div>
+    </header>
+  </div>
+
+  <div class="meta">Copy — markup</div>
+  <pre><code>&lt;header class="app-header"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="header-left"&gt;
+      &lt;a href="/"&gt;
+        &lt;img src="assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" /&gt;
+      &lt;/a&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a class="nav-link" href="#"&gt;Explorar propiedades&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a class="nav-link" href="#"&gt;Cómo funciona&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/nav&gt;
+    &lt;/div&gt;
+    &lt;a class="btn btn-primary btn-header-cta" href="#"&gt;Agenda tu reunión&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/header&gt;</code></pre>
+
+  <div class="meta" style="margin-top: 24px;">Copy — CSS (add alongside <code>colors_and_type.css</code>)</div>
+  <pre><code>.app-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+.app-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.app-header .header-left { display: flex; align-items: center; gap: 40px; }
+.app-header img { width: 160px; height: auto; }
+.app-header nav ul { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+.app-header .nav-link { color: var(--fg-emphasis); text-decoration: none; font-size: 14px; }
+.app-header .nav-link:hover { color: var(--accent); }
+.app-header .btn-header-cta { padding: 10px 24px; font-size: 12px; }</code></pre>
+  <p style="color: var(--muted); font-size: 12px; margin-top: 8px; max-width: 640px;">
+    <code>.btn</code> and <code>.btn-primary</code> come from <code>colors_and_type.css</code> — pill shape,
+    Raleway 700 uppercase, tracked-out (DESIGN.md §6 Buttons). <code>.btn-header-cta</code> only trims the
+    padding/size to fit the 64px header.
+  </p>
+</body>
+</html>

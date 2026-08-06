@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .demo { padding: 32px; border-radius: var(--radius-md); margin-bottom: 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .demo-light { background: var(--surface); border: 1px solid var(--border); }
+  .demo-accent { background: var(--accent); }
+  .meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Buttons</h1>
+    <p>Three variants, all copied from real markup: ContactForm submit, CTABanner button (on-accent),
+    and Features "Evalúate ahora" CTA (outline). Every button is Raleway 700 uppercase in a fully
+    pill-shaped container — this is the system's single most recognizable UI signature.</p>
+  </div>
+
+  <div class="meta">Primary — bg-brand-blue text-white (ContactForm.astro submit, FeaturedWork.astro cta)</div>
+  <div class="demo demo-light">
+    <button class="btn btn-primary">Siguiente</button>
+    <a class="btn btn-primary" href="#">Agenda tu reunión</a>
+  </div>
+
+  <div class="meta">On-accent (inverted) — bg-white text-brand-blue, used only on the blue CTA banner</div>
+  <div class="demo demo-accent">
+    <a class="btn btn-on-accent" href="#">Agenda tu reunión online</a>
+  </div>
+
+  <div class="meta">Outline — border-2 border-brand-blue, fills solid on hover (Features.astro cta)</div>
+  <div class="demo demo-light">
+    <a class="btn btn-outline" href="#">Evalúate ahora agendando una reunión online</a>
+  </div>
+</body>
+</html>
