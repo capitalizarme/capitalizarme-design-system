@@ -23,6 +23,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
 <style>
+  /* Brand fonts come from the Google Fonts CDN @import in
+     colors_and_type.css (Space Grotesk 300–700 + Raleway 700) — no local
+     @font-face rules here, so nothing can block on missing local assets. */
+
   /* §10: US Letter default, real running footer with a page counter. */
   @page {
     size: 8.5in 11in;
@@ -154,6 +158,21 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', function () {
+      /* Chart.js paints canvas text synchronously at instantiation: if the
+         Space Grotesk webfont isn't loaded yet, labels fall back to the
+         canvas default (sans-serif) and stay wrong forever — the <img>
+         snapshot is taken once, right after drawing. Wait for the Google
+         CDN faces from colors_and_type.css to finish before creating any
+         chart; a short timeout keeps pagination moving even if a font
+         request hangs. */
+      function whenFontsReady() {
+        if (!document.fonts || !document.fonts.ready) return Promise.resolve();
+        return Promise.race([
+          document.fonts.ready,
+          new Promise(function (resolve) { setTimeout(resolve, 1500); })
+        ]);
+      }
+      whenFontsReady().then(function () {
       var navy = '#25397f', blue = '#106cb5', border = '#e5e7eb', muted = '#64748b';
 
       var commissionChart = new Chart(document.getElementById('chartCommission'), {
@@ -207,7 +226,8 @@
         canvas.parentNode.replaceChild(img, canvas);
       });
 
-      new Paged.Previewer().preview();
+        new Paged.Previewer().preview();
+      });
     });
   </script>
 </body>
