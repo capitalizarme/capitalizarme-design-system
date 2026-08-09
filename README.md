@@ -1,5 +1,9 @@
 # Capitalizarme Design System
 
+**v0.1.0** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
+breaking token/API changes bump MAJOR, additive tokens/components/artifacts bump MINOR, fixes bump
+PATCH. `package.json` at the project root is the source of truth once this package publishes to npm.
+
 A reusable Open Design design-system package extracted from multiple real Capitalizarme sources —
 brand tokens, component markup, the official iconset, logo family, and the full captured set of the
 brand's "Capi" mascot renders. See Source references below for the complete evidence list.

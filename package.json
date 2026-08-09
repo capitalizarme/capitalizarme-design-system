@@ -1,0 +1,19 @@
+{
+  "name": "capitalizarme-design-system",
+  "version": "0.1.0",
+  "description": "Capitalizarme brand tokens, type, iconset, logo family, Capi mascot assets, and reusable component markup.",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "author": "Capitalizarme",
+  "files": [
+    "DESIGN.md",
+    "colors_and_type.css",
+    "assets",
+    "components",
+    "fonts",
+    "system"
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  }
+}
