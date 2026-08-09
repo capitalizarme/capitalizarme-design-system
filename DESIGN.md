@@ -620,6 +620,14 @@ overview decks, broker/partner presentations, and any other keynote-style delive
 - Charts embedded in slides are live Chart.js instances (§12) bound to this system's tokens, not static
   images pasted into a slide.
 
+**Known exception:** `system/artifacts/deck.html` — the "Pitch deck" tile in the Design System pane's
+Assets grid — does **not** use reveal.js. It's built on the host runtime's own fixed scale-to-fit deck
+framework (the exact hand-rolled pattern this rule forbids), because that artifact's requirement was to
+match the framework every OTHER deck this session produces is built on, not to demonstrate this rule.
+Don't copy `system/artifacts/deck.html` as a reveal.js reference, and don't treat it as precedent for a
+real deck deliverable — any actual "build me a deck" request still must follow reveal.js per the rule
+above. Rebuilding that one tile on reveal.js remains open; flagged here rather than done silently.
+
 ## 12. Charts & Data Visualization
 
 Rule: **every chart, graph, or data visualization must be a live [Chart.js](https://www.chartjs.org)
