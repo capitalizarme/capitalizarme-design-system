@@ -9,10 +9,15 @@
   body { margin: 0; }
   .container { max-width: 1180px; margin-inline: auto; padding-inline: 24px; }
 
-  header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border-subtle); }
-  header .row { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  header img { width: 150px; height: auto; }
-  header nav { display: flex; gap: 24px; }
+  /* Header — applied verbatim from components/header.html (app-header) */
+  .app-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border-subtle); }
+  .app-header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 24px; }
+  .app-header .header-left { display: flex; align-items: center; gap: 40px; }
+  .app-header img { width: 160px; height: auto; }
+  .app-header nav ul { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .app-header .nav-link { color: var(--fg-emphasis); text-decoration: none; font-size: 14px; }
+  .app-header .nav-link:hover { color: var(--accent); }
+  .app-header .btn-header-cta { padding: 10px 24px; font-size: 12px; }
 
   section { padding-block: 56px; }
   .split { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
@@ -71,14 +76,20 @@
 </style>
 </head>
 <body>
-  <header>
-    <div class="container row">
-      <img src="../../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
-      <nav>
-        <a class="nav-link" href="#">Inicio</a>
-        <a class="nav-link" href="#">Cómo funciona</a>
-        <a class="nav-link" href="#">Agenda tu reunión</a>
-      </nav>
+  <header class="app-header" data-od-id="header">
+    <div class="container">
+      <div class="header-left">
+        <a href="#">
+          <img src="../../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
+        </a>
+        <nav>
+          <ul>
+            <li><a class="nav-link" href="#">Explorar propiedades</a></li>
+            <li><a class="nav-link" href="#">Cómo funciona</a></li>
+          </ul>
+        </nav>
+      </div>
+      <a class="btn btn-primary btn-header-cta" href="#" data-od-id="header-cta">Agenda tu reunión</a>
     </div>
   </header>
 
@@ -87,7 +98,7 @@
       <div>
         <h1>Agenda tu reunión y averigua tu capacidad de inversión</h1>
         <p>Descubre hasta qué monto puedes invertir acorde a tu situación financiera y para qué propiedades te alcanza.</p>
-        <a class="btn btn-primary" href="#">Agenda tu reunión</a>
+        <a class="btn btn-outline" href="#" data-od-id="hero-cta">Descubre tu capacidad de inversión</a>
       </div>
       <div><img src="../../assets/mascot/capi-front-wave.png" alt="Capi" /></div>
     </div>
