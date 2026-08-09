@@ -43,8 +43,8 @@ See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usag
 - `DESIGN.md` — canonical rules: product context, color, typography, spacing, layout, components,
   motion, voice, anti-patterns. Read this first, every time.
 - `colors_and_type.css` — concrete CSS custom properties + base styles + `.btn`/`.card`/
-  `.input-underline`/`.nav-link` component classes, with Space Grotesk self-hosted from `fonts/` via
-  `@font-face` and Raleway loaded from Google Fonts.
+  `.input-underline`/`.nav-link` component classes. Space Grotesk and Raleway load from Google Fonts
+  CDN only (`@import`) — no local `@font-face`, no JS font-loading script.
 - `preview/` — 10 focused HTML cards, each loading `colors_and_type.css` live: primary colors, light
   theme surfaces, typography specimens, spacing tokens, radius, shadows, buttons, inputs, brand assets,
   the official iconset (Figma icon-sheet export, with a color switcher across all 6 color layers and a
@@ -59,9 +59,11 @@ See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usag
   picking one — and its 5 sibling color folders `verde/ azul/ rojo/ amarillo/ celeste/`, the same
   124-icon grid re-exported per brand color and index-matched to the grayscale set), `mascot/` (20 "Capi"
   character renders).
-- `fonts/` — real Space Grotesk TTF files (Light/Regular/Medium/SemiBold/Bold), uploaded directly to
-  the project and bound in `colors_and_type.css` via `@font-face`. Raleway (buttons only) still loads
-  from the Google Fonts CDN — no local Raleway file was provided.
+- `fonts/` — real TTF files uploaded directly to the project: Space Grotesk
+  (Light/Regular/Medium/SemiBold/Bold) and Raleway (Bold, BoldItalic — the only weight/style the
+  button/CTA rule uses). Preserved as brand assets and read by the Design System pane's Fonts module
+  via `fonts/manifest.json`; not bound via `@font-face` in `colors_and_type.css`, which loads both
+  faces from Google Fonts CDN only.
 - `build/` — not present; the linked repo is a static Astro site with no runtime/installer icon
   evidence.
 - `source-evidence/` — EVIDENCE: real Astro component source (Header, Hero, ContactForm, CTABanner,
@@ -88,6 +90,11 @@ See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usag
   extracted from `ui_kits/app-react/components/`: `header.html` (sticky top nav) and `footer.html` (5-column
   link grid + the DESIGN.md §8 compliance disclaimer). Use these when you need just the header/footer
   chrome without pulling in the whole `ui_kits/app-react/` kit.
+- `system/` — the Design System pane's kit + artifact assets, all real and token-driven (loads
+  `colors_and_type.css`): `kit.html`/`kit.dark.html` (condensed brand kit, light + the one evidenced
+  inverted navy surface), `index.html` (links to everything below), `tokens.default.json` (flat token
+  JSON), and `artifacts/` — landing page, deck cover, poster, email, newsletter, and form page, each
+  reusing real Spanish copy from `source-evidence/…/content.ts`.
 
 See "Source context" below for how the archived landing-page repo, the official iconset's Figma export,
 and the 2021 branding-guidelines cover page/BrandBook text extraction were captured.

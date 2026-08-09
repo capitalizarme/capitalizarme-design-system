@@ -20,48 +20,13 @@
   was evidenced — Gold is reserved for AI/premium, not warning, per source). Elevation levels beyond
   shadow-sm are DERIVED, tuned against the official navy.
 
-  Space Grotesk is self-hosted from fonts/ (real brand font files, uploaded directly to the project —
-  see fonts/ below). Raleway (buttons/CTAs only) still loads from Google Fonts; no local file was
-  provided for it.
+  Space Grotesk and Raleway load from Google Fonts CDN only (@import below). The real uploaded TTF
+  files still live in fonts/ (preserved brand assets, and what the Design System pane's Fonts module
+  reads via fonts/manifest.json), but colors_and_type.css no longer binds them via @font-face —
+  no local-file fallback face, no JS-based font-loading script.
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
-
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Space Grotesk";
-  src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Raleway:ital,wght@0,700;1,700&display=swap");
 
 :root {
   /* ---- Brand — OFFICIAL palette (source-backed: 2021 branding guidelines cover page —

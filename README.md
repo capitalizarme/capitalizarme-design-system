@@ -136,8 +136,8 @@ be re-skinned per themed landing page.
 ```
 DESIGN.md                Canonical rules doc — product context, color, type, spacing, layout,
                           components, motion, voice, anti-patterns
-colors_and_type.css       Concrete design tokens + base styles, bound to real Google Fonts (Space
-                          Grotesk, Raleway) via @import
+colors_and_type.css       Concrete design tokens + base styles. Space Grotesk/Raleway load from
+                          Google Fonts CDN only (@import) — no local @font-face, no JS font loader
 README.md                 This file
 SKILL.md                  Agent-usable skill entry for reusing this system in future projects
 LICENSE                    Copyright / usage terms for this package (Capitalizarme, all rights reserved)
@@ -166,8 +166,10 @@ source-evidence/           EVIDENCE — real Astro component source, copied out 
   src/layouts/Layout.astro Real <head> setup incl. the Google Fonts <link>
   src/pages/index.astro    Real section composition order
   src/data/content.ts      Real Spanish marketing copy
-fonts/                     Real Space Grotesk TTF files (5 weights), uploaded directly to the
-                            project and self-hosted via @font-face in colors_and_type.css
+fonts/                     Real Space Grotesk (5 weights) + Raleway (Bold, BoldItalic) TTF files,
+                            uploaded directly to the project and preserved as brand assets — not
+                            bound in colors_and_type.css (fonts load from Google Fonts CDN only)
+  manifest.json              Per-file family/weight/style manifest read by the Design System pane
 ui_kits/app-react/       APPLIED — an invented "browse properties" webapp screen built from this
                             system's tokens, not extracted fact (see ui_kits/app-react/README.md).
                             React + Babel-standalone, no build step, browser-runnable.
@@ -177,6 +179,15 @@ ui_kits/app-astro/ APPLIED — the same invented screen, rebuilt as real .astro 
 ui_kits/app-svelte/ APPLIED — the same invented screen again, rebuilt as real .svelte + Tailwind
                             components (see ui_kits/app-svelte/README.md). Requires a Node/Vite
                             build step; meant to be dropped into an actual Svelte codebase.
+system/                    Design System pane assets — brand kit pages + 6 real artifact demos, all
+                            token-driven, all loading colors_and_type.css
+  kit.html / kit.dark.html   Condensed brand kit (palette, type, buttons, mascot) — light + the one
+                            evidenced inverted/dark surface (CTA-banner navy treatment, not a
+                            fabricated dark mode)
+  index.html                  Overview linking to the kit pages and every artifact below
+  tokens.default.json         Real tokens (color/type/spacing/radius/shadow/motion) as flat JSON
+  artifacts/                Landing, deck cover, poster, email, newsletter, form page — each reusing
+                            real Spanish copy from source-evidence/data/content.ts and real assets
 ```
 
 `source-evidence/` vs `ui_kits/app-react/`/`ui_kits/app-astro/`/`ui_kits/app-svelte/` — these look
@@ -192,11 +203,12 @@ not as a spec to match precisely.
 No `build/` directory: the linked repo has no runtime/installer icon evidence (it's a static Astro
 site, not an Electron/desktop app), so no root `build/` was fabricated.
 
-`fonts/` holds the real Space Grotesk brand font — 5 weights (Light 300, Regular 400, Medium 500,
-SemiBold 600, Bold 700), uploaded directly to the project and preserved byte-for-byte. They're bound
-in `colors_and_type.css` via `@font-face`, so `--font-display`/`--font-body` render the actual brand
-typeface locally instead of only via CDN. Raleway (buttons/CTAs only) still loads from Google Fonts —
-no local Raleway file was provided.
+`fonts/` holds both real brand fonts, uploaded directly to the project and preserved byte-for-byte:
+Space Grotesk — 5 weights (Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700) — and Raleway —
+Bold (700, normal) + BoldItalic (700, italic), the only weight/style the button/CTA rule uses.
+`colors_and_type.css` loads both from Google Fonts CDN only (`@import`) — the files in `fonts/` are
+preserved as real brand assets and read by the Design System pane's Fonts module via
+`fonts/manifest.json`, but are not bound via `@font-face` in `colors_and_type.css`.
 
 ## Preview Manifest
 

@@ -1,0 +1,11 @@
+{
+  "files": [
+    { "family": "Space Grotesk", "weight": "300", "style": "normal", "file": "SpaceGrotesk-Light.ttf", "format": "truetype" },
+    { "family": "Space Grotesk", "weight": "400", "style": "normal", "file": "SpaceGrotesk-Regular.ttf", "format": "truetype" },
+    { "family": "Space Grotesk", "weight": "500", "style": "normal", "file": "SpaceGrotesk-Medium.ttf", "format": "truetype" },
+    { "family": "Space Grotesk", "weight": "600", "style": "normal", "file": "SpaceGrotesk-SemiBold.ttf", "format": "truetype" },
+    { "family": "Space Grotesk", "weight": "700", "style": "normal", "file": "SpaceGrotesk-Bold.ttf", "format": "truetype" },
+    { "family": "Raleway", "weight": "700", "style": "normal", "file": "Raleway-Bold.ttf", "format": "truetype" },
+    { "family": "Raleway", "weight": "700", "style": "italic", "file": "Raleway-BoldItalic.ttf", "format": "truetype" }
+  ]
+}

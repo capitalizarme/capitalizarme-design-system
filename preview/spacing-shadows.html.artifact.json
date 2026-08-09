@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "preview/spacing-shadows.html",
+  "entry": "preview/spacing-shadows.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-08-09T02:12:39.485Z",
+  "updatedAt": "2026-08-09T02:12:39.485Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

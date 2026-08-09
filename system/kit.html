@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Design System Kit</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 48px; max-width: 1040px; }
+  .kit-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
+  .kit-header img { width: 220px; height: auto; }
+  .kit-header p { color: var(--muted); margin: 4px 0 0; font-size: 13px; }
+  h2 { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-emphasis); margin: 48px 0 16px; }
+  h2:first-of-type { margin-top: 0; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .swatch { width: 132px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border); }
+  .swatch-fill { height: 64px; }
+  .swatch-meta { padding: 10px 12px; background: var(--surface); }
+  .swatch-name { font-weight: var(--weight-bold); font-size: 12px; }
+  .swatch-value { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+  .type-row { padding: 16px 0; border-bottom: 1px solid var(--border-subtle); }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="kit-header">
+    <img src="../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
+    <div>
+      <p>Design system kit — generated from colors_and_type.css and DESIGN.md</p>
+    </div>
+  </div>
+
+  <h2>Official palette — DESIGN.md §2.1</h2>
+  <div class="row">
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-navy);"></div><div class="swatch-meta"><div class="swatch-name">Navy</div><div class="swatch-value">#25397F</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-blue);"></div><div class="swatch-meta"><div class="swatch-name">Blue</div><div class="swatch-value">#106CB5</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-gold);"></div><div class="swatch-meta"><div class="swatch-name">Gold</div><div class="swatch-value">#FBAF17</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-green);"></div><div class="swatch-meta"><div class="swatch-name">Green</div><div class="swatch-value">#006939</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-red);"></div><div class="swatch-meta"><div class="swatch-name">Red</div><div class="swatch-value">#ED1847</div></div></div>
+  </div>
+
+  <h2>Typography — Space Grotesk / Raleway</h2>
+  <div class="type-row">
+    <div class="type-meta">Display · Space Grotesk 800</div>
+    <div style="font-family: var(--font-display); font-weight: var(--weight-extrabold); font-size: 40px; color: var(--accent);">Capitalizarme Design System</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Body · Space Grotesk 400</div>
+    <div style="font-family: var(--font-body); font-size: 16px;">Descubre hasta qué monto puedes invertir acorde a tu situación financiera.</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Button / CTA · Raleway 700 uppercase</div>
+    <a class="btn btn-primary" href="#">Agenda tu reunión</a>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="row" style="align-items: center;">
+    <a class="btn btn-primary" href="#">Primary</a>
+    <a class="btn btn-outline" href="#">Outline</a>
+    <a class="btn btn-cta-secondary" href="#">CTA secundario</a>
+  </div>
+
+  <h2>Mascot — Capi</h2>
+  <div class="row">
+    <img src="../assets/mascot/capi-front-wave.png" alt="Capi" style="width: 96px; height: 96px; object-fit: contain;" />
+    <img src="../assets/mascot/capi-3.png" alt="Capi" style="width: 96px; height: 96px; object-fit: contain;" />
+  </div>
+</body>
+</html>

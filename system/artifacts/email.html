@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Email artifact</title>
+<style>
+  /* Progressive enhancement only — most clients (Outlook especially) strip <style>/@import,
+     so every element below still carries the system-font stack inline as the real fallback.
+     Clients that DO support this (Apple/iOS Mail, several webmail providers) show the real
+     brand faces; nothing else changes for clients that don't. */
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@800&family=Raleway:wght@700&display=swap");
+</style>
+</head>
+<!-- Email markup uses inline styles + table layout (client-compatibility convention), values
+     copied from colors_and_type.css rather than linking it, since most email clients strip
+     <link>/external CSS. -->
+<body style="margin:0; padding:32px 0; background:#f8f9fb; font-family:-apple-system,BlinkMacSystemFont,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align="center">
+      <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:16px; overflow:hidden; border:1px solid #e5e7eb;">
+        <tr><td style="padding:32px 32px 0;">
+          <img src="../../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" width="150" style="display:block;" />
+        </tr></td>
+        <tr><td style="padding:24px 32px 8px;">
+          <div style="font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif; font-weight:800; font-size:22px; color:#106cb5;">Trabajamos con todos los bancos y mutuarias</div>
+        </td></tr>
+        <tr><td style="padding:0 32px 24px; color:#000000; font-size:15px; line-height:1.5;">
+          Así te ayudamos a conseguir las mejores condiciones para un crédito hipotecario, y que sea fácil y rápido.
+        </td></tr>
+        <tr><td style="padding:0 32px 32px;">
+          <a href="#" style="display:inline-block; background:#106cb5; color:#ffffff; text-decoration:none; font-family:'Raleway',Arial,sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; font-size:13px; padding:12px 28px; border-radius:9999px;">Agenda tu reunión</a>
+        </td></tr>
+        <tr><td style="padding:20px 32px; border-top:1px solid #f3f4f6; font-size:10px; color:#64748b; line-height:1.4;">
+          Todas las rentabilidades y retornos mostrados en la página son referenciales, los rendimientos pasados no garantizan retornos futuros.<br />
+          ©Capitalizarme 2026 • Condiciones de uso • Políticas de privacidad
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

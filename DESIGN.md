@@ -262,12 +262,19 @@ Rule: **Raleway never appears outside buttons.** If a design needs a CTA, it's R
 pill; everything else — including large display type — stays Space Grotesk. Do not swap this pairing
 or introduce a third family.
 
-Space Grotesk is self-hosted: real TTF files (Light 300, Regular 400, Medium 500, SemiBold 600,
-Bold 700) were uploaded directly to the project, preserved in `fonts/`, and bound in
-`colors_and_type.css` via `@font-face`. Raleway (buttons only) still loads from Google Fonts via
-`@import` — no local Raleway file was provided. Weights 800/900 used by the hero h1 and section h2
-(see table above) have no discrete local file; browsers fall back to the closest available weight
-(700, Bold) rather than the CDN's variable-weight face.
+Both display and body roles use the same face, Space Grotesk, at weights 300/400/500/600/700, with
+fallback stack `'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif`.
+
+(Raleway is the button/CTA-only accent face — `--font-accent` in `colors_and_type.css` — not a body or
+display role; see the table above and §6 Buttons for where it applies.)
+
+Both faces load from Google Fonts CDN only — a single `@import` in `colors_and_type.css`, no local
+`@font-face`, no JS-based font-loading script. Real Space Grotesk (Light 300, Regular 400, Medium 500,
+SemiBold 600, Bold 700) and Raleway (Bold 700 normal, BoldItalic 700 italic) TTF files are still
+preserved in `fonts/` as uploaded brand assets and read by the Design System pane's Fonts module via
+`fonts/manifest.json`, but they are not bound in `colors_and_type.css`. Weight 900 used by the section
+h2 (see table above) has no discrete face — Google Fonts' hosted Space Grotesk tops out at 700 (Bold)
+— so browsers synthesize/clamp to 700.
 
 ## 4. Spacing
 

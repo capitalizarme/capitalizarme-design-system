@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "components/header.html",
+  "entry": "components/header.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-08-09T02:43:22.014Z",
+  "updatedAt": "2026-08-09T02:43:22.014Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

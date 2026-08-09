@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Design System Kit (inverted)</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  /* Capitalizarme has no evidenced dark theme (DESIGN.md §2 — every surface is white or a pale
+     blue tint). This page reuses the one real inverted/dark-surface pattern that IS evidenced:
+     the CTABanner's navy background with white text and on-accent button — DESIGN.md §6 Buttons. */
+  body { padding: 48px; max-width: 1040px; background: var(--color-brand-navy); color: #ffffff; }
+  .kit-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
+  .kit-header img { width: 220px; height: auto; }
+  .kit-header p { color: rgba(255,255,255,0.6); margin: 4px 0 0; font-size: 13px; }
+  h2 { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin: 48px 0 16px; }
+  h2:first-of-type { margin-top: 0; }
+  .row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .swatch { width: 132px; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.15); }
+  .swatch-fill { height: 64px; }
+  .swatch-meta { padding: 10px 12px; background: rgba(255,255,255,0.06); }
+  .swatch-name { font-weight: var(--weight-bold); font-size: 12px; color: #fff; }
+  .swatch-value { font-family: ui-monospace, monospace; font-size: 11px; color: rgba(255,255,255,0.6); }
+  .type-row { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta { font-family: ui-monospace, monospace; font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="kit-header">
+    <img src="../assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png" alt="Capitalizarme" />
+    <div>
+      <p>Inverted surface — the evidenced CTA-banner treatment, not a fabricated dark mode</p>
+    </div>
+  </div>
+
+  <h2>Official palette on navy</h2>
+  <div class="row">
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-blue);"></div><div class="swatch-meta"><div class="swatch-name">Blue</div><div class="swatch-value">#106CB5</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-gold);"></div><div class="swatch-meta"><div class="swatch-name">Gold</div><div class="swatch-value">#FBAF17</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-green);"></div><div class="swatch-meta"><div class="swatch-name">Green</div><div class="swatch-value">#006939</div></div></div>
+    <div class="swatch"><div class="swatch-fill" style="background: var(--color-brand-red);"></div><div class="swatch-meta"><div class="swatch-name">Red</div><div class="swatch-value">#ED1847</div></div></div>
+  </div>
+
+  <h2>Typography on navy</h2>
+  <div class="type-row">
+    <div class="type-meta">Display · Space Grotesk 800</div>
+    <div style="font-family: var(--font-display); font-weight: var(--weight-extrabold); font-size: 40px; color: #ffffff;">Conviértete en inversionista</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Body · Space Grotesk 400</div>
+    <div style="font-family: var(--font-body); font-size: 16px; color: rgba(255,255,255,0.85);">Empieza tu camino hacia la libertad financiera.</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">Button / CTA on-accent · Raleway 700 uppercase</div>
+    <a class="btn btn-on-accent" href="#">Agenda tu reunión online</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Form page artifact</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  body { margin: 0; display: flex; justify-content: center; padding: 64px 24px; }
+  .card { width: 100%; max-width: 440px; padding: 40px; }
+  .card img.logo { width: 150px; height: auto; margin-bottom: 24px; }
+  .card h1 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 24px; margin: 0 0 8px; }
+  .card p { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+  form .btn { margin-top: 24px; width: 100%; text-align: center; border: none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="../../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
+    <h1>Descubre cómo funciona</h1>
+    <p>Regístrate con tus datos de contacto y agenda una reunión con alguien de nuestro equipo de solo 45 minutos sin costo.</p>
+    <form>
+      <label for="name">¿Cómo te llamas?</label>
+      <input class="input-underline" id="name" type="text" required />
+      <label for="lastname">¿Cuál es tu apellido?</label>
+      <input class="input-underline" id="lastname" type="text" required />
+      <label for="phone">¿Cuál es tu teléfono?</label>
+      <input class="input-underline" id="phone" type="tel" required />
+      <label for="email">¿Cuál es tu email?</label>
+      <input class="input-underline" id="email" type="email" required />
+      <button class="btn btn-primary" type="submit">Siguiente</button>
+    </form>
+  </div>
+</body>
+</html>

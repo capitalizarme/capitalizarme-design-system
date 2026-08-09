@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "components/footer.html",
+  "entry": "components/footer.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-08-09T02:43:23.661Z",
+  "updatedAt": "2026-08-09T02:43:23.661Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

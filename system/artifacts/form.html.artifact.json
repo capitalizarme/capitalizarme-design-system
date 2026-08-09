@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "system/artifacts/form.html",
+  "entry": "system/artifacts/form.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-08-09T03:14:25.334Z",
+  "updatedAt": "2026-08-09T03:14:25.334Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

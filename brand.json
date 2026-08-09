@@ -1,0 +1,67 @@
+{
+  "name": "Capitalizarme",
+  "colors": [],
+  "logo": {
+    "primary": "assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png",
+    "alternates": [
+      "assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png",
+      "assets/logo/horizontal/070726_logo-capitalizarme-azul-sin-com.png",
+      "assets/logo/horizontal/070726_logo-capitalizarme-azul-oscuro-sin-com.png",
+      "assets/logo/horizontal/070726_logo-capitalizarme-verde-sin-com.png",
+      "assets/logo/horizontal/070726_logo-capitalizarme-rojo-sin-com.png",
+      "assets/logo/horizontal/070726_logo-capitalizarme-amarillo-sin-com.png",
+      "assets/logo/isotypes/Isotipo Negro.png",
+      "assets/logo/isotypes/Isotipo Blanco.png",
+      "assets/logo/isotypes/Isotipo Azul.png",
+      "assets/logo/isotypes/Isotipo Celeste.png",
+      "assets/logo/isotypes/Isotipo Verde.png",
+      "assets/logo/isotypes/Isotipo Rojo.png",
+      "assets/logo/isotypes/Isotipo Amarillo.png"
+    ],
+    "notes": "Negro (black), \"sin com\" — the default wordmark. Alternates: the 6 other horizontal color variants (Blanco is for dark/navy backgrounds only), then all 7 isotype color variants. See DESIGN.md §6 Logo system for the full 7-color horizontal + isotype families and construction rules."
+  },
+  "typography": {
+    "display": {
+      "family": "Space Grotesk",
+      "fallbacks": ["-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      "weights": [300, 400, 500, 600, 700],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap",
+      "notes": "Also self-hosted in fonts/ as a preserved brand asset — see fonts/manifest.json. colors_and_type.css loads this face from Google Fonts CDN only."
+    },
+    "body": {
+      "family": "Space Grotesk",
+      "fallbacks": ["-apple-system", "BlinkMacSystemFont", "sans-serif"],
+      "weights": [300, 400, 500, 600, 700],
+      "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    }
+  },
+  "imagery": {
+    "style": "",
+    "subjects": [],
+    "treatment": "",
+    "avoid": [],
+    "samples": [
+      { "file": "assets/mascot/capi-front-wave.png", "kind": "mascot", "caption": "Capi front wave" },
+      { "file": "assets/mascot/capi-portrait.png", "kind": "mascot", "caption": "Capi portrait" },
+      { "file": "assets/mascot/capi-1-phone.png", "kind": "mascot", "caption": "Capi on phone" },
+      { "file": "assets/mascot/capi-2-filing.png", "kind": "mascot", "caption": "Capi filing documents" },
+      { "file": "assets/mascot/capi-3.png", "kind": "mascot", "caption": "Capi thumbs up" },
+      { "file": "assets/mascot/capi-4.png", "kind": "mascot", "caption": "Capi" },
+      { "file": "assets/mascot/capi-5.png", "kind": "mascot", "caption": "Capi" },
+      { "file": "assets/mascot/capi-6.png", "kind": "mascot", "caption": "Capi" },
+      { "file": "assets/mascot/capi-7.png", "kind": "mascot", "caption": "Capi" },
+      { "file": "assets/mascot/capi-searching.png", "kind": "mascot", "caption": "Capi searching" },
+      { "file": "assets/mascot/capi-atareado-busy.png", "kind": "mascot", "caption": "Capi busy" },
+      { "file": "assets/mascot/capi-subgerente-brand-manager.png", "kind": "mascot", "caption": "Capi brand manager" },
+      { "file": "assets/mascot/capi-cohete-rocket.png", "kind": "mascot", "caption": "Capi riding rocket" },
+      { "file": "assets/mascot/capi-skate.png", "kind": "mascot", "caption": "Capi skateboarding" },
+      { "file": "assets/mascot/capi-graduado.png", "kind": "mascot", "caption": "Capi graduate" },
+      { "file": "assets/mascot/capi-cines.png", "kind": "mascot", "caption": "Capi at the movies" },
+      { "file": "assets/mascot/capi-celular-1.png", "kind": "mascot", "caption": "Capi with phone" },
+      { "file": "assets/mascot/capi-celular-2.png", "kind": "mascot", "caption": "Capi with phone" },
+      { "file": "assets/mascot/capi-scene-01.png", "kind": "mascot", "caption": "Capi scene" },
+      { "file": "assets/mascot/capi-scene-02.png", "kind": "mascot", "caption": "Capi scene" },
+      { "file": "assets/mascot/capi-rot-lineup.png", "kind": "mascot", "caption": "Capi rotation lineup (multi-angle reference sheet)" }
+    ]
+  }
+}

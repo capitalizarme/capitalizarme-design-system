@@ -1,0 +1,54 @@
+{
+  "source": "colors_and_type.css",
+  "colors": {
+    "brandNavy": "#25397f",
+    "brandBlue": "#106cb5",
+    "brandGold": "#fbaf17",
+    "brandGreen": "#006939",
+    "brandRed": "#ed1847",
+    "brandPurple": "#8e27c6",
+    "offWhite": "#f8f9fb",
+    "blueLight": "#dde6ff",
+    "slate": "#64748b",
+    "bg": "#ffffff",
+    "surface": "#ffffff",
+    "fg": "#000000",
+    "fgEmphasis": "#25397f",
+    "muted": "#64748b",
+    "border": "#e5e7eb",
+    "borderSubtle": "#f3f4f6",
+    "accent": "#106cb5",
+    "accentContrast": "#ffffff",
+    "accentSecondary": "#25397f",
+    "statusSuccess": "#006939",
+    "statusDanger": "#ed1847"
+  },
+  "typography": {
+    "display": { "family": "Space Grotesk", "fallbacks": ["-apple-system", "BlinkMacSystemFont", "sans-serif"] },
+    "body": { "family": "Space Grotesk", "fallbacks": ["-apple-system", "BlinkMacSystemFont", "sans-serif"] },
+    "accent": { "family": "Raleway", "fallbacks": ["Arial", "sans-serif"], "notes": "buttons/CTAs only" },
+    "sizes": {
+      "xs": 10, "sm": 14, "base": 16, "lg": 20, "xl": 24,
+      "2xl": 30, "3xl": 36, "4xl": 48, "5xl": 60
+    },
+    "weights": { "regular": 400, "medium": 500, "bold": 700, "extrabold": 800, "black": 900 }
+  },
+  "spacing": {
+    "containerMax": 1440,
+    "containerPad": 24,
+    "containerPadLg": 140,
+    "scale": [4, 8, 12, 16, 24, 32, 40, 48, 64]
+  },
+  "radius": { "sm": 8, "md": 16, "pill": 9999 },
+  "shadow": {
+    "sm": "0 1px 2px rgba(37,57,127,0.06), 0 1px 1px rgba(37,57,127,0.04)",
+    "md": "0 8px 24px rgba(37,57,127,0.10)",
+    "lg": "0 20px 48px rgba(37,57,127,0.16)"
+  },
+  "motion": {
+    "easeStandard": "cubic-bezier(0.4,0,0.2,1)",
+    "durationFast": "150ms",
+    "durationBase": "200ms",
+    "durationSlow": "300ms"
+  }
+}

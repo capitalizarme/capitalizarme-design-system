@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { padding: 48px; max-width: 860px; }
+  .header img { width: 200px; height: auto; }
+  h1 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 28px; margin: 24px 0 8px; }
+  .intro { color: var(--muted); max-width: 620px; }
+  .list { list-style: none; margin: 32px 0 0; padding: 0; display: grid; gap: 10px; }
+  .list a {
+    display: block; padding: 14px 18px; border: 1px solid var(--border); border-radius: var(--radius-md);
+    color: var(--fg-emphasis); text-decoration: none; font-weight: var(--weight-medium);
+  }
+  .list a:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="header"><img src="../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" /></div>
+  <h1>Design system</h1>
+  <p class="intro">Tokens, type, and reusable components for Capitalizarme — see <code>DESIGN.md</code> at the
+  project root for the full canonical rules doc.</p>
+  <ul class="list">
+    <li><a href="kit.html">Brand kit — light</a></li>
+    <li><a href="kit.dark.html">Brand kit — inverted (navy)</a></li>
+    <li><a href="artifacts/landing.html">Artifact — Landing page</a></li>
+    <li><a href="artifacts/deck.html">Artifact — Pitch deck</a></li>
+    <li><a href="artifacts/poster.html">Artifact — Poster</a></li>
+    <li><a href="artifacts/email.html">Artifact — Email</a></li>
+    <li><a href="artifacts/newsletter.html">Artifact — Newsletter</a></li>
+    <li><a href="artifacts/form.html">Artifact — Form page</a></li>
+  </ul>
+</body>
+</html>

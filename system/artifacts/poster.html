@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Poster artifact</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  body { margin: 0; background: var(--color-brand-blue); display: flex; justify-content: center; }
+  .poster {
+    aspect-ratio: 3 / 4; width: 100%; max-width: 640px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 48px; color: #ffffff; text-align: center; align-items: center;
+  }
+  .poster img.logo { width: 170px; height: auto; }
+  .poster img.mascot { width: 200px; height: auto; }
+  .poster h1 {
+    font-family: var(--font-display); font-weight: var(--weight-black);
+    font-size: 40px; line-height: 1.1; margin: 0;
+  }
+  .poster p { max-width: 30ch; margin: 12px auto 0; color: rgba(255,255,255,0.85); }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <img class="logo" src="../../assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png" alt="Capitalizarme" />
+    <img class="mascot" src="../../assets/mascot/capi-cohete-rocket.png" alt="Capi" />
+    <div>
+      <h1>Invertir es simple con Capitalizarme.com</h1>
+      <p>Evalúate ahora agendando una reunión online</p>
+      <a class="btn btn-on-accent" href="#" style="margin-top: 20px;">Agenda tu reunión</a>
+    </div>
+  </div>
+</body>
+</html>

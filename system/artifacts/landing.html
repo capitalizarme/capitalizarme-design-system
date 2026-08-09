@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Landing page artifact</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  body { margin: 0; }
+  header { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border-subtle); }
+  header .container { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  header img { width: 150px; height: auto; }
+  header nav { display: flex; gap: 24px; }
+  .hero { padding-block: 64px; display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+  .hero-copy { flex: 1 1 420px; min-width: 300px; }
+  .hero h1 { font-family: var(--font-display); font-weight: var(--weight-extrabold); font-size: 44px; line-height: 1.1; color: var(--accent); margin: 0 0 16px; }
+  .hero p { color: var(--fg); margin: 0 0 24px; max-width: 46ch; }
+  .hero-visual { flex: 0 0 auto; }
+  .hero-visual img { width: 220px; height: auto; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <img src="../../assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png" alt="Capitalizarme" />
+      <nav>
+        <a class="nav-link" href="#">Inicio</a>
+        <a class="nav-link" href="#">Cómo funciona</a>
+        <a class="nav-link" href="#">Agenda tu reunión</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container hero">
+    <div class="hero-copy">
+      <h1>Agenda tu reunión y averigua tu capacidad de inversión</h1>
+      <p>Descubre hasta qué monto puedes invertir acorde a tu situación financiera y para qué propiedades te alcanza.</p>
+      <a class="btn btn-primary" href="#">Agenda tu reunión</a>
+    </div>
+    <div class="hero-visual">
+      <img src="../../assets/mascot/capi-front-wave.png" alt="Capi" />
+    </div>
+  </div>
+</body>
+</html>

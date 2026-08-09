@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "copycat": {
+      "command": "copycat-mcp"
+    }
+  }
+}

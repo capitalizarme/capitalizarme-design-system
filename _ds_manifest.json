@@ -1,0 +1,14 @@
+{
+  "cards": [
+    { "path": "preview/typography-specimens.html", "group": "Type", "name": "Typography specimens", "subtitle": "Space Grotesk / Raleway type scale, weights, line-height" },
+    { "path": "preview/colors-primary.html", "group": "Colors", "name": "Primary palette", "subtitle": "2021 official palette + landing-campaign variant" },
+    { "path": "preview/colors-theme-light.html", "group": "Colors", "name": "Theme — light", "subtitle": "Surface, border, and text tokens on light theme" },
+    { "path": "preview/spacing-tokens.html", "group": "Spacing", "name": "Spacing tokens", "subtitle": "4/8px spacing scale" },
+    { "path": "preview/spacing-radius.html", "group": "Spacing", "name": "Radius", "subtitle": "Corner radius tokens" },
+    { "path": "preview/spacing-shadows.html", "group": "Spacing", "name": "Shadows", "subtitle": "Elevation tokens" },
+    { "path": "preview/components-buttons.html", "group": "Components", "name": "Buttons", "subtitle": "Primary, secondary, ghost button states" },
+    { "path": "preview/components-inputs.html", "group": "Components", "name": "Inputs", "subtitle": "Text input, focus, error states" },
+    { "path": "preview/brand-assets.html", "group": "Brand", "name": "Brand assets", "subtitle": "Logo, favicon, step icons, Capi mascot renders" },
+    { "path": "preview/icons-iconset.html", "group": "Brand", "name": "Official iconset", "subtitle": "124-glyph labeled iconset, 6 color families" }
+  ]
+}
