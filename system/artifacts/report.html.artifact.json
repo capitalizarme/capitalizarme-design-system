@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "system/artifacts/report.html",
+  "entry": "system/artifacts/report.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-08-09T04:05:40.223Z",
+  "updatedAt": "2026-08-09T04:05:40.223Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

@@ -1,0 +1,214 @@
+<!doctype html>
+<!--
+  Not one of the app's 6 fixed "Design System Assets" tile kinds (landing/deck/
+  poster/email/newsletter/form — see DESIGN.md §11's sibling note on deck.html)
+  so it won't auto-appear in that grid. It's a real, linked example instead —
+  see system/index.html — demonstrating DESIGN.md §10 (paged.js, US Letter)
+  and §12 (Chart.js, token-bound colors) together, since those are this
+  system's two other enforced-tool rules with no artifact showcasing them yet.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Report artifact</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<script>
+  /* Paged.js auto-paginates on load by cloning DOM content into page
+     fragments — canvas.cloneNode() doesn't copy drawn pixels, so any
+     Chart.js canvas gets wiped blank during pagination. Hold pagination
+     off until the charts are drawn and swapped for static <img>s. */
+  window.PagedConfig = { auto: false };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+<style>
+  /* §10: US Letter default, real running footer with a page counter. */
+  @page {
+    size: 8.5in 11in;
+    margin: 0.85in 0.75in 0.75in;
+    @bottom-center { content: "Capitalizarme — Resumen de operación"; font-size: 8pt; color: #6b6964; }
+    @bottom-right { content: counter(page); font-size: 8pt; color: #6b6964; }
+  }
+  @page :first { margin: 0; @bottom-center { content: none; } @bottom-right { content: none; } }
+
+  body { margin: 0; color: var(--fg); }
+  .page-break { break-before: page; }
+  section { padding: 0 0.1in; }
+
+  /* ---- Cover ---- */
+  .cover {
+    height: 11in; width: 8.5in; box-sizing: border-box;
+    background: var(--color-brand-navy); color: #fff;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 1in 0.75in;
+  }
+  .cover img.logo { width: 220px; height: auto; }
+  .cover .kicker { font-family: var(--font-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: 12pt; color: var(--color-brand-gold); margin-bottom: 16px; }
+  .cover h1 { font-family: var(--font-display); font-weight: 800; font-size: 34pt; line-height: 1.15; max-width: 9in; margin: 0; }
+  .cover .cover-foot { font-size: 10pt; color: rgba(255,255,255,0.6); display: flex; justify-content: space-between; }
+
+  /* ---- TOC ---- */
+  h2.section-title { font-family: var(--font-display); font-weight: 800; font-size: 20pt; color: var(--fg-emphasis); margin: 0 0 24px; }
+  .toc-list { list-style: none; margin: 0; padding: 0; }
+  .toc-list li { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border-subtle); font-size: 12pt; }
+  .toc-list .num { font-family: ui-monospace, monospace; color: var(--muted); }
+
+  /* ---- KPI tiles ---- */
+  .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+  .kpi-tile { border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; }
+  .kpi-tile .value { font-family: var(--font-display); font-weight: 800; font-size: 26pt; color: var(--accent); line-height: 1; }
+  .kpi-tile .label { font-size: 10pt; color: var(--muted); margin-top: 8px; }
+  .kpi-tile .source { font-size: 8pt; color: var(--muted); margin-top: 4px; }
+
+  /* ---- Charts ---- */
+  .chart-note { font-size: 9pt; color: var(--muted); margin: -8px 0 16px; }
+  .chart-wrap { border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; }
+  .chart-wrap canvas, .chart-wrap img { max-width: 100%; height: auto; display: block; }
+
+  /* ---- Data table ---- */
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border-subtle); }
+  th { font-family: var(--font-display); font-weight: 700; color: var(--fg-emphasis); font-size: 9pt; text-transform: uppercase; letter-spacing: 0.04em; }
+
+  .legal { font-size: 8pt; color: var(--muted); line-height: 1.5; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+</style>
+</head>
+<body>
+
+  <section class="cover">
+    <img class="logo" src="../../assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png" alt="Capitalizarme" />
+    <div>
+      <div class="kicker">Resumen de operación</div>
+      <h1>Marketplace de inversión inmobiliaria — resumen de intermediación</h1>
+    </div>
+    <div class="cover-foot"><span>Capitalizarme</span><span>Documento de referencia — no oficial</span></div>
+  </section>
+
+  <section class="page-break">
+    <h2 class="section-title">Contenidos</h2>
+    <ul class="toc-list">
+      <li><span>Indicadores clave</span><span class="num">03</span></li>
+      <li><span>Distribución de la comisión de intermediación</span><span class="num">04</span></li>
+      <li><span>Tipos de activo en el marketplace</span><span class="num">05</span></li>
+      <li><span>Cadena de intermediación</span><span class="num">06</span></li>
+    </ul>
+  </section>
+
+  <section class="page-break">
+    <h2 class="section-title">Indicadores clave</h2>
+    <div class="kpi-grid">
+      <div class="kpi-tile">
+        <div class="value">5.000+</div>
+        <div class="label">Personas ayudadas a descubrir su capacidad de inversión</div>
+        <div class="source">Fuente: copia evidenciada, socialProof — content.ts</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="value">UF 1.665</div>
+        <div class="label">Precio desde, Proyectos Destacados</div>
+        <div class="source">Fuente: copia evidenciada, featuredWork — content.ts</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="value">84</div>
+        <div class="label">Cuotas máximas disponibles</div>
+        <div class="source">Fuente: copia evidenciada, featuredWork — content.ts</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="value">~3%</div>
+        <div class="label">Comisión de intermediación referencial (no fija, varía por proyecto/acuerdo)</div>
+        <div class="source">Fuente: DESIGN.md — Business model</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-break">
+    <h2 class="section-title">Distribución de la comisión de intermediación</h2>
+    <p class="chart-note">Real, evidenciado — DESIGN.md: "60% de esa comisión fluye hacia el MBP, que paga al broker."</p>
+    <div class="chart-wrap"><canvas id="chartCommission" width="600" height="280"></canvas></div>
+  </section>
+
+  <section class="page-break">
+    <h2 class="section-title">Tipos de activo en el marketplace</h2>
+    <p class="chart-note">Categorías reales (departamentos, terrenos, estacionamientos, bodegas — DESIGN.md §Business model). Proporciones ilustrativas — no hay conteo oficial por categoría en la evidencia capturada.</p>
+    <div class="chart-wrap"><canvas id="chartAssets" width="600" height="280"></canvas></div>
+  </section>
+
+  <section class="page-break">
+    <h2 class="section-title">Cadena de intermediación</h2>
+    <table>
+      <thead><tr><th>Actor</th><th>Rol</th></tr></thead>
+      <tbody>
+        <tr><td>Inmobiliaria</td><td>Dueña del proyecto/stock; redacta la promesa de compraventa.</td></tr>
+        <tr><td>Capitalizarme</td><td>Marketplace + operaciones + tecnología + legal; centraliza el proceso.</td></tr>
+        <tr><td>MBP / BP / TL / Broker</td><td>Red comercial que capta y asesora al inversionista (jerarquía sin superposición).</td></tr>
+        <tr><td>Cliente inversionista</td><td>Inversionista final, casi siempre apalancado con crédito hipotecario.</td></tr>
+      </tbody>
+    </table>
+    <p class="legal">
+      Comisión calculada sobre el precio final de venta, excluyendo el bono pie del desarrollador, ganada en
+      el hito de la promesa (no en la escritura final). Todas las cifras y rentabilidades mostradas son
+      referenciales; los rendimientos pasados no garantizan retornos futuros. Documento de referencia
+      interno — Capitalizarme, ©2026.
+    </p>
+  </section>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      var navy = '#25397f', blue = '#106cb5', border = '#e5e7eb', muted = '#64748b';
+
+      var commissionChart = new Chart(document.getElementById('chartCommission'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Red MBP / BP / TL / Broker', 'Capitalizarme'],
+          datasets: [{ data: [60, 40], backgroundColor: [blue, navy], borderWidth: 0 }]
+        },
+        options: {
+          responsive: false,
+          animation: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { color: '#1c1b1a', font: { family: 'Space Grotesk' } } },
+            tooltip: { enabled: false }
+          }
+        }
+      });
+
+      var assetsChart = new Chart(document.getElementById('chartAssets'), {
+        type: 'bar',
+        data: {
+          labels: ['Departamentos', 'Terrenos', 'Estacionamientos', 'Bodegas'],
+          datasets: [{ label: 'Distribución ilustrativa', data: [45, 22, 20, 13], backgroundColor: blue, borderRadius: 4 }]
+        },
+        options: {
+          responsive: false,
+          animation: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: '#1c1b1a', font: { family: 'Space Grotesk' } } },
+            y: { grid: { color: border }, ticks: { color: muted }, beginAtZero: true }
+          }
+        }
+      });
+
+      /* Paged.js clones/moves DOM nodes to build pages; a canvas's drawn
+         pixels don't survive cloneNode(), so swap each chart canvas for a
+         static <img> snapshot before pagination runs (see PagedConfig
+         above). Only then start Paged.js manually. */
+      [commissionChart, assetsChart].forEach(function (chart) {
+        var canvas = chart.canvas;
+        var img = document.createElement('img');
+        img.src = chart.toBase64Image();
+        /* canvas.width/height are the retina-scaled backing-store pixel
+           counts, not the intended on-page size — use the CSS size Chart.js
+           actually laid the canvas out at (its style width/height, falling
+           back to the HTML attributes for older Chart.js builds). */
+        img.width = parseInt(canvas.style.width, 10) || canvas.getAttribute('width');
+        img.height = parseInt(canvas.style.height, 10) || canvas.getAttribute('height');
+        img.alt = canvas.getAttribute('aria-label') || '';
+        canvas.parentNode.replaceChild(img, canvas);
+      });
+
+      new Paged.Previewer().preview();
+    });
+  </script>
+</body>
+</html>
