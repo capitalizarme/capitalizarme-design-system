@@ -36,10 +36,20 @@
     }
   },
   "imagery": {
-    "style": "",
-    "subjects": [],
-    "treatment": "",
-    "avoid": [],
+    "style": "Photographic 3D-rendered mascot imagery centered on Capi, the orange bear in business-casual dress (navy vest, white shirt, maroon tie). Capi is the brand's entire expressive/warmth layer; UI chrome around it stays restrained, geometric, and pill-shaped. Imagery sits on flat white or pale-blue-tint surfaces — no gradients, no dark mode, no beige/cream washes (DESIGN.md §1, §6).",
+    "subjects": [
+      "Capi in everyday business and life poses: on the phone, filing paperwork, searching, busy, thumbs up, riding a rocket, skateboarding, graduating, at the movies, multi-angle lineup",
+      "Real-estate investment moments: evaluating a property, receiving documents, using the app",
+      "Whole-scene mascot renders (capi-scene-01/02) for hero or empty-state warmth"
+    ],
+    "treatment": "Always used as a whole photographic image — never recolored, tinted, cropped, flattened, or vectorized. Placed as a full standalone image for warmth in empty states, hero moments, and step call-outs; pair text side-by-side, never on top. Default to the preserved assets/mascot/ set over generating new illustrated characters (DESIGN.md §6, §5 Don'ts).",
+    "avoid": [
+      "Recoloring, cropping, or flattening the Capi mascot into a 2D icon",
+      "Placing UI text or labels on top of a Capi image",
+      "Hand-drawn illustration or generic stock photos in place of the preserved mascot renders",
+      "Gradients, dark surfaces, or beige/cream backgrounds behind imagery",
+      "Inventing illustrated characters instead of the real Capi asset"
+    ],
     "samples": [
       { "file": "assets/mascot/capi-front-wave.png", "kind": "mascot", "caption": "Capi front wave" },
       { "file": "assets/mascot/capi-portrait.png", "kind": "mascot", "caption": "Capi portrait" },
