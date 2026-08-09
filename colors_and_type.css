@@ -24,6 +24,12 @@
   files still live in fonts/ (preserved brand assets, and what the Design System pane's Fonts module
   reads via fonts/manifest.json), but colors_and_type.css no longer binds them via @font-face —
   no local-file fallback face, no JS-based font-loading script.
+
+  --focus-ring and the .btn/.input-underline [disabled] rules below are DERIVED, not evidenced — the
+  archived source has no keyboard-focus or disabled-state styling at all. Added per this system's own
+  interaction-states requirement (every focusable element needs a visible :focus-visible ring; disabled
+  is the one state allowed to reduce contrast). --focus-ring reuses the official brand-blue at full
+  opacity so it never collides with the surrounding UI's own blue accent.
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Raleway:ital,wght@0,700;1,700&display=swap");
@@ -72,6 +78,12 @@
   --accent-contrast: #ffffff;
   --accent-secondary: var(--color-brand-navy);
   --accent-cta-secondary: var(--color-brand-blue-dark);
+
+  /* ---- Focus / disabled — DERIVED, no keyboard-focus or disabled styling exists in source. See the
+     header comment. Disabled is the only state allowed to drop contrast (interaction-states rule). ---- */
+  --focus-ring: var(--color-brand-blue);
+  --focus-ring-offset: 2px;
+  --disabled-opacity: 0.45;
 
   /* ---- Status (Success/Danger source-backed to official Green/Red; Warning remains DERIVED — no
      dedicated warning color was evidenced) ---- */
@@ -167,6 +179,15 @@ h1, h2, h3, h4 {
 }
 
 /* ---------------------------------------------------------------------
+   Focus-visible — DERIVED (see header comment). One rule, every focusable
+   element: buttons, links, inputs. Never removed, never color-only.
+--------------------------------------------------------------------- */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ---------------------------------------------------------------------
    Layout helpers
 --------------------------------------------------------------------- */
 .container {
@@ -230,6 +251,13 @@ h1, h2, h3, h4 {
 }
 .btn-cta-secondary:hover { opacity: 0.9; }
 
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 /* ---------------------------------------------------------------------
    Cards / panels
 --------------------------------------------------------------------- */
@@ -273,6 +301,10 @@ label {
   transition: border-color var(--duration-fast) ease-in-out;
 }
 .input-underline:focus { border-bottom-color: var(--accent); }
+.input-underline:disabled {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
 
 /* ---------------------------------------------------------------------
    Nav links (Header.astro)

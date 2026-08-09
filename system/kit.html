@@ -21,6 +21,14 @@
   .type-row { padding: 16px 0; border-bottom: 1px solid var(--border-subtle); }
   .type-row:last-child { border-bottom: none; }
   .type-meta { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+  .token-tile { width: 96px; text-align: center; }
+  .token-tile .box { background: var(--surface-tint-alt); border: 1px solid var(--border); margin: 0 auto 8px; }
+  .token-tile .label { font-size: 11px; color: var(--muted); font-family: ui-monospace, monospace; }
+  .icon-tile { width: 96px; text-align: center; }
+  .icon-tile img { width: 48px; height: 48px; }
+  .icon-tile .label { font-size: 11px; color: var(--muted); margin-top: 6px; }
+  form.demo-form { max-width: 320px; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -54,11 +62,44 @@
     <a class="btn btn-primary" href="#">Agenda tu reunión</a>
   </div>
 
-  <h2>Buttons</h2>
+  <h2>Spacing &amp; radius — DESIGN.md §4</h2>
+  <div class="row">
+    <div class="token-tile"><div class="box" style="width: 64px; height: 24px; border-radius: var(--radius-sm);"></div><div class="label">radius-sm 8px</div></div>
+    <div class="token-tile"><div class="box" style="width: 64px; height: 24px; border-radius: var(--radius-md);"></div><div class="label">radius-md 16px</div></div>
+    <div class="token-tile"><div class="box" style="width: 64px; height: 24px; border-radius: var(--radius-pill);"></div><div class="label">radius-pill</div></div>
+    <div class="token-tile"><div class="box" style="width: var(--space-4); height: 24px;"></div><div class="label">space-4 16px</div></div>
+    <div class="token-tile"><div class="box" style="width: var(--space-8); height: 24px;"></div><div class="label">space-8 32px</div></div>
+  </div>
+
+  <h2>Buttons — hover, focus, disabled (§6.1)</h2>
   <div class="row" style="align-items: center;">
     <a class="btn btn-primary" href="#">Primary</a>
     <a class="btn btn-outline" href="#">Outline</a>
     <a class="btn btn-cta-secondary" href="#">CTA secundario</a>
+    <button class="btn btn-primary" disabled>Disabled</button>
+  </div>
+  <p class="hint">Tab to any button above to see the real <code>:focus-visible</code> ring (§2.3) — it's
+  not a screenshot, it's the live token.</p>
+
+  <h2>Card &amp; form — underline inputs (§6)</h2>
+  <div class="row" style="align-items: flex-start;">
+    <div class="card" style="width: 220px;">
+      <div style="font-weight: var(--weight-bold); margin-bottom: 6px;">Card title</div>
+      <div style="color: var(--muted); font-size: 14px;">rounded-2xl, border, shadow-sm — ContactForm wrapper shape.</div>
+    </div>
+    <form class="demo-form">
+      <label for="kit-email">¿Cuál es tu email?</label>
+      <input class="input-underline" id="kit-email" type="email" placeholder="tu@email.com" />
+      <label for="kit-email-disabled">Campo deshabilitado</label>
+      <input class="input-underline" id="kit-email-disabled" type="email" disabled value="no editable" />
+    </form>
+  </div>
+
+  <h2>Official iconset — assets/icons/iconset/ (§6)</h2>
+  <div class="row">
+    <div class="icon-tile"><img src="../assets/icons/iconset/azul/icon-116.svg" alt="Property / apartment" /><div class="label">Property</div></div>
+    <div class="icon-tile"><img src="../assets/icons/iconset/azul/icon-115.svg" alt="Investment / payment received" /><div class="label">Investment</div></div>
+    <div class="icon-tile"><img src="../assets/icons/iconset/azul/icon-113.svg" alt="Parking / vehicle" /><div class="label">Parking</div></div>
   </div>
 
   <h2>Mascot — Capi</h2>

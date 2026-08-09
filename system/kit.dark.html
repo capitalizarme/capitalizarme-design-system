@@ -24,6 +24,22 @@
   .type-row { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .type-row:last-child { border-bottom: none; }
   .type-meta { font-family: ui-monospace, monospace; font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+  .token-tile { width: 96px; text-align: center; }
+  .token-tile .box { background: rgba(255,255,255,0.18); margin: 0 auto 8px; }
+  .token-tile .label { font-size: 11px; color: rgba(255,255,255,0.6); font-family: ui-monospace, monospace; }
+  .dark-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius-md); padding: var(--space-6); width: 220px; }
+  .dark-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(255,255,255,0.35);
+    outline: none; padding: var(--space-2) 0; color: #ffffff; font-family: var(--font-body); font-size: var(--text-base);
+  }
+  .dark-input:disabled { opacity: var(--disabled-opacity); }
+  .dark-label { display: block; font-weight: var(--weight-medium); margin-top: var(--space-3); margin-bottom: var(--space-1); color: rgba(255,255,255,0.8); }
+  .icon-tile { width: 96px; text-align: center; }
+  .icon-tile .icon-plate { background: #ffffff; border-radius: var(--radius-sm); padding: 12px; display: inline-block; }
+  .icon-tile img { width: 40px; height: 40px; display: block; }
+  .icon-tile .label { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+  .hint { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 8px; }
+  .demo-form { max-width: 320px; }
 </style>
 </head>
 <body>
@@ -54,6 +70,45 @@
   <div class="type-row">
     <div class="type-meta">Button / CTA on-accent · Raleway 700 uppercase</div>
     <a class="btn btn-on-accent" href="#">Agenda tu reunión online</a>
+  </div>
+
+  <h2>Spacing &amp; radius</h2>
+  <div class="row">
+    <div class="token-tile"><div class="box" style="width: 64px; height: 24px; border-radius: var(--radius-sm);"></div><div class="label">radius-sm 8px</div></div>
+    <div class="token-tile"><div class="box" style="width: 64px; height: 24px; border-radius: var(--radius-md);"></div><div class="label">radius-md 16px</div></div>
+    <div class="token-tile"><div class="box" style="width: 64px; height: 24px; border-radius: var(--radius-pill);"></div><div class="label">radius-pill</div></div>
+  </div>
+
+  <h2>Buttons — hover, focus, disabled</h2>
+  <div class="row" style="align-items: center;">
+    <a class="btn btn-on-accent" href="#">On-accent</a>
+    <a class="btn btn-outline" href="#" style="background: transparent; color: #ffffff; border-color: #ffffff;">Outline</a>
+    <button class="btn btn-on-accent" disabled>Disabled</button>
+  </div>
+  <p class="hint">Tab to any button above — the same <code>--focus-ring</code> token (§2.3) renders at
+  full contrast against navy, since it reuses brand-blue rather than a lighter tint.</p>
+
+  <h2>Card &amp; form on navy</h2>
+  <div class="row" style="align-items: flex-start;">
+    <div class="dark-card">
+      <div style="font-weight: var(--weight-bold); margin-bottom: 6px;">Card title</div>
+      <div style="color: rgba(255,255,255,0.7); font-size: 14px;">Translucent surface — 6% white over navy, real border at 15%.</div>
+    </div>
+    <form class="demo-form">
+      <label class="dark-label" for="kit-email-dark">¿Cuál es tu email?</label>
+      <input class="dark-input" id="kit-email-dark" type="email" placeholder="tu@email.com" />
+      <label class="dark-label" for="kit-email-dark-disabled">Campo deshabilitado</label>
+      <input class="dark-input" id="kit-email-dark-disabled" type="email" disabled value="no editable" />
+    </form>
+  </div>
+
+  <h2>Official iconset on navy</h2>
+  <p class="hint" style="margin: -8px 0 16px;">The iconset's dark ink fills disappear on navy directly —
+  plated on white here, matching the text-overlay contrast rule (never dark-on-dark).</p>
+  <div class="row">
+    <div class="icon-tile"><div class="icon-plate"><img src="../assets/icons/iconset/icon-116.svg" alt="Property / apartment" /></div><div class="label">Property</div></div>
+    <div class="icon-tile"><div class="icon-plate"><img src="../assets/icons/iconset/icon-115.svg" alt="Investment / payment received" /></div><div class="label">Investment</div></div>
+    <div class="icon-tile"><div class="icon-plate"><img src="../assets/icons/iconset/icon-113.svg" alt="Parking / vehicle" /></div><div class="label">Parking</div></div>
   </div>
 </body>
 </html>

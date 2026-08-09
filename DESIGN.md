@@ -244,6 +244,23 @@ tinted panels above), and never competes with blue for attention. This rule stil
 official §2.1 tokens: `--color-brand-blue` carries interaction, `--color-brand-navy` carries text
 weight.
 
+### 2.3 Focus & disabled tokens (DERIVED — not in source)
+
+🔵 The archived source has no keyboard-focus or disabled-state styling anywhere — these three tokens
+close that gap so every interactive surface built from this system meets the interaction-states rule
+(a visible `:focus-visible` ring on every focusable element; disabled is the only state allowed to
+reduce contrast).
+
+| Token | Value | Usage |
+|---|---|---|
+| `--focus-ring` | `var(--color-brand-blue)` | `:focus-visible` outline color, global — every button, link, and input |
+| `--focus-ring-offset` | `2px` | `outline-offset` paired with the ring above |
+| `--disabled-opacity` | `0.45` | `.btn:disabled` / `.input-underline:disabled` — opacity drop, never a color swap |
+
+Bound globally in `colors_and_type.css` (`:focus-visible { outline: 2px solid var(--focus-ring); ... }`)
+so it applies uniformly without per-component overrides — see §6 "Component states" for how this plays
+out per component.
+
 ## 3. Typography
 
 Source: Google Fonts `<link>` in `Layout.astro` —
@@ -395,6 +412,24 @@ All patterns below are copied from real component source now preserved in `sourc
   icon, a status icon, a step icon), promote it into a named file (mirroring `assets/icons/step-*.svg`)
   so future readers don't have to cross-reference the grid.
 
+### 6.1 Component states — hover, focus, disabled
+
+🔵 Hover is source-backed (see each component above); focus and disabled are DERIVED per §2.3 — the
+archived source never styled either. State rules per component, so an agent building a new screen
+doesn't have to reverse-engineer them from the CSS:
+
+| Component | Hover | Focus | Disabled |
+|---|---|---|---|
+| Buttons (`.btn*`) | `opacity: 0.9`, or full fill/text swap for `.btn-outline` — never a scale/transform (§7) | `outline: 2px solid var(--focus-ring)`, `outline-offset: 2px` | `opacity: var(--disabled-opacity)`, `cursor: not-allowed`, no pointer events — never remove the pill shape or grey out to illegibility |
+| Form inputs (`.input-underline`) | — (no hover state in source) | Bottom-border switches to `--accent` **and** the same global focus ring | Same opacity drop as buttons; label stays full-contrast (only the input itself dims) |
+| Nav links (`.nav-link`) | `color` shifts navy → blue (§7) | Global focus ring | N/A — nav links aren't disabled, they're omitted |
+
+Two rules that apply everywhere, not just the table above: disabled is the *only* state allowed to drop
+contrast (per this system's interaction-states requirement) — hover and focus must never make text or
+icons harder to read than the resting state. And a `:focus-visible` ring is required on every
+focusable element you add, even ones not listed here (icon-only buttons, custom nav toggles, chart
+legend filters) — reuse `--focus-ring`/`--focus-ring-offset` rather than inventing a new indicator.
+
 ## 7. Motion & Interaction
 
 - Standard transition timing observed: `transition-colors duration-200` (nav links),
@@ -424,6 +459,15 @@ All patterns below are copied from real component source now preserved in `sourc
   garantizan retornos futuros") — carry it into every derivative page, not just the homepage.
 - Section labels use a small uppercase eyebrow above headings ("Oportunidad de Inversión" above
   "Proyectos Destacados") — Space Grotesk bold, not Raleway (Raleway is reserved for buttons only).
+
+**Quick reference — same rule set as above, applied to copy an agent is likely to draft from scratch:**
+
+| Don't write | Write instead | Why |
+|---|---|---|
+| "¡Excelente pregunta! Capitalizarme te ofrece las mejores oportunidades de inversión." | "Descubre hasta qué monto puedes invertir acorde a tu situación financiera." | No sycophancy opener, no company-as-subject, reader-benefit first — §8.1 anti-sycophancy + §8 benefit-led headlines |
+| "Nuestros clientes obtienen retornos garantizados de hasta un 12% anual." | "Históricamente, propiedades similares se han valorizado en el tiempo — rendimientos pasados no garantizan retornos futuros." | Never "garantizado" next to a return figure — §9 compliance anti-pattern, Ley 19.496 |
+| "Estimado/a inversionista, le informamos que su solicitud ha sido procesada." | "Hola, ya recibimos tu solicitud — te contactamos apenas tengamos novedades." | *Tú*, first person, no "usted"/formal closing — §8.1 |
+| "Contact john.perez@capitalizarme.com para más información." | "Contacta a nuestro equipo de soporte para más información." | Never expose internal routing names/emails — §9 anti-pattern |
 
 ### 8.1 Internal tone standard (extends to any product surface with written copy)
 
@@ -728,3 +772,59 @@ video-format deliverable.
 - Never guarantee or imply investment outcomes through video framing (return figures, growth curves,
   success narratives without a source) — the same compliance rule as §9's anti-pattern on guaranteed
   returns applies to video content just as much as to copy and charts.
+
+## 15. Implementation Quick-Start
+
+Everything above is the *rules*; this is the one block to copy when starting a brand-new HTML surface
+from scratch — a landing page, an app screen, a dashboard. It binds §2.1 colors, §3 typography, and
+§13's Tailwind requirement in a single `<head>`, correctly ordered (Tailwind config before the Play CDN
+script reads it; `colors_and_type.css` after, for `.btn`/`.card`/`.input-underline` and the focus/
+disabled rules in §2.3/§6.1):
+
+```html
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — [surface name]</title>
+<script>
+  tailwind = { config: {
+    theme: { extend: {
+      colors: {
+        'brand-navy': '#25397F', 'brand-blue': '#106CB5', 'brand-gold': '#FBAF17',
+        'brand-green': '#006939', 'brand-red': '#ED1847', 'brand-purple': '#8E27C6',
+      },
+      fontFamily: {
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Space Grotesk', 'sans-serif'],
+        cta: ['Raleway', 'sans-serif'],
+      },
+      borderRadius: { DEFAULT: '12px', full: '9999px' },
+    } },
+  } };
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="colors_and_type.css" />
+</head>
+<body class="bg-white text-black">
+  <!-- pill buttons: class="btn btn-primary" (or .btn-outline / .btn-on-accent / .btn-cta-secondary)
+       underline inputs: class="input-underline" + a <label> above it
+       cards: class="card"
+       real assets only — assets/logo/, assets/icons/iconset/, assets/mascot/ — see the quick
+       reference table near the top of this document before drawing anything new -->
+</body>
+</html>
+```
+
+Checklist for anything built from this block, cross-referencing the section that governs it:
+- [ ] Colors come from the table in §2.1, never a guessed hex (§9 anti-pattern)
+- [ ] Space Grotesk for structure, Raleway only inside `.btn*` (§3)
+- [ ] Buttons are `.btn` + one variant class, pill-shaped, never squared off (§6, §9)
+- [ ] Any focusable custom element gets `:focus-visible` for free from `colors_and_type.css` — don't
+      suppress it (§2.3, §6.1)
+- [ ] Real logo/icon/mascot files from `assets/` — see the "Brand asset quick reference" table under
+      Source Context, near the top of this document
+- [ ] No invented figures, no guaranteed-returns language, no exposed internal contacts (§9)
+- [ ] Reports use paged.js (§10), decks use reveal.js (§11), charts use Chart.js (§12), video uses
+      Hyperframes (§14) — this quick-start is for a plain HTML/Tailwind surface, not those four

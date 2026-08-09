@@ -191,12 +191,17 @@ and the 2021 branding-guidelines cover page/BrandBook text extraction were captu
 12. Style every web surface with [Tailwind CSS](https://tailwindcss.com) (Play CDN for single-file
     deliverables, a real build step for existing Astro/Vite/Next codebases) — never hand-rolled
     layout/utility CSS or a different CSS framework. Bind this system's brand colors, fonts, and radii
-    into `tailwind.config`, and still load `colors_and_type.css` alongside it for `@font-face` and
-    component classes. See `DESIGN.md` §13 for the config snippet.
+    into `tailwind.config`, and still load `colors_and_type.css` alongside it for the Google Fonts
+    `@import`, `.btn`/`.card`/`.input-underline` component classes, and the focus/disabled rules (§2.3,
+    §6.1). See `DESIGN.md` §13 for the config snippet.
 13. For any video, animated brand intro, product walkthrough, or motion presentation, use Hyperframes —
     never a hand-rolled CSS-keyframe/canvas timeline or a different video-generation tool. Bind this
     system's palette, type split, iconset, and mascot into every scene, and use the full specified
     duration with real production effort rather than finishing early. See `DESIGN.md` §14.
+14. Starting a brand-new HTML surface from scratch (not a report/deck/chart/video, which follow their
+    own dedicated tool above)? Copy the single `<head>` block in `DESIGN.md` §15 "Implementation
+    Quick-Start" — it binds colors, Tailwind config, and `colors_and_type.css` in the right load order,
+    plus a checklist cross-referencing every rule a new surface needs to satisfy.
 
 ## Design System Highlights
 
