@@ -76,7 +76,7 @@
 </head>
 <body>
 
-  <section class="cover">
+  <section class="cover" data-od-id="report-cover">
     <img class="logo" src="../../assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png" alt="Capitalizarme" />
     <div>
       <div class="kicker">Resumen de operación</div>
@@ -85,8 +85,8 @@
     <div class="cover-foot"><span>Capitalizarme</span><span>Documento de referencia — no oficial</span></div>
   </section>
 
-  <section class="page-break">
-    <h2 class="section-title">Contenidos</h2>
+  <section class="page-break" data-od-id="report-toc">
+    <h2 class="section-title" data-od-id="report-toc-title">Contenidos</h2>
     <ul class="toc-list">
       <li><span>Indicadores clave</span><span class="num">03</span></li>
       <li><span>Distribución de la comisión de intermediación</span><span class="num">04</span></li>
@@ -95,25 +95,25 @@
     </ul>
   </section>
 
-  <section class="page-break">
-    <h2 class="section-title">Indicadores clave</h2>
+  <section class="page-break" data-od-id="report-kpis">
+    <h2 class="section-title" data-od-id="report-kpis-title">Indicadores clave</h2>
     <div class="kpi-grid">
-      <div class="kpi-tile">
+      <div class="kpi-tile" data-od-id="kpi-tile-people">
         <div class="value">5.000+</div>
         <div class="label">Personas ayudadas a descubrir su capacidad de inversión</div>
         <div class="source">Fuente: copia evidenciada, socialProof — content.ts</div>
       </div>
-      <div class="kpi-tile">
+      <div class="kpi-tile" data-od-id="kpi-tile-price">
         <div class="value">UF 1.665</div>
         <div class="label">Precio desde, Proyectos Destacados</div>
         <div class="source">Fuente: copia evidenciada, featuredWork — content.ts</div>
       </div>
-      <div class="kpi-tile">
+      <div class="kpi-tile" data-od-id="kpi-tile-installments">
         <div class="value">84</div>
         <div class="label">Cuotas máximas disponibles</div>
         <div class="source">Fuente: copia evidenciada, featuredWork — content.ts</div>
       </div>
-      <div class="kpi-tile">
+      <div class="kpi-tile" data-od-id="kpi-tile-commission">
         <div class="value">~3%</div>
         <div class="label">Comisión de intermediación referencial (no fija, varía por proyecto/acuerdo)</div>
         <div class="source">Fuente: DESIGN.md — Business model</div>
@@ -121,20 +121,20 @@
     </div>
   </section>
 
-  <section class="page-break">
-    <h2 class="section-title">Distribución de la comisión de intermediación</h2>
+  <section class="page-break" data-od-id="report-chart-commission">
+    <h2 class="section-title" data-od-id="report-chart-commission-title">Distribución de la comisión de intermediación</h2>
     <p class="chart-note">Real, evidenciado — DESIGN.md: "60% de esa comisión fluye hacia el MBP, que paga al broker."</p>
-    <div class="chart-wrap"><canvas id="chartCommission" width="600" height="280"></canvas></div>
+    <div class="chart-wrap"><canvas id="chartCommission" width="600" height="280" aria-label="Comisión de intermediación: 60% para la red MBP/BP/TL/broker y 40% para Capitalizarme"></canvas></div>
   </section>
 
-  <section class="page-break">
-    <h2 class="section-title">Tipos de activo en el marketplace</h2>
+  <section class="page-break" data-od-id="report-chart-assets">
+    <h2 class="section-title" data-od-id="report-chart-assets-title">Tipos de activo en el marketplace</h2>
     <p class="chart-note">Categorías reales (departamentos, terrenos, estacionamientos, bodegas — DESIGN.md §Business model). Proporciones ilustrativas — no hay conteo oficial por categoría en la evidencia capturada.</p>
-    <div class="chart-wrap"><canvas id="chartAssets" width="600" height="280"></canvas></div>
+    <div class="chart-wrap"><canvas id="chartAssets" width="600" height="280" aria-label="Distribución ilustrativa por tipo de activo: departamentos 45, terrenos 22, estacionamientos 20, bodegas 13"></canvas></div>
   </section>
 
-  <section class="page-break">
-    <h2 class="section-title">Cadena de intermediación</h2>
+  <section class="page-break" data-od-id="report-chain-table">
+    <h2 class="section-title" data-od-id="report-chain-table-title">Cadena de intermediación</h2>
     <table>
       <thead><tr><th>Actor</th><th>Rol</th></tr></thead>
       <tbody>
