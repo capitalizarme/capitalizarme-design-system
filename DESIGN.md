@@ -127,6 +127,12 @@ Real, preserved brand assets exist for icons, logo, and mascot. **Default to reu
 drawing new icon glyphs, redrawing the wordmark, or generating illustrated characters** — that's the
 whole point of having preserved them byte-for-byte.
 
+**Hard rule — the brand name is never rendered as styled text.** No hand-set "Capitalizarme"
+wordmark (styled, colored, tracked, or spaced text meant to read as a logo) in any deliverable. The
+mark is always one of the preserved files below — the horizontal lockup wherever it fits, the isotype
+at small scale. A text rendering is a substitute, not the brand; treat it like a redrawn isotype and
+reject it.
+
 | Asset | Location | Rule |
 |---|---|---|
 | Official iconset (124 glyphs × 6 colors, labeled) | `assets/icons/iconset/{color}/icon-NNN.svg` | Default source for **any** icon need. Browse `preview/icons-iconset.html` (color switcher + category filter) and pick by its semantic label, e.g. "Property / apartment," "Cart / purchase" — see `assets/icons/iconset/labels.json` and §6. |
@@ -362,7 +368,9 @@ All patterns below are copied from real component source now preserved in `sourc
   states, hero moments, or step call-outs. Never place UI text on top of a Capi image; pair them
   side-by-side instead. See `assets/mascot/` for the preserved set and `preview/brand-assets.html` for
   usage guidance.
-- **Logo system** — a horizontal lockup (`assets/logo/horizontal/`, 7 pre-rendered color variants: Azul,
+- **Logo system** — **the logo is always one of the preserved asset files below, never a styled-text
+  recreation** (`<img>` from `assets/logo/`, not a hand-set wordmark) — a horizontal lockup
+  (`assets/logo/horizontal/`, 7 pre-rendered color variants: Azul,
   Azul Oscuro, Verde, Rojo, Amarillo, Negro, Blanco) and a standalone isotype (`assets/logo/isotypes/`,
   7 variants: Azul, Celeste, Rojo, Amarillo, Verde, Negro, Blanco — Celeste appears only at isotype
   scale, not in the current horizontal batch). Use the horizontal lockup wherever the full wordmark fits
@@ -505,6 +513,15 @@ brokers" — treat it as the house voice for any UI copy, not only chat:
 
 ## 9. Anti-patterns
 
+- ❌ **Never render the brand name as a text logo / hand-set wordmark.** In every deliverable (page
+  header, footer, deck cover, report cover, email, poster, video), the Capitalizarme mark is one of the
+  preserved files in `assets/logo/` — horizontal lockup or isotype — placed as an `<img>` from the real
+  file. Styled text ("Capitalizarme" in Raleway or Space Grotesk, colored/spaced/tracked to read as a
+  logo) is a substitute, not the brand.
+- ❌ Don't substitute generated, hand-drawn, or stock stand-ins for any preserved brand asset — logo,
+  iconset glyph, step icon, or Capi mascot. When a brief needs an asset not in `assets/`, reuse the
+  closest real file (e.g. a different color variant of an existing lockup) — never generate a "new
+  logo" or "new mascot", and never fall back to a text wordmark.
 - ❌ Don't introduce a third typeface. Space Grotesk (structure) + Raleway (buttons only) is the whole
   system.
 - ❌ Don't put Raleway anywhere except button/CTA labels — not headings, not body, not nav.

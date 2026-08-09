@@ -27,7 +27,9 @@ bindings, anti-patterns).
 ## Brand asset quick reference — use these, don't invent
 
 Real, preserved icons/logo/mascot exist in this package. **Always reuse them instead of drawing new
-icon glyphs, redrawing the wordmark, or generating illustrated characters.**
+icon glyphs, redrawing the wordmark, or generating illustrated characters.** **Hard rule: never render
+the brand name as styled text / a hand-set wordmark** — in any deliverable, the logo is always an
+`<img>` from a real file in `assets/logo/` (horizontal lockup or isotype).
 
 | Asset | Location |
 |---|---|
@@ -159,7 +161,9 @@ and the 2021 branding-guidelines cover page/BrandBook text extraction were captu
 6. Use `assets/mascot/` renders for warmth in empty states or hero moments — always as a whole image,
    never recolored or cropped into UI chrome (see `DESIGN.md` §6/§9).
 7. Use `assets/logo/` and `assets/icons/` for the wordmark, favicon, and the 4 real step icons instead
-   of redrawing them. For the logo specifically, pick the color variant by background: Negro on
+   of redrawing them — and **never as styled text**: the brand name is always an `<img>` from a real
+   `assets/logo/` file (horizontal lockup or isotype), never a hand-set text wordmark. For the logo
+   specifically, pick the color variant by background: Negro on
    light/white, Blanco only on navy or brand-blue (never white), hue variants for themed/co-brand
    placements — see `preview/brand-assets.html` and `DESIGN.md` §6 "Logo system" before choosing one.
 8. `assets/icons/iconset/` is **Capitalizarme's official iconset** — use it as the default source
