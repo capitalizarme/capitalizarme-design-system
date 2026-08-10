@@ -12,6 +12,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-08-10
+
+### Added
+- Six new Capi mascot renders (`capi-happy.png`, `capi-happy-2.png`, `capi-builder.png`,
+  `capi-edi.png`, `capi-edi-2.png`, `capi-edi-3.png`), registered in `brand.json` and the
+  `preview/brand-assets.html` gallery. Mascot set now totals 27 renders (was 20); count updated
+  across `DESIGN.md`, `README.md`, and `SKILL.md`.
+
 ## [0.1.0] — 2026-08-09
 
 ### Added
