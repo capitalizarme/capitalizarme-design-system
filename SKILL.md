@@ -36,7 +36,7 @@ the brand name as styled text / a hand-set wordmark** — in any deliverable, th
 | Official iconset (124 glyphs × 6 colors, labeled) | `assets/icons/iconset/{color}/icon-NNN.svg` — browse by label/category via `preview/icons-iconset.html`, or read `labels.json` directly |
 | Logo — horizontal (7 colors incl. Verde, Azul Oscuro) / isotype (7 colors incl. Celeste) | `assets/logo/horizontal/`, `assets/logo/isotypes/` — browse via `preview/brand-assets.html` |
 | Primary wordmark + favicon | `assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png` (Negro/black, "sin com" — used directly as the default on light surfaces, no separate root copy), `assets/logo/favicon.png` (default favicon, black isotype) |
-| Capi mascot (20 renders) | `assets/mascot/` — whole image only, never recolored/cropped |
+| Capi mascot (27 renders) | `assets/mascot/` — whole image only, never recolored/cropped |
 
 See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usage rules.
 
@@ -59,7 +59,7 @@ See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usag
   recovered from a flattened Figma frame export, real geometry; filenames are position-indexed but every
   glyph has a semantic label, category, and confidence flag in `labels.json` — see `DESIGN.md` §6 before
   picking one — and its 5 sibling color folders `verde/ azul/ rojo/ amarillo/ celeste/`, the same
-  124-icon grid re-exported per brand color and index-matched to the grayscale set), `mascot/` (20 "Capi"
+  124-icon grid re-exported per brand color and index-matched to the grayscale set), `mascot/` (27 "Capi"
   character renders).
 - `fonts/` — real TTF files uploaded directly to the project: Space Grotesk
   (Light/Regular/Medium/SemiBold/Bold) and Raleway (Bold, BoldItalic — the only weight/style the
@@ -115,7 +115,7 @@ and the 2021 branding-guidelines cover page/BrandBook text extraction were captu
   filenames position-indexed but every glyph now carries a semantic label/category/confidence in
   `labels.json` (`DESIGN.md` §6)
 - Uploaded assets: real wordmark logo, a full logo color family (7 horizontal + 7 isotype variants,
-  horizontal incl. Verde and Azul Oscuro), and 20 mascot renders
+  horizontal incl. Verde and Azul Oscuro), and 27 mascot renders
 - A 2021 branding-guidelines cover page, the **only authoritative source for the official brand
   palette** (`DESIGN.md` §2.1)
 - A peer-provided text extraction of the full 117-page BrandBook (Werner Fett Studio, 2020/2021) — text
@@ -227,7 +227,7 @@ and the 2021 branding-guidelines cover page/BrandBook text extraction were captu
 - **Form inputs are underline-only** — no boxed/bordered fields anywhere in the system.
   (Source: `ContactForm.astro` input classes.)
 - **Capi mascot** — a 3D-rendered orange bear in business-casual dress — is the brand's entire
-  expressive/warmth layer, always used as a whole photographic image. (Source: 20 uploaded mascot
+  expressive/warmth layer, always used as a whole photographic image. (Source: 27 uploaded mascot
   renders preserved in `assets/mascot/`.)
 - **Official iconset** — 124 glyphs in 6 color layers (grayscale + verde/azul/rojo/amarillo/celeste) at
   `assets/icons/iconset/`, extracted from a Figma frame export. This is the default icon source for

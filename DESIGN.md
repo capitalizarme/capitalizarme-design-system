@@ -81,7 +81,7 @@ portals.
   adopting one for a specific recurring use.
 - **Uploaded brand assets**: the primary wordmark lockup PNG, a full logo color family — a 7-color
   horizontal lockup batch (`assets/logo/horizontal/`, see below) and 7 isotype variants
-  (`assets/logo/isotypes/`) — and 20 "Capi" mascot character renders, uploaded directly to the project
+  (`assets/logo/isotypes/`) — and 27 "Capi" mascot character renders, uploaded directly to the project
   and preserved byte-for-byte in `assets/`.
 - **Uploaded font files**: 5 real Space Grotesk TTF weights (Light, Regular, Medium, SemiBold, Bold),
   uploaded directly to the project and preserved byte-for-byte in `fonts/`, self-hosted via
@@ -140,7 +140,7 @@ reject it.
 | Logo — horizontal lockup (7 colors incl. Verde, Azul Oscuro) | `assets/logo/horizontal/` | Full wordmark, current "sin .com" naming. Pick color by background — see §6 "Logo system". |
 | Logo — isotype (7 colors) | `assets/logo/isotypes/` | Mark alone, for favicon/avatar/watermark scale. |
 | Primary wordmark + favicon | `assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png` (Negro/black, "sin com" — the horizontal set's own Negro file, used directly as the default wordmark, no separate root copy), `assets/logo/favicon.png` (Negro/black isotype — byte-for-byte copy of `assets/logo/isotypes/Isotipo Negro.png`) | Default logo files on light surfaces when no themed color is needed. `assets/logo/favicon.svg` is the archived source's original favicon, kept for provenance, no longer the default. |
-| Capi mascot (20 renders) | `assets/mascot/` | Use as a whole photographic image for warmth in empty states, hero moments, step call-outs — never recolored, cropped, or vectorized. See §6. |
+| Capi mascot (27 renders) | `assets/mascot/` | Use as a whole photographic image for warmth in empty states, hero moments, step call-outs — never recolored, cropped, or vectorized. See §6. |
 
 All of the above render live in `preview/brand-assets.html` and `preview/icons-iconset.html` —
 check there before picking a file blind.

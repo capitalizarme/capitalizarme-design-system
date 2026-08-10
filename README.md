@@ -54,7 +54,7 @@ squared-off buttons). See Reuse workflow below for the step-by-step process.
 <td align="center"><img src="assets/icons/iconset/azul/icon-113.svg" width="36"><br><sub>Parking</sub></td>
 </tr></table>
 
-**Capi mascot** — `assets/mascot/` (20 renders, always used whole, never recolored/cropped)
+**Capi mascot** — `assets/mascot/` (27 renders, always used whole, never recolored/cropped)
 
 <table><tr>
 <td><img src="assets/mascot/capi-front-wave.png" width="110"></td>
@@ -126,7 +126,7 @@ be re-skinned per themed landing page.
   category instead of grid position — see `DESIGN.md` §6 and `preview/icons-iconset.html` (color
   switcher + category filter)
 - Uploaded brand assets: real wordmark logo, a full logo color family (7 horizontal + 7 isotype color
-  variants), and 20 "Capi" mascot renders, preserved in `assets/`
+  variants), and 27 "Capi" mascot renders, preserved in `assets/`
 - A 2021 branding-guidelines cover page — pixel-sampled for its 5-color palette, **per company decision
   the only official brand palette source** (`DESIGN.md` §2.1) — plus a peer-provided text extraction of
   the full 117-page BrandBook it's excerpted from (Werner Fett Studio, 2020/2021; text only, source PDF
@@ -158,7 +158,7 @@ assets/
                             category/confidence per glyph) — see DESIGN.md §6
       verde/ azul/ rojo/    Same 124-icon grid re-exported in 5 brand colors, index-matched to the
       amarillo/ celeste/   grayscale set; manifest-colors.json has path/fill metadata per color
-  mascot/                  All 20 captured "Capi" mascot renders
+  mascot/                  All 27 captured "Capi" mascot renders
 preview/                   10 focused, reviewable HTML cards (see Preview Manifest below)
 components/                Copy-paste-ready HTML partials (markup + CSS), extracted from ui_kits/app-react/:
   header.html               Sticky top nav — wordmark + 3 links (from ui_kits/app-react/components/Header.jsx)
@@ -229,7 +229,7 @@ mockup.
 | `preview/spacing-shadows.html` | Elevation levels on cards against a tinted background | `--shadow-sm` (evidenced) vs `--shadow-md`/`--shadow-lg` (derived) |
 | `preview/components-buttons.html` | All 3 button variants (primary, on-accent, outline) with real copy | `.btn`, `.btn-primary`, `.btn-on-accent`, `.btn-outline` |
 | `preview/components-inputs.html` | The real ContactForm reproduced with underline inputs | `.input-underline`, label spacing, `.card` wrapper |
-| `preview/brand-assets.html` | Real primary wordmark, favicon, all 7 horizontal + 7 isotype logo color variants (each shown on its correct-contrast tile, incl. Verde and Azul Oscuro), 4 step icons, and all 20 mascot renders loaded via `<img>`/`<object>` from `assets/` | `assets/logo/`, `assets/logo/horizontal/`, `assets/logo/isotypes/`, `assets/icons/`, `assets/mascot/` |
+| `preview/brand-assets.html` | Real primary wordmark, favicon, all 7 horizontal + 7 isotype logo color variants (each shown on its correct-contrast tile, incl. Verde and Azul Oscuro), 4 step icons, and all 27 mascot renders loaded via `<img>`/`<object>` from `assets/` | `assets/logo/`, `assets/logo/horizontal/`, `assets/logo/isotypes/`, `assets/icons/`, `assets/mascot/` |
 | `preview/icons-iconset.html` | **Capitalizarme's official iconset** — all 124 icon glyphs recovered from the flattened Figma frame export, each tile showing its semantic label and category, with a color switcher (6 layers) and a category filter (8 categories) | `assets/icons/iconset/icon-001.svg`…`icon-124.svg` (grayscale) + `{verde,azul,rojo,amarillo,celeste}/icon-001.svg`…`icon-124.svg`, `manifest.json`, `manifest-colors.json`, `labels.json` (content name, category, confidence per glyph) — filenames stay position-indexed, pick by label/category |
 | `components/header.html` | Sticky header, live-rendered, with copy-paste markup + CSS blocks below the demo | `.app-header`, wordmark from `assets/logo/horizontal/`, `Header.astro` source pattern |
 | `components/footer.html` | 5-column footer + legal disclaimer, live-rendered, with copy-paste markup + CSS blocks below the demo | `.app-footer`, wordmark from `assets/logo/horizontal/`, `Footer.astro` source pattern, DESIGN.md §8 disclaimer text |

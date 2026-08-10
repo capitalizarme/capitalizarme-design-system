@@ -176,6 +176,36 @@
         "file": "assets/mascot/capi-rot-lineup.png",
         "kind": "mascot",
         "caption": "Capi rotation lineup (multi-angle reference sheet)"
+      },
+      {
+        "file": "assets/mascot/capi-happy.png",
+        "kind": "mascot",
+        "caption": "Capi celebrating, arms raised (outdoor scene)"
+      },
+      {
+        "file": "assets/mascot/capi-happy-2.png",
+        "kind": "mascot",
+        "caption": "Capi celebrating, arms raised"
+      },
+      {
+        "file": "assets/mascot/capi-builder.png",
+        "kind": "mascot",
+        "caption": "Capi as architect/engineer with blueprints"
+      },
+      {
+        "file": "assets/mascot/capi-edi.png",
+        "kind": "mascot",
+        "caption": "Capi giving thumbs up beside a building"
+      },
+      {
+        "file": "assets/mascot/capi-edi-2.png",
+        "kind": "mascot",
+        "caption": "Capi holding keys beside a building"
+      },
+      {
+        "file": "assets/mascot/capi-edi-3.png",
+        "kind": "mascot",
+        "caption": "Capi beside a high-rise building"
       }
     ]
   }
