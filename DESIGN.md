@@ -84,8 +84,9 @@ portals.
   (`assets/logo/isotypes/`) — and 27 "Capi" mascot character renders, uploaded directly to the project
   and preserved byte-for-byte in `assets/`.
 - **Uploaded font files**: 5 real Space Grotesk TTF weights (Light, Regular, Medium, SemiBold, Bold),
-  uploaded directly to the project and preserved byte-for-byte in `fonts/`, self-hosted via
-  `@font-face` in `colors_and_type.css`.
+  uploaded directly to the project and preserved byte-for-byte in `fonts/` as brand assets, but not
+  bound via `@font-face` — `colors_and_type.css` loads Space Grotesk and Raleway from Google Fonts
+  CDN only (`@import`).
 - **2021 branding guidelines cover page** ("Uso de color") — a one-page internal document, uploaded
   directly to the project, and the design system's **only official color source** (§2.1) — its five
   pixel-sampled color bars (gold, blue, navy, green, red) are the palette in force. Its stated color
@@ -765,8 +766,8 @@ codebase itself, which was Astro + **Tailwind v4** (`@theme` tokens) — see §2
     };
   </script>
   ```
-  Still load `colors_and_type.css` alongside Tailwind for the `@font-face` bindings (self-hosted Space
-  Grotesk) and any component classes (`.btn`, `.card`, `.input-underline`) — Tailwind utilities and
+  Still load `colors_and_type.css` alongside Tailwind for the Google Fonts `@import` (Space Grotesk,
+  Raleway) and any component classes (`.btn`, `.card`, `.input-underline`) — Tailwind utilities and
   this system's token classes are complementary, not a replacement for each other.
 - Component shape rules from §6 still apply regardless of Tailwind usage: pill buttons (`rounded-full`),
   underline-only inputs (no `border` box), `rounded-2xl` cards — express them as Tailwind utility classes

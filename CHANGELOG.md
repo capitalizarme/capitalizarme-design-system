@@ -12,6 +12,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.2.1] — 2026-08-11
+
+### Fixed
+- Corrected stale "self-hosted `@font-face`" claims in `README.md` and `DESIGN.md` — Space Grotesk
+  and Raleway load from Google Fonts CDN only (`@import`) per `colors_and_type.css`; the uploaded
+  TTFs in `fonts/` are preserved brand assets, not bound faces.
+
 ## [0.2.0] — 2026-08-10
 
 ### Added

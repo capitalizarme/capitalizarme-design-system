@@ -11,9 +11,9 @@ brand's "Capi" mascot renders. See Source references below for the complete evid
 ## What you can build with this system
 
 This package is a full brand kit, not just a landing-page skin — it has real tokens, an official
-iconset, a full logo family, the Capi mascot, self-hosted type, and enforced-tool rules for every
-output format below. Build any of these directly from `DESIGN.md` + `colors_and_type.css` +
-`assets/`:
+iconset, a full logo family, the Capi mascot, a locked Google Fonts type pairing, and enforced-tool
+rules for every output format below. Build any of these directly from `DESIGN.md` +
+`colors_and_type.css` + `assets/`:
 
 | Deliverable | Required tool / rule | Source |
 |---|---|---|
@@ -41,7 +41,7 @@ squared-off buttons). See Reuse workflow below for the step-by-step process.
 | `--color-brand-navy` | `--color-brand-blue` | `--color-brand-gold` | `--color-brand-green` | `--color-brand-red` |
 | backgrounds, titles | primary accent, links | AI / premium only | success | alerts, critical |
 
-**Type pairing** — `Space Grotesk` (structure, self-hosted in `fonts/`) + `Raleway` (buttons/CTA only, bold uppercase)
+**Type pairing** — `Space Grotesk` (structure, Google Fonts CDN) + `Raleway` (buttons/CTA only, bold uppercase, Google Fonts CDN)
 
 **Official iconset** — `assets/icons/iconset/azul/` (see `preview/icons-iconset.html` for all 124, with color switcher + category filter)
 
