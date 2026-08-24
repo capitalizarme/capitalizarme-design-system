@@ -30,6 +30,18 @@
   interaction-states requirement (every focusable element needs a visible :focus-visible ring; disabled
   is the one state allowed to reduce contrast). --focus-ring reuses the official brand-blue at full
   opacity so it never collides with the surrounding UI's own blue accent.
+
+  2026-08-24 accessibility/consistency audit (measured against WCAG 2.1 AA, 4.5:1 for normal text):
+    - --color-slate darkened #64748B → #556378 (4.76:1 → 6.10:1 on white). It was passing but with
+      almost no margin, and it's the color the smallest text in the whole system leans on (8-10px
+      footer/legal disclaimers) — the one place where every extra tenth of a point of contrast matters
+      most. Same role, same hue family, just more headroom.
+    - Added --status-warning-text / --status-danger-text. --status-warning itself is ~2.5:1 on white
+      or its own -bg tint, and plain --status-danger is ~4.35:1 — both fail 4.5:1 as a text/icon color,
+      only as a fill behind dark text. --color-brand-red-dark was already documented above as "hover
+      state on red, alert text" but --status-danger was never actually wired to it — the -text tokens
+      close that gap without touching the official swatch colors. --status-success-text is an alias:
+      --status-success already clears 6.8:1 on white and needed no change.
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Raleway:ital,wght@0,700;1,700&display=swap");
@@ -47,7 +59,7 @@
   --color-brand-green: #006939;      /* Éxito */
   --color-off-white: #f8f9fb;        /* Fondo — no 2021 equivalent, unverified placeholder */
   --color-blue-light: #dde6ff;       /* Bordes, paneles tintados — no 2021 equivalent, unverified placeholder */
-  --color-slate: #64748b;            /* Texto secundario — no 2021 equivalent, unverified placeholder */
+  --color-slate: #556378;            /* Texto secundario — no 2021 equivalent, unverified placeholder. 6.10:1 on white (was #64748B, 4.76:1) — see 2026-08-24 audit note above */
   --color-brand-muted: var(--color-slate);
 
   /* ---- Legacy landing-campaign tints (source-backed: inline fills in Hero.astro, Features.astro,
@@ -86,13 +98,19 @@
   --disabled-opacity: 0.45;
 
   /* ---- Status (Success/Danger source-backed to official Green/Red; Warning remains DERIVED — no
-     dedicated warning color was evidenced) ---- */
+     dedicated warning color was evidenced). --status-*-text are the text/icon-safe variants — the base
+     --status-warning and --status-danger swatches are fill-only tokens (pair with dark or white text
+     per §6); using the swatch color itself AS text or an icon fill fails WCAG AA — see 2026-08-24
+     audit note above. ---- */
   --status-success: var(--color-brand-green);
   --status-success-bg: color-mix(in oklch, var(--color-brand-green) 12%, white);
+  --status-success-text: var(--color-brand-green); /* 6.82:1 on white already — safe as-is */
   --status-warning: oklch(72% 0.15 75);
   --status-warning-bg: oklch(96% 0.04 75);
+  --status-warning-text: color-mix(in oklch, var(--status-warning) 65%, black); /* ~7:1 on white, ~6.2:1 on --status-warning-bg — --status-warning itself is only ~2.5:1 on either */
   --status-danger: var(--color-brand-red);
   --status-danger-bg: color-mix(in oklch, var(--color-brand-red) 10%, white);
+  --status-danger-text: var(--color-brand-red-dark); /* ~7.5:1 on white — --status-danger itself is only ~4.35:1, just under AA */
 
   /* ---- Typography ---- */
   --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;

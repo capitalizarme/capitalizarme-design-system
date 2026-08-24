@@ -1,6 +1,6 @@
 # Capitalizarme Design System
 
-**v0.1.0** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
+**v0.4.0** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
 breaking token/API changes bump MAJOR, additive tokens/components/artifacts bump MINOR, fixes bump
 PATCH. `package.json` at the project root is the source of truth once this package publishes to npm.
 
@@ -163,6 +163,9 @@ preview/                   10 focused, reviewable HTML cards (see Preview Manife
 components/                Copy-paste-ready HTML partials (markup + CSS), extracted from ui_kits/app-react/:
   header.html               Sticky top nav — wordmark + 3 links (from ui_kits/app-react/components/Header.jsx)
   footer.html                5-col link grid + legal/compliance disclaimer (from Footer.jsx)
+  card.html                  Property card — photo, label, title, checklist, CTA (from PropertyGrid.jsx)
+  filter-bar.html            Underline-input fields + pill property-type toggle group (from FilterBar.jsx)
+  advisor-list.html          "Mensajes" thread rail — avatar, name, last message (from AdvisorList.jsx)
 source-evidence/           EVIDENCE — real Astro component source, copied out verbatim for direct
                             reading (ground truth: what the archived source actually contains)
   src/components/          Header, Hero, ContactForm, CTABanner, Features, FeaturedWork,
@@ -233,6 +236,9 @@ mockup.
 | `preview/icons-iconset.html` | **Capitalizarme's official iconset** — all 124 icon glyphs recovered from the flattened Figma frame export, each tile showing its semantic label and category, with a color switcher (6 layers) and a category filter (8 categories) | `assets/icons/iconset/icon-001.svg`…`icon-124.svg` (grayscale) + `{verde,azul,rojo,amarillo,celeste}/icon-001.svg`…`icon-124.svg`, `manifest.json`, `manifest-colors.json`, `labels.json` (content name, category, confidence per glyph) — filenames stay position-indexed, pick by label/category |
 | `components/header.html` | Sticky header, live-rendered, with copy-paste markup + CSS blocks below the demo | `.app-header`, wordmark from `assets/logo/horizontal/`, `Header.astro` source pattern |
 | `components/footer.html` | 5-column footer + legal disclaimer, live-rendered, with copy-paste markup + CSS blocks below the demo | `.app-footer`, wordmark from `assets/logo/horizontal/`, `Footer.astro` source pattern, DESIGN.md §8 disclaimer text |
+| `components/card.html` | Real property listing card — photo placeholder, label, title, checklist (the system's one bespoke icon glyph), outline CTA | `.card`, `.property-card`, DESIGN.md §6 Cards, `PropertyGrid.jsx` / `Features.astro`/`FeaturedWork.astro` source pattern |
+| `components/filter-bar.html` | Underline-input filter fields + a pill property-type toggle group | `.input-underline`, `.btn-primary`/`.btn-outline` toggle, `FilterBar.jsx` / `ContactForm.astro` underline pattern |
+| `components/advisor-list.html` | The "Mensajes" thread rail — initials avatar, name, truncated last message, selected-row tint | `.advisor-list`, real evidenced advisor copy, `AdvisorList.jsx` source pattern |
 
 ## Reuse workflow
 

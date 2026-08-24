@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Filter bar component</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .demo { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px; padding: 24px; background: var(--off-white, #f8f9fb); }
+
+  /* ---- Filter bar — applied verbatim from ui_kits/app-react/components/FilterBar.jsx. Reuses the
+     underline-input pattern from ContactForm.astro (no boxed inputs, per DESIGN.md §9) plus the
+     pill-button property-type toggle group. ---- */
+  .filter-bar { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+  .filter-bar .field { flex: 1 1 160px; }
+  .filter-bar .field label { display: block; margin-bottom: 4px; font-size: 12px; color: var(--muted); }
+  .filter-bar .types { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-bar .types button { padding: 8px 18px; font-size: 12px; }
+
+  pre { background: var(--surface-tint); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; overflow-x: auto; font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Filter bar component</h1>
+    <p>A search/filter panel: three underline fields (comuna, price range) plus a property-type toggle
+    group rendered as pill buttons — the active type uses <code>.btn-primary</code>, the rest
+    <code>.btn-outline</code> (DESIGN.md §6 Buttons). Copied from
+    <code>ui_kits/app-react/components/FilterBar.jsx</code>, which reuses
+    <code>ContactForm.astro</code>'s underline-input pattern: no boxed/bordered text fields anywhere in
+    this system. Depends on <code>colors_and_type.css</code>'s <code>.card</code>,
+    <code>.input-underline</code>, and <code>.btn</code> classes plus the rules below.</p>
+  </div>
+
+  <div class="meta">Live render</div>
+  <div class="demo">
+    <div class="card filter-bar">
+      <div class="field">
+        <label for="filter-city">Comuna</label>
+        <input id="filter-city" class="input-underline" type="text" placeholder="Las Condes" />
+      </div>
+      <div class="field">
+        <label for="filter-min">Desde (UF)</label>
+        <input id="filter-min" class="input-underline" type="number" placeholder="1.665" />
+      </div>
+      <div class="field">
+        <label for="filter-max">Hasta (UF)</label>
+        <input id="filter-max" class="input-underline" type="number" placeholder="5.000" />
+      </div>
+      <div class="types">
+        <button type="button" class="btn btn-primary">Departamentos</button>
+        <button type="button" class="btn btn-outline">Terrenos</button>
+        <button type="button" class="btn btn-outline">Bodegas</button>
+        <button type="button" class="btn btn-outline">Estacionamientos</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta">Copy — markup</div>
+  <pre><code>&lt;div class="card filter-bar"&gt;
+  &lt;div class="field"&gt;
+    &lt;label for="filter-city"&gt;Comuna&lt;/label&gt;
+    &lt;input id="filter-city" class="input-underline" type="text" placeholder="Las Condes" /&gt;
+  &lt;/div&gt;
+  &lt;div class="field"&gt;
+    &lt;label for="filter-min"&gt;Desde (UF)&lt;/label&gt;
+    &lt;input id="filter-min" class="input-underline" type="number" placeholder="1.665" /&gt;
+  &lt;/div&gt;
+  &lt;div class="field"&gt;
+    &lt;label for="filter-max"&gt;Hasta (UF)&lt;/label&gt;
+    &lt;input id="filter-max" class="input-underline" type="number" placeholder="5.000" /&gt;
+  &lt;/div&gt;
+  &lt;div class="types"&gt;
+    &lt;button type="button" class="btn btn-primary" aria-pressed="true"&gt;Departamentos&lt;/button&gt;
+    &lt;button type="button" class="btn btn-outline" aria-pressed="false"&gt;Terrenos&lt;/button&gt;
+    &lt;button type="button" class="btn btn-outline" aria-pressed="false"&gt;Bodegas&lt;/button&gt;
+    &lt;button type="button" class="btn btn-outline" aria-pressed="false"&gt;Estacionamientos&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  <div class="meta" style="margin-top: 24px;">Copy — CSS (add alongside <code>colors_and_type.css</code>)</div>
+  <pre><code>.filter-bar { display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; }
+.filter-bar .field { flex: 1 1 160px; }
+.filter-bar .field label { display: block; margin-bottom: 4px; font-size: 12px; color: var(--muted); }
+.filter-bar .types { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-bar .types button { padding: 8px 18px; font-size: 12px; }</code></pre>
+  <p style="color: var(--muted); font-size: 12px; margin-top: 8px; max-width: 640px;">
+    On toggle, swap the clicked button to <code>.btn .btn-primary</code> and every sibling back to
+    <code>.btn .btn-outline</code> — never leave more than one type visually active at once.
+    <code>aria-pressed</code> (added above; not present in the source JSX) keeps the toggle state
+    exposed to assistive tech, matching this system's own focus/disabled interaction-states
+    requirement in DESIGN.md §6.1.
+  </p>
+</body>
+</html>

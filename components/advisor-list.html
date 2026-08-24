@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Advisor list component</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .demo { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px; max-width: 280px; }
+
+  /* ---- Advisor list — applied verbatim from ui_kits/app-react/components/AdvisorList.jsx, the
+     "Mensajes" rail: the direct product continuation of ContactForm.astro's purpose (booking time
+     with an advisor) as an ongoing conversation thread list. ---- */
+  .advisor-list { width: 260px; flex-shrink: 0; border-right: 1px solid var(--border-subtle); background: var(--surface); }
+  .advisor-list h2 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 18px; margin: 0; padding: 20px 16px 12px; }
+  .advisor-list ul { list-style: none; margin: 0; padding: 0; }
+  .advisor-list button {
+    width: 100%; display: flex; gap: 12px; align-items: center;
+    border: none; cursor: pointer; text-align: left; padding: 12px 16px; background: transparent;
+  }
+  .advisor-list button.selected { background: var(--surface-tint); }
+  .advisor-list .avatar {
+    width: 36px; height: 36px; border-radius: var(--radius-pill); background: var(--accent);
+    color: #fff; font-family: var(--font-display); font-weight: var(--weight-bold); font-size: 13px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .advisor-list .meta-col { min-width: 0; }
+  .advisor-list .name { display: block; font-size: 13px; font-weight: var(--weight-bold); color: var(--fg-emphasis); }
+  .advisor-list .last-message { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  pre { background: var(--surface-tint); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; overflow-x: auto; font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Advisor list component</h1>
+    <p>The "Mensajes" rail — a real advisor-thread list, each row an initials avatar (brand-blue
+    circle, white bold initials) + name + truncated last message, with a tinted background on the
+    selected row. Copied from <code>ui_kits/app-react/components/AdvisorList.jsx</code>: the direct
+    product continuation of <code>ContactForm.astro</code>'s whole purpose (booking time with an
+    advisor) carried on as an ongoing conversation — see <code>ui_kits/app/README.md</code>
+    "Messaging surface". Names/roles/messages are the system's real evidenced advisor copy, not
+    filler (DESIGN.md §9). Depends on <code>colors_and_type.css</code> tokens plus the rules below.
+    Note the class here is <code>.meta-col</code> (the source JSX/CSS uses the generic <code>.meta</code>,
+    renamed to avoid colliding with this preview page's own <code>.meta</code> label style).</p>
+  </div>
+
+  <div class="meta">Live render</div>
+  <div class="demo">
+    <div class="advisor-list">
+      <h2>Mensajes</h2>
+      <ul>
+        <li>
+          <button type="button" class="selected">
+            <span class="avatar">CV</span>
+            <span class="meta-col">
+              <span class="name">Camila Vidal</span>
+              <span class="last-message">¿Agendamos una reunión de 45 minutos?</span>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button">
+            <span class="avatar">JR</span>
+            <span class="meta-col">
+              <span class="name">Jorge Reyes</span>
+              <span class="last-message">Hola, soy Jorge, ¿cómo te ayudo?</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="meta">Copy — markup</div>
+  <pre><code>&lt;div class="advisor-list"&gt;
+  &lt;h2&gt;Mensajes&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;button type="button" class="selected"&gt;
+        &lt;span class="avatar"&gt;CV&lt;/span&gt;
+        &lt;span class="meta-col"&gt;
+          &lt;span class="name"&gt;Camila Vidal&lt;/span&gt;
+          &lt;span class="last-message"&gt;¿Agendamos una reunión de 45 minutos?&lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/li&gt;
+    &lt;!-- repeat &lt;li&gt; per advisor thread; add class="selected" on the active one --&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+  <div class="meta" style="margin-top: 24px;">Copy — CSS (add alongside <code>colors_and_type.css</code>)</div>
+  <pre><code>.advisor-list { width: 260px; flex-shrink: 0; border-right: 1px solid var(--border-subtle); background: var(--surface); }
+.advisor-list h2 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 18px; margin: 0; padding: 20px 16px 12px; }
+.advisor-list ul { list-style: none; margin: 0; padding: 0; }
+.advisor-list button {
+  width: 100%; display: flex; gap: 12px; align-items: center;
+  border: none; cursor: pointer; text-align: left; padding: 12px 16px; background: transparent;
+}
+.advisor-list button.selected { background: var(--surface-tint); }
+.advisor-list .avatar {
+  width: 36px; height: 36px; border-radius: var(--radius-pill); background: var(--accent);
+  color: #fff; font-family: var(--font-display); font-weight: var(--weight-bold); font-size: 13px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.advisor-list .meta-col { min-width: 0; }
+.advisor-list .name { display: block; font-size: 13px; font-weight: var(--weight-bold); color: var(--fg-emphasis); }
+.advisor-list .last-message { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }</code></pre>
+  <p style="color: var(--muted); font-size: 12px; margin-top: 8px; max-width: 640px;">
+    Pairs with <code>ui_kits/app-react/components/ChatArea.jsx</code> +
+    <code>InputBar.jsx</code>/<code>MessageBubble.jsx</code> for the full messaging surface — this
+    partial is just the left-hand thread rail.
+  </p>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Property card component</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 40px; max-width: 900px; }
+  .intro { margin-bottom: 32px; }
+  .intro h1 { font-size: 24px; font-weight: var(--weight-black); }
+  .intro p { color: var(--muted); max-width: 640px; }
+  .meta { font-family: ui-monospace, monospace; font-size: 12px; color: var(--muted); margin-bottom: 10px; }
+  .demo { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px; padding: 24px; background: var(--off-white, #f8f9fb); }
+
+  /* ---- Property card — applied verbatim from ui_kits/app-react/components/PropertyGrid.jsx
+     (Features.astro / FeaturedWork.astro source). Depends on the base .card class in
+     colors_and_type.css (rounded-2xl, border, shadow-sm) plus the rules below. ---- */
+  .property-card { max-width: 300px; padding: 0; overflow: hidden; }
+  .property-card .photo {
+    height: 140px; background: var(--surface-tint-alt);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .property-card .photo span { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+  .property-card .body { padding: 20px; }
+  .property-card .label {
+    margin: 0; font-size: 11px; font-weight: var(--weight-bold);
+    text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-emphasis);
+  }
+  .property-card h3 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 20px; margin: 4px 0 2px; }
+  .property-card .subtitle { margin: 0 0 12px; color: var(--fg); }
+  .property-card ul.checks { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .property-card .check-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .property-card .check-item svg { flex-shrink: 0; }
+  .property-card .btn { padding: 8px 20px; font-size: 11px; display: inline-block; }
+
+  pre { background: var(--surface-tint); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px; overflow-x: auto; font-size: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>Property card component</h1>
+    <p>The system's card pattern applied to a real listing — DESIGN.md §6 Cards
+    (<code>rounded-2xl</code>, <code>border border-gray-200</code>, <code>shadow-sm</code>) plus the
+    checklist item, the system's one bespoke icon glyph (filled blue circle + white checkmark stroke —
+    do not swap in a generic icon font). Copied from
+    <code>ui_kits/app-react/components/PropertyGrid.jsx</code>, itself applied from
+    <code>Features.astro</code> / <code>FeaturedWork.astro</code>. Copy specificity (UF price, cuotas,
+    plazo) mirrors <code>source-evidence/capitalizarme-boilerplate-html/data/content.ts</code> — never
+    generic "Property 1" filler, per DESIGN.md §9. Depends on <code>colors_and_type.css</code>'s
+    <code>.card</code> and <code>.btn</code>/<code>.btn-outline</code> classes plus the rules below.</p>
+  </div>
+
+  <div class="meta">Live render</div>
+  <div class="demo">
+    <div class="card property-card">
+      <div class="photo"><span>foto de la propiedad</span></div>
+      <div class="body">
+        <p class="label">Oportunidad de Inversión</p>
+        <h3>Edificio Vista Las Condes</h3>
+        <p class="subtitle">Departamentos desde UF 1.665</p>
+        <ul class="checks">
+          <li class="check-item">
+            <svg width="18" height="18" viewBox="0 0 25 25" aria-hidden="true">
+              <circle cx="12.5" cy="12.5" r="12.5" fill="var(--accent)" />
+              <path d="M7 12.5l3.5 3.5 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Hasta 84 cuotas</span>
+          </li>
+          <li class="check-item">
+            <svg width="18" height="18" viewBox="0 0 25 25" aria-hidden="true">
+              <circle cx="12.5" cy="12.5" r="12.5" fill="var(--accent)" />
+              <path d="M7 12.5l3.5 3.5 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Pie desde $36.000</span>
+          </li>
+          <li class="check-item">
+            <svg width="18" height="18" viewBox="0 0 25 25" aria-hidden="true">
+              <circle cx="12.5" cy="12.5" r="12.5" fill="var(--accent)" />
+              <path d="M7 12.5l3.5 3.5 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>5 años de arriendo garantizado</span>
+          </li>
+        </ul>
+        <a class="btn btn-outline" href="#">Ver detalle</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="meta">Copy — markup</div>
+  <pre><code>&lt;div class="card property-card"&gt;
+  &lt;div class="photo"&gt;&lt;span&gt;foto de la propiedad&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="body"&gt;
+    &lt;p class="label"&gt;Oportunidad de Inversión&lt;/p&gt;
+    &lt;h3&gt;Edificio Vista Las Condes&lt;/h3&gt;
+    &lt;p class="subtitle"&gt;Departamentos desde UF 1.665&lt;/p&gt;
+    &lt;ul class="checks"&gt;
+      &lt;li class="check-item"&gt;
+        &lt;svg width="18" height="18" viewBox="0 0 25 25" aria-hidden="true"&gt;
+          &lt;circle cx="12.5" cy="12.5" r="12.5" fill="var(--accent)" /&gt;
+          &lt;path d="M7 12.5l3.5 3.5 7-7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" /&gt;
+        &lt;/svg&gt;
+        &lt;span&gt;Hasta 84 cuotas&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;!-- repeat &lt;li class="check-item"&gt; per checklist point --&gt;
+    &lt;/ul&gt;
+    &lt;a class="btn btn-outline" href="#"&gt;Ver detalle&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+  <div class="meta" style="margin-top: 24px;">Copy — CSS (add alongside <code>colors_and_type.css</code>)</div>
+  <pre><code>.property-card { max-width: 300px; padding: 0; overflow: hidden; }
+.property-card .photo {
+  height: 140px; background: var(--surface-tint-alt);
+  display: flex; align-items: center; justify-content: center;
+}
+.property-card .photo span { font-family: ui-monospace, monospace; font-size: 11px; color: var(--muted); }
+.property-card .body { padding: 20px; }
+.property-card .label {
+  margin: 0; font-size: 11px; font-weight: var(--weight-bold);
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-emphasis);
+}
+.property-card h3 { font-family: var(--font-display); font-weight: var(--weight-black); font-size: 20px; margin: 4px 0 2px; }
+.property-card .subtitle { margin: 0 0 12px; color: var(--fg); }
+.property-card ul.checks { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.property-card .check-item { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.property-card .check-item svg { flex-shrink: 0; }
+.property-card .btn { padding: 8px 20px; font-size: 11px; display: inline-block; }</code></pre>
+  <p style="color: var(--muted); font-size: 12px; margin-top: 8px; max-width: 640px;">
+    <code>.card</code> (base shape) and <code>.btn</code>/<code>.btn-outline</code> come from
+    <code>colors_and_type.css</code>. Repeat this markup inside a <code>.property-grid</code>
+    (<code>display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;</code>
+    — see <code>ui_kits/app-react/index.html</code>) for the full listing page.
+  </p>
+</body>
+</html>

@@ -89,9 +89,15 @@ See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usag
   of React state/props or Astro's `data-*` + script pattern). Requires a Node/Vite build step to
   run — use this when the target is a real Svelte project.
 - `components/` — standalone, copy-paste-ready HTML partials (live render + markup + CSS blocks),
-  extracted from `ui_kits/app-react/components/`: `header.html` (sticky top nav) and `footer.html` (5-column
-  link grid + the DESIGN.md §8 compliance disclaimer). Use these when you need just the header/footer
-  chrome without pulling in the whole `ui_kits/app-react/` kit.
+  extracted from `ui_kits/app-react/components/`: `header.html` (sticky top nav), `footer.html` (5-column
+  link grid + the DESIGN.md §8 compliance disclaimer), `card.html` (property listing card + checklist,
+  from `PropertyGrid.jsx`), `filter-bar.html` (underline-input fields + pill type-toggle group, from
+  `FilterBar.jsx`), and `advisor-list.html` (the "Mensajes" thread rail, from `AdvisorList.jsx`). Use
+  these when you need one piece of chrome without pulling in the whole `ui_kits/app-react/` kit.
+  No `modal.html`, `table.html`, or `tabs.html` exist here — none of those patterns appear anywhere in
+  `source-evidence/` or `ui_kits/`, so extracting them would mean inventing a pattern this system has
+  never actually shown; design them fresh (Superdesign canvas or otherwise) rather than assuming one
+  belongs here.
 - `system/` — the Design System pane's kit + artifact assets, all real and token-driven (loads
   `colors_and_type.css`): `kit.html`/`kit.dark.html` (condensed brand kit, light + the one evidenced
   inverted navy surface), `index.html` (links to everything below), `tokens.default.json` (flat token

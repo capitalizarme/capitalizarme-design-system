@@ -207,11 +207,19 @@ company ever supplies a source, don't treat them as brand-confirmed:
 | `--color-brand-purple` | `#8E27C6` — no 2021 equivalent, unverified placeholder | Secondary elements |
 | `--color-off-white` | `#F8F9FB` — no 2021 equivalent, unverified placeholder | Background |
 | `--color-blue-light` | `#DDE6FF` — no 2021 equivalent, unverified placeholder | Borders, tinted panels |
-| `--color-slate` | `#64748B` — no 2021 equivalent, unverified placeholder | Secondary text |
+| `--color-slate` | `#556378` — no 2021 equivalent, unverified placeholder | Secondary text — 6.10:1 on white (darkened from `#64748B`/4.76:1 in the 2026-08-24 accessibility audit; same role, more margin for the 8-10px sizes it's used at) |
 
 `--status-success` and `--status-danger` in `colors_and_type.css` map directly to Green/Red above;
 `--status-warning` remains DERIVED (oklch) since no dedicated warning color was evidenced — do not
 repurpose Gold for warning, it's reserved for AI/premium moments per source.
+
+**`--status-success` / `--status-warning` / `--status-danger` are fill tokens, not text tokens.**
+Per the 2026-08-24 audit, `--status-warning` is only ~2.5:1 against white or its own `-bg` tint, and
+`--status-danger` is ~4.35:1 — both read as a solid fill (paired with dark or white text), never as the
+color of the text/icon itself. Use `--status-success-text` / `--status-warning-text` /
+`--status-danger-text` for status labels, icon fills, or badge copy — `--status-danger-text` reuses the
+already-documented `--color-brand-red-dark` ("hover state on red, alert text" above); the other two are
+darkened derivatives of the same hue. See `preview/colors-primary.html` for a rendered side-by-side.
 
 This document's own "Uso de color" text is the earliest documented **rationale** for the multi-color
 system:
@@ -351,10 +359,20 @@ All patterns below are copied from real component source now preserved in `sourc
   - Outline: `border-2 border-brand-blue text-brand-blue`, fills solid blue on hover (Features CTA)
   - All three: `hover:opacity-90` or full color swap, `transition-all duration-300 ease-in-out`
 - **Cards** — `rounded-2xl`, `border border-gray-200`, `shadow-sm`, `p-6 md:p-10` (ContactForm wrapper);
-  Features step cards use the same radius/shadow at `p-6` without the border.
+  Features step cards use the same radius/shadow at `p-6` without the border. Copy-paste partial:
+  `components/card.html` (property listing variant, from `PropertyGrid.jsx`).
 - **Form inputs** — no boxed input; underline-only style: `border-b border-gray-300`, transparent
   background, `focus:border-brand-blue`, label above in `font-medium`. Client-side `required` only,
-  no boxed/bordered text fields anywhere in the system.
+  no boxed/bordered text fields anywhere in the system. Copy-paste partial: `components/filter-bar.html`
+  (underline fields + a pill type-toggle group, from `FilterBar.jsx`).
+- **Thread/list rows** — an initials avatar (brand-blue circle, white bold initials) + name + a
+  truncated secondary line, with a `--surface-tint` background on the selected row — the "Mensajes"
+  advisor rail (`AdvisorList.jsx`), the direct continuation of ContactForm's advisor-booking flow into
+  an ongoing conversation. Copy-paste partial: `components/advisor-list.html`.
+- **Not evidenced anywhere in this system**: modal/dialog overlays, data tables, and tab groups — none
+  appear in `source-evidence/` or any `ui_kits/` variant. Don't improvise one from a generic UI-kit
+  memory; if a surface genuinely needs one, design it fresh against these tokens rather than assuming
+  an unevidenced pattern belongs here.
 - **Navigation** — flat text links, `text-brand-navy`, `hover:text-brand-blue`, no active-state
   underline or pill background evidenced.
 - **Icon roundel** — 100×100px circle, tinted background (`#E8F0FC`), centered icon, used once per

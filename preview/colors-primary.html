@@ -120,22 +120,25 @@
       <div class="swatch-fill" style="background: var(--color-slate);"></div>
       <div class="swatch-meta">
         <div class="swatch-name">slate</div>
-        <div class="swatch-value">#64748B</div>
-        <div class="swatch-source">Texto secundario — no 2021 equivalent, unverified placeholder</div>
+        <div class="swatch-value">#556378</div>
+        <div class="swatch-source">Texto secundario — no 2021 equivalent, unverified placeholder. 6.10:1 on white (2026-08-24 audit; was #64748B at 4.76:1)</div>
       </div>
     </div>
   </div>
 
   <h2>Status colors</h2>
   <p class="section-note">Success and Danger now map directly to the official 2021 Green/Red above.
-  Warning has no evidenced source and stays derived — Gold is reserved for AI/premium, not warning.</p>
+  Warning has no evidenced source and stays derived — Gold is reserved for AI/premium, not warning.
+  The swatch fills below are <strong>not</strong> safe as a text or icon color on their own — each has a
+  <code>-text</code> counterpart (2026-08-24 audit) for that use; see the samples under each swatch.</p>
   <div class="grid">
     <div class="swatch">
       <div class="swatch-fill" style="background: var(--status-success);"></div>
       <div class="swatch-meta">
         <div class="swatch-name">status-success</div>
         <div class="swatch-value">#006939 (brand-green)</div>
-        <div class="swatch-source">Source-backed — §2.1 (2021 guidelines)</div>
+        <div class="swatch-source">Source-backed — §2.1 (2021 guidelines) · 6.82:1 on white, safe as text as-is</div>
+        <div style="color: var(--status-success-text); font-weight: var(--weight-bold); font-size: 13px; margin-top: 6px;">Aa status-success-text</div>
       </div>
     </div>
     <div class="swatch">
@@ -143,7 +146,8 @@
       <div class="swatch-meta">
         <div class="swatch-name">status-warning (derived)</div>
         <div class="swatch-value">oklch(72% 0.15 75)</div>
-        <div class="swatch-source">Not evidenced — tuned near the official palette</div>
+        <div class="swatch-source">Not evidenced — tuned near the official palette · only ~2.5:1 on white/its own -bg, fails AA as text/icon</div>
+        <div style="color: var(--status-warning-text); font-weight: var(--weight-bold); font-size: 13px; margin-top: 6px;">Aa status-warning-text</div>
       </div>
     </div>
     <div class="swatch">
@@ -151,7 +155,8 @@
       <div class="swatch-meta">
         <div class="swatch-name">status-danger</div>
         <div class="swatch-value">#ED1847 (brand-red)</div>
-        <div class="swatch-source">Source-backed — §2.1 (2021 guidelines)</div>
+        <div class="swatch-source">Source-backed — §2.1 (2021 guidelines) · only ~4.35:1 on white, just under AA as text/icon</div>
+        <div style="color: var(--status-danger-text); font-weight: var(--weight-bold); font-size: 13px; margin-top: 6px;">Aa status-danger-text</div>
       </div>
     </div>
   </div>
