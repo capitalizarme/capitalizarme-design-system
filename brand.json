@@ -71,6 +71,8 @@
       "Gradients, dark surfaces, or beige/cream backgrounds behind imagery",
       "Inventing illustrated characters instead of the real Capi asset"
     ],
+    "manifest": "assets/mascot/manifest.json",
+    "manifestNote": "Pick a render by pose, not by opening every file: assets/mascot/manifest.json labels all 31 renders by category (office-work, communication, approval-confidence, celebration-leisure, real-estate, portrait-neutral, professional-role, scene-hero, reference-sheet) plus a confidence flag, mirroring assets/icons/iconset/labels.json's schema. It also flags an unresolved outfit inconsistency: most renders wear the navy-vest/white-shirt/maroon-tie look described in 'style' above, but 4 renders (capi-searching-files, capi-overwhelmed-papers, capi-approve-point, capi-planning-pencil) show a plain blue blazer with no visible shirt/tie — don't treat either as more canonical without asking.",
     "samples": [
       {
         "file": "assets/mascot/capi-front-wave.png",
@@ -100,22 +102,22 @@
       {
         "file": "assets/mascot/capi-4.png",
         "kind": "mascot",
-        "caption": "Capi"
+        "caption": "Capi adjusting glasses, holding a book/ledger"
       },
       {
         "file": "assets/mascot/capi-5.png",
         "kind": "mascot",
-        "caption": "Capi"
+        "caption": "Capi on the phone, pointing"
       },
       {
         "file": "assets/mascot/capi-6.png",
         "kind": "mascot",
-        "caption": "Capi"
+        "caption": "Capi calm, content, arms at sides"
       },
       {
         "file": "assets/mascot/capi-7.png",
         "kind": "mascot",
-        "caption": "Capi"
+        "caption": "Capi drinking coffee from a branded mug"
       },
       {
         "file": "assets/mascot/capi-searching.png",
@@ -206,6 +208,26 @@
         "file": "assets/mascot/capi-edi-3.png",
         "kind": "mascot",
         "caption": "Capi beside a high-rise building"
+      },
+      {
+        "file": "assets/mascot/capi-searching-files.png",
+        "kind": "mascot",
+        "caption": "Capi searching through an open filing-cabinet drawer, holding a folder"
+      },
+      {
+        "file": "assets/mascot/capi-overwhelmed-papers.png",
+        "kind": "mascot",
+        "caption": "Capi rushing with an overflowing, toppling stack of papers"
+      },
+      {
+        "file": "assets/mascot/capi-approve-point.png",
+        "kind": "mascot",
+        "caption": "Capi pointing with one hand, thumbs up with the other"
+      },
+      {
+        "file": "assets/mascot/capi-planning-pencil.png",
+        "kind": "mascot",
+        "caption": "Capi with hand on hip, holding a raised pencil"
       }
     ]
   }

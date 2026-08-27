@@ -12,6 +12,28 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-08-27
+
+### Added
+- Four new Capi mascot renders (`capi-searching-files.png`, `capi-overwhelmed-papers.png`,
+  `capi-approve-point.png`, `capi-planning-pencil.png` — renamed from their original uploaded
+  filenames, `CapiSearching-M.png`/`capi-ajetreada.png`/`capi-mujer2.png`/`capi-mujer3.png`, to match
+  this set's kebab-case descriptive-slug convention). Mascot set now totals 31 renders (was 27); count
+  updated across `DESIGN.md`, `README.md`, `SKILL.md`, and `preview/brand-assets.html`.
+- `assets/mascot/manifest.json` — a label/category/confidence catalog for all 31 mascot renders,
+  mirroring `assets/icons/iconset/labels.json`'s schema so an agent can pick a render by pose
+  (`office-work`, `communication`, `approval-confidence`, `celebration-leisure`, `real-estate`,
+  `portrait-neutral`, `professional-role`, `scene-hero`, `reference-sheet`) instead of opening every
+  file or guessing from a filename. Also replaced 4 uninformative "Capi"-only captions
+  (`capi-4`–`capi-7`) in `brand.json` and `preview/brand-assets.html` with real descriptions.
+  `brand.json`'s `imagery` block now points at the manifest directly.
+
+### Fixed / flagged
+- `assets/mascot/manifest.json` and `preview/brand-assets.html` flag a real, unresolved visual
+  inconsistency: the 4 new renders show Capi in a plain blue blazer with no visible shirt/tie, while
+  every prior render wears the navy-vest/white-shirt/maroon-tie look documented in `brand.json`'s
+  `imagery.style`. Not reconciled — noted so it isn't silently treated as either canonical.
+
 ## [0.4.0] — 2026-08-24
 
 ### Added
