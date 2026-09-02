@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Capitalizarme — Internal announcement email artifact</title>
+<style>
+  /* Progressive enhancement only — most clients (Outlook especially) strip <style>/@import,
+     so every element below still carries the system-font stack inline as the real fallback.
+     Clients that DO support this (Apple/iOS Mail, several webmail providers) show the real
+     brand faces; nothing else changes for clients that don't. */
+  @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;800&display=swap");
+</style>
+</head>
+<!-- Inline styles + table layout, same email-client-compatibility convention as artifacts/email.html
+     and artifacts/newsletter.html. This variant is the internal-comms pattern: a dark header band
+     (kicker + headline) instead of a plain white masthead, for HR/ops announcements rather than
+     external marketing sends.
+
+     Logo note: the header band is a dark surface, so the mark is the Blanco horizontal lockup placed
+     directly as an <img> — no white "badge" tile behind it. That white-tile treatment showed up in an
+     early draft of this pattern and was rejected: it re-composes the mark into a container shape that
+     doesn't exist in assets/logo/, and it was standing in for what the Blanco variant already solves
+     (a lockup built for dark surfaces). See DESIGN.md §6 Logo system and §9 Anti-patterns. -->
+<body style="margin:0; padding:32px 0; background:#f8f9fb; font-family:-apple-system,BlinkMacSystemFont,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+    <tr><td align="center">
+      <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="background:#ffffff; border-radius:16px; overflow:hidden; border:1px solid #e5e7eb;">
+        <tr><td style="background:#25397f; padding:32px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td valign="top">
+                <div style="font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif; font-weight:700; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#fbaf17;">Comunicado interno</div>
+                <div style="font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif; font-weight:800; font-size:22px; line-height:1.25; color:#ffffff; margin-top:10px;">Actualizamos nuestra política de teletrabajo</div>
+              </td>
+              <td valign="top" align="right" width="120" style="padding-left:16px;">
+                <img src="../../assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png" alt="Capitalizarme" width="120" style="display:block;" />
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:28px 32px 8px; color:#000000; font-size:15px; line-height:1.5;">
+          Equipo,
+        </td></tr>
+        <tr><td style="padding:0 32px 24px; color:#000000; font-size:15px; line-height:1.5;">
+          A partir del próximo mes, cada persona podrá coordinar hasta dos días de trabajo remoto a la
+          semana directamente con su jefatura. El detalle completo queda disponible en el manual interno.
+        </td></tr>
+        <tr><td style="padding:0 32px 32px;">
+          <a href="#" style="display:inline-block; background:#106cb5; color:#ffffff; text-decoration:none; font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; font-size:13px; padding:12px 28px; border-radius:9999px;">Ver detalle</a>
+        </td></tr>
+        <tr><td style="padding:20px 32px; border-top:1px solid #f3f4f6; font-size:10px; color:#556378; line-height:1.4;">
+          ©Capitalizarme 2026 • Comunicaciones internas • Gerencia de Personas
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

@@ -101,8 +101,8 @@ See `DESIGN.md`'s "Brand asset quick reference" and §6 Components for full usag
 - `system/` — the Design System pane's kit + artifact assets, all real and token-driven (loads
   `colors_and_type.css`): `kit.html`/`kit.dark.html` (condensed brand kit, light + the one evidenced
   inverted navy surface), `index.html` (links to everything below), `tokens.default.json` (flat token
-  JSON), and `artifacts/` — landing page, deck cover, poster, email, newsletter, and form page, each
-  reusing real Spanish copy from `source-evidence/…/content.ts`.
+  JSON), and `artifacts/` — landing page, deck cover, poster, email, internal-announcement email,
+  newsletter, form page, and report, each reusing real Spanish copy from `source-evidence/…/content.ts`.
 
 See "Source context" below for how the archived landing-page repo, the official iconset's Figma export,
 and the 2021 branding-guidelines cover page/BrandBook text extraction were captured.

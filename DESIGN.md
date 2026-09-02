@@ -571,6 +571,12 @@ brokers" — treat it as the house voice for any UI copy, not only chat:
   specifically for dark/navy/brand-blue backgrounds and is invisible on light ones.
 - ❌ Don't add a drop shadow to the logo/isotype in any placement. The brand explicitly removed it as a
   deliberate modernization — see §6 Logo system.
+- ❌ Don't box the isotype in a white "badge" tile to fake contrast on a dark surface (e.g. an isotype
+  cropped into a rounded white square, floated on a navy/black banner). That re-composes the mark into a
+  container shape that doesn't exist in `assets/logo/` and shrinks it to icon scale in the process. The
+  system already ships the fix: the Blanco horizontal lockup is built for exactly this case — place it
+  directly as an `<img>` on the dark surface, no container. See §6 Logo system's horizontal-lockup vs.
+  isotype-scale guidance.
 - ❌ Don't use "Capitalizarme.com" (domain-suffixed) as the brand name in new copy or lockups. The
   archived 2020/2021 BrandBook uses "CAPITALIZARME.COM" throughout as the formal name, but current brand
   usage — including this package's existing logo/isotype files and the newer 2026 "sin com" lockup batch

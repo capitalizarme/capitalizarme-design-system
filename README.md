@@ -186,15 +186,16 @@ ui_kits/app-astro/ APPLIED — the same invented screen, rebuilt as real .astro 
 ui_kits/app-svelte/ APPLIED — the same invented screen again, rebuilt as real .svelte + Tailwind
                             components (see ui_kits/app-svelte/README.md). Requires a Node/Vite
                             build step; meant to be dropped into an actual Svelte codebase.
-system/                    Design System pane assets — brand kit pages + 6 real artifact demos, all
+system/                    Design System pane assets — brand kit pages + 8 real artifact demos, all
                             token-driven, all loading colors_and_type.css
   kit.html / kit.dark.html   Condensed brand kit (palette, type, buttons, mascot) — light + the one
                             evidenced inverted/dark surface (CTA-banner navy treatment, not a
                             fabricated dark mode)
   index.html                  Overview linking to the kit pages and every artifact below
   tokens.default.json         Real tokens (color/type/spacing/radius/shadow/motion) as flat JSON
-  artifacts/                Landing, deck cover, poster, email, newsletter, form page — each reusing
-                            real Spanish copy from source-evidence/data/content.ts and real assets
+  artifacts/                Landing, deck cover, poster, email, internal-announcement email,
+                            newsletter, form page, report — each reusing real Spanish copy from
+                            source-evidence/data/content.ts and real assets
 ```
 
 `source-evidence/` vs `ui_kits/app-react/`/`ui_kits/app-astro/`/`ui_kits/app-svelte/` — these look

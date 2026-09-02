@@ -12,6 +12,23 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-09-02
+
+### Added
+- `system/artifacts/email-announcement.html` — a new internal-comms email pattern: a dark navy header
+  band (kicker + headline) instead of the marketing pattern's plain white masthead, for HR/ops
+  announcements rather than external sends. Same inline-style/table-layout convention as
+  `email.html`/`newsletter.html`. The header places the Blanco horizontal lockup directly on the navy
+  band as a real `<img>` — prompted by a peer email that boxed the isotype in a white "badge" tile to
+  fake contrast on a black surface, which both shrank the mark to icon scale and reintroduced the
+  retired "Capitalizarme.com" domain-suffixed caption. `README.md`/`SKILL.md` artifact counts and lists
+  updated (also picked up `report.html`, previously missing from both).
+
+### Fixed
+- `DESIGN.md` §9 Anti-patterns — added an explicit bullet against boxing the isotype in a white "badge"
+  tile on dark surfaces, naming the specific mistake above so it isn't repeated: the fix is placing the
+  Blanco horizontal lockup directly, not re-composing the mark into a new container shape.
+
 ## [0.5.0] — 2026-08-27
 
 ### Added
