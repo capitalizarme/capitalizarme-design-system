@@ -1,6 +1,6 @@
 # Capitalizarme Design System
 
-**v0.5.0** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
+**v0.7.1** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
 breaking token/API changes bump MAJOR, additive tokens/components/artifacts bump MINOR, fixes bump
 PATCH. `package.json` at the project root is the source of truth once this package publishes to npm.
 

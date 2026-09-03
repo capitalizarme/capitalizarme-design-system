@@ -12,6 +12,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.7.1] — 2026-09-03
+
+### Fixed
+- `README.md`'s top-of-file version badge was stuck at "v0.5.0" through the v0.6.0 and v0.7.0
+  releases — bumped to v0.7.1. This line doesn't self-update; bump it on every release alongside
+  `package.json` and the new `CHANGELOG.md` entry.
+
 ## [0.7.0] — 2026-09-03
 
 ### Added
