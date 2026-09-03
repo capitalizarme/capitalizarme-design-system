@@ -12,6 +12,24 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.7.0] — 2026-09-03
+
+### Added
+- `system/components/` — a general-purpose, importable React component library: `Button`, `Card`,
+  `EyebrowLabel`, `ChecklistItem`, `IconRoundel`, `Icon`, `Logo`, `Mascot` (`core/`), `Field`
+  (`forms/`), `NavLink`, `SiteHeader`, `SiteFooter` (`navigation/`). Every other artifact in this repo
+  is either tokens/prose rules or one applied *screen* per stack (`ui_kits/*`) — this is the first
+  piece meant to be `import`ed directly into a real bundler-based codebase. Each component ships a
+  `.d.ts` props contract and a `.prompt.md` usage note; `Icon` sizes glyphs by `max-width`/`max-height`
+  with `width`/`height: auto` rather than forcing both dimensions, so non-square iconset glyphs don't
+  distort. See `system/components/README.md`. Documented in `DESIGN.md` §6, `README.md`, `SKILL.md`.
+- `colors_and_type.css` — nine small DERIVED custom properties the new component library needed as
+  reusable tokens instead of each component re-deriving the same literal: `--fg-on-inverse`,
+  `--hairline`, `--hairline-subtle`, `--hover-opacity`, `--tracking-cta`, `--tracking-eyebrow`,
+  `--card-pad`, `--card-pad-lg`, `--header-h`. None are new decisions — each aliases a value this file
+  or `DESIGN.md` already states in prose (hover opacity 0.9 per §6.1, CTA/eyebrow tracking 0.08em per
+  §3, card padding 24px→40px per §6, the 64px fixed header per §5).
+
 ## [0.6.0] — 2026-09-02
 
 ### Added

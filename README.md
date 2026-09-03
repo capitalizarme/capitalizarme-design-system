@@ -196,6 +196,10 @@ system/                    Design System pane assets — brand kit pages + 8 rea
   artifacts/                Landing, deck cover, poster, email, internal-announcement email,
                             newsletter, form page, report — each reusing real Spanish copy from
                             source-evidence/data/content.ts and real assets
+  components/                General-purpose importable React primitives (Button, Card, Field,
+                            SiteHeader/Footer, etc.) with .d.ts + .prompt.md per component — for a
+                            real bundler-based codebase, not a browser-script-tag preview. See
+                            system/components/README.md.
 ```
 
 `source-evidence/` vs `ui_kits/app-react/`/`ui_kits/app-astro/`/`ui_kits/app-svelte/` — these look

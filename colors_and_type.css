@@ -42,6 +42,13 @@
       state on red, alert text" but --status-danger was never actually wired to it — the -text tokens
       close that gap without touching the official swatch colors. --status-success-text is an alias:
       --status-success already clears 6.8:1 on white and needed no change.
+
+  2026-09-03: added --fg-on-inverse, --hairline(-subtle), --hover-opacity, --tracking-cta,
+  --tracking-eyebrow, --card-pad(-lg), --header-h. None are new decisions — each aliases a value this
+  file or DESIGN.md already states in prose (hover is opacity 0.9 per §6.1; CTA/eyebrow tracking is
+  0.08em per §3; cards pad 24px→40px per §6; the fixed header is 64px per §5) — added because
+  components/ (the new React primitives library) needed them as reusable custom properties instead of
+  each component re-deriving the same literal.
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Raleway:ital,wght@0,700;1,700&display=swap");
@@ -81,9 +88,12 @@
   --surface-tint-alt: var(--color-brand-blue-tint-100);
   --fg: #000000;                 /* text-black — used for body copy & several headings */
   --fg-emphasis: var(--color-brand-navy); /* text-brand-navy — nav links, Features/FeaturedWork headings */
+  --fg-on-inverse: #ffffff;      /* text on a navy/brand-blue surface — DERIVED alias, white is already used this way throughout */
   --muted: var(--color-brand-muted);      /* footer legal text, secondary nav */
   --border: #e5e7eb;             /* border-gray-200 (ContactForm card, Footer column rule) */
   --border-subtle: #f3f4f6;      /* border-gray-100 (Header bottom hairline, Footer top hairline) */
+  --hairline: 1px solid var(--border);              /* DERIVED shorthand — card/input rule */
+  --hairline-subtle: 1px solid var(--border-subtle); /* DERIVED shorthand — header/footer rule */
 
   /* ---- Interactive ---- */
   --accent: var(--color-brand-blue);
@@ -96,6 +106,7 @@
   --focus-ring: var(--color-brand-blue);
   --focus-ring-offset: 2px;
   --disabled-opacity: 0.45;
+  --hover-opacity: 0.9;          /* DESIGN.md §6.1 — the evidenced hover treatment outside outline buttons/nav */
 
   /* ---- Status (Success/Danger source-backed to official Green/Red; Warning remains DERIVED — no
      dedicated warning color was evidenced). --status-*-text are the text/icon-safe variants — the base
@@ -133,6 +144,9 @@
   --weight-extrabold: 800; /* hero h1: font-extrabold */
   --weight-black: 900;     /* section h2: font-black */
 
+  --tracking-cta: 0.08em;     /* Raleway button/CTA labels — DESIGN.md §3, always uppercase + tracked */
+  --tracking-eyebrow: 0.08em; /* uppercase eyebrow kickers — same tracking, Space Grotesk not Raleway */
+
   /* ---- Spacing / layout rhythm (source-backed: max-w-[1440px] px-6 lg:px-[140px] py-16) ---- */
   --container-max: 1440px;
   --container-pad: 24px;
@@ -140,6 +154,7 @@
   --section-py: 64px;      /* py-16 */
   --section-py-lg: 80px;   /* lg:py-20 (Features) */
   --section-py-xl: 96px;   /* lg:py-24 (CTA banner) */
+  --header-h: 64px;        /* the fixed header — DESIGN.md §5, the system's one fixed layout element */
 
   --space-1: 4px;
   --space-2: 8px;
@@ -150,6 +165,9 @@
   --space-10: 40px;
   --space-12: 48px;
   --space-16: 64px;
+
+  --card-pad: var(--space-6);     /* DERIVED alias — DESIGN.md §6 Cards, 24px padding */
+  --card-pad-lg: var(--space-10); /* DERIVED alias — DESIGN.md §6 Cards, 40px on desktop */
 
   /* ---- Radius (source-backed: rounded-lg / rounded-2xl / rounded-full) ---- */
   --radius-sm: 8px;

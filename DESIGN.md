@@ -438,6 +438,14 @@ All patterns below are copied from real component source now preserved in `sourc
   that glyph for a specific recurring use. When a glyph is adopted for a specific recurring use (a nav
   icon, a status icon, a step icon), promote it into a named file (mirroring `assets/icons/step-*.svg`)
   so future readers don't have to cross-reference the grid.
+- **React component library — `system/components/`** — general-purpose, importable primitives
+  (`Button`, `Card`, `EyebrowLabel`, `ChecklistItem`, `IconRoundel`, `Icon`, `Logo`, `Mascot`, `Field`,
+  `NavLink`, `SiteHeader`, `SiteFooter`), each with a `.d.ts` props contract and a `.prompt.md` usage
+  note. Everywhere else in this system defines rules and evidenced patterns; this is the only place
+  that turns them into reusable, importable code — meant for a real bundler-based codebase, not a
+  browser-script-tag preview (`ui_kits/app-react/` covers that case). Derived strictly from the
+  evidenced markup, same discipline as the copy-paste patterns in `components/*.html` — see
+  `system/components/README.md`.
 
 ### 6.1 Component states — hover, focus, disabled
 
