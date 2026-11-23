@@ -1,6 +1,6 @@
 # Capitalizarme Design System
 
-**v0.7.1** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
+**v0.8.0** — see [`CHANGELOG.md`](CHANGELOG.md). Versioned with [SemVer](https://semver.org/):
 breaking token/API changes bump MAJOR, additive tokens/components/artifacts bump MINOR, fixes bump
 PATCH. `package.json` at the project root is the source of truth once this package publishes to npm.
 
@@ -29,6 +29,16 @@ Every format shares the same source of truth: bind `colors_and_type.css`'s token
 type pairing), pull icons/logo/mascot from `assets/` per the quick-reference table above, and follow
 the §9 anti-patterns (no invented figures, no guaranteed-returns language, no third typeface, no
 squared-off buttons). See Reuse workflow below for the step-by-step process.
+
+### Using it with open-design-agent-kit
+
+This package is also an [open-design-agent-kit](https://github.com/feimacode/open-design-agent-kit)
+design system: `DESIGN.md` + the generated, self-contained `tokens.css` (all 56 kit contract tokens) +
+`brand.json` (`kind: "own"`). Copy them with `assets/` into a consumer project's
+`.open-design/design-systems/capitalizarme/` and ask the agent to "use the capitalizarme design
+system". Setup for Claude Code, Codex and Pi, the token-alias table, and how to regenerate
+`tokens.css` (`npm run build:tokens`) are in
+[`docs/open-design-agent-kit.md`](docs/open-design-agent-kit.md).
 
 ## Visual Preview
 
@@ -142,6 +152,11 @@ DESIGN.md                Canonical rules doc — product context, color, type, s
                           components, motion, voice, anti-patterns
 colors_and_type.css       Concrete design tokens + base styles. Space Grotesk/Raleway load from
                           Google Fonts CDN only (@import) — no local @font-face, no JS font loader
+tokens.css                GENERATED from colors_and_type.css (npm run build:tokens) — one
+                          self-contained :root block with the open-design-agent-kit token
+                          contract. Never hand-edit; see docs/open-design-agent-kit.md
+scripts/                  build-tokens.mjs (tokens.css generator, --check for drift) + node:test
+                          tests (npm test)
 README.md                 This file
 SKILL.md                  Agent-usable skill entry for reusing this system in future projects
 LICENSE                    Copyright / usage terms for this package (Capitalizarme, all rights reserved)

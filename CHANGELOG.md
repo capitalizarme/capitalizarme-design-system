@@ -12,6 +12,28 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); version
 
 ## [Unreleased]
 
+## [0.8.0] — 2026-11-23
+
+### Added
+- `tokens.css` — a GENERATED, self-contained `:root` block declaring all 56 tokens of the
+  [open-design-agent-kit](https://github.com/feimacode/open-design-agent-kit) token contract: every
+  `colors_and_type.css` `:root` declaration verbatim plus contract aliases (`--meta`, `--accent-on`,
+  `--elev-*`, `--motion-*`, `--section-y-*`, `--container-gutter-*`, …). No `@import`; every
+  `var()` resolves inside the block. `--focus-ring` is a box-shadow here (the kit's usage) while
+  `colors_and_type.css` keeps it as an outline color. `colors_and_type.css` stays the source of truth.
+- `scripts/build-tokens.mjs` — the generator (`--check` fails on a missing or stale `tokens.css`),
+  with `node:test` tests in `scripts/`. No dependencies.
+- `package.json` scripts: `build:tokens`, `check:tokens`, `test`; `tokens.css` and `brand.json`
+  added to `files`.
+- `docs/open-design-agent-kit.md` — how this package maps to the kit, the token-alias table,
+  consumer install as `user:capitalizarme`, and host setup (Claude Code, Codex, Pi / any MCP host).
+  README gains a pointer section.
+
+### Changed
+- `brand.json` now follows the kit's brand schema: `version: 1`, `kind: "own"`, `marks` (logo,
+  logo-on-dark, icon, touch-icon), `fonts` (Space Grotesk, Raleway via Google Fonts), `descriptor`,
+  and `imagery.hero` / `imagery.icons`. Every existing key and mascot sample is kept.
+
 ## [0.7.1] — 2026-09-03
 
 ### Fixed
