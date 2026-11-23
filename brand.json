@@ -1,6 +1,37 @@
 {
+  "version": 1,
+  "kind": "own",
   "name": "Capitalizarme",
+  "descriptor": {
+    "moods": ["corporate", "friendly"],
+    "industries": ["finance"],
+    "surfaces": ["web", "mobile", "print", "slides"]
+  },
   "colors": [],
+  "marks": [
+    {
+      "role": "logo",
+      "path": "assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png",
+      "format": "png",
+      "seenOn": "#ffffff"
+    },
+    {
+      "role": "logo-on-dark",
+      "path": "assets/logo/horizontal/070726_logo-capitalizarme-blanco-sin-com.png",
+      "format": "png",
+      "seenOn": "#25397f"
+    },
+    {
+      "role": "icon",
+      "path": "assets/logo/isotypes/Isotipo Negro.png",
+      "format": "png"
+    },
+    {
+      "role": "touch-icon",
+      "path": "assets/logo/favicon.png",
+      "format": "png"
+    }
+  ],
   "logo": {
     "primary": "assets/logo/horizontal/070726_logo-capitalizarme-negro-sin-com.png",
     "alternates": [
@@ -56,7 +87,27 @@
       "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     }
   },
+  "fonts": [
+    {
+      "family": "Space Grotesk",
+      "weights": ["300", "400", "500", "600", "700"],
+      "source": "google",
+      "stylesheet": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap",
+      "licence": "free"
+    },
+    {
+      "family": "Raleway",
+      "weights": ["700"],
+      "source": "google",
+      "stylesheet": "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,700&display=swap",
+      "licence": "free"
+    }
+  ],
   "imagery": {
+    "hero": "3d",
+    "icons": {
+      "set": "custom"
+    },
     "style": "Photographic 3D-rendered mascot imagery centered on Capi, the orange bear in business-casual dress (navy vest, white shirt, maroon tie). Capi is the brand's entire expressive/warmth layer; UI chrome around it stays restrained, geometric, and pill-shaped. Imagery sits on flat white or pale-blue-tint surfaces — no gradients, no dark mode, no beige/cream washes (DESIGN.md §1, §6).",
     "subjects": [
       "Capi in everyday business and life poses: on the phone, filing paperwork, searching, busy, thumbs up, riding a rocket, skateboarding, graduating, at the movies, multi-angle lineup",
