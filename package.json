@@ -5,9 +5,16 @@
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
   "author": "Capitalizarme",
+  "scripts": {
+    "build:tokens": "node scripts/build-tokens.mjs",
+    "check:tokens": "node scripts/build-tokens.mjs --check",
+    "test": "node --test \"scripts/*.test.mjs\""
+  },
   "files": [
     "DESIGN.md",
     "colors_and_type.css",
+    "tokens.css",
+    "brand.json",
     "assets",
     "components",
     "fonts",
