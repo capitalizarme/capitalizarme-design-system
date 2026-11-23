@@ -14,7 +14,7 @@ against the brand. It reads the same design-system contract as Open Design — a
 |---|---|---|
 | `DESIGN.md` | [`DESIGN.md`](../DESIGN.md) | §§1–9 are exactly the kit's required outline (Visual Theme, Color, Typography, Spacing, Layout, Components, Motion, Voice, Anti-patterns). §§10–15 (print, slides, charts, CSS framework, video, quick-start) are additive and harmless to the kit. |
 | `tokens.css` | [`tokens.css`](../tokens.css) — **generated** | Declares all 56 tokens of the kit's contract in one self-contained `:root` block: no `@import`, every `var()` target declared in the same block. It must be self-contained because agents paste that block alone into a single `<style>`. Generated from [`colors_and_type.css`](../colors_and_type.css), which stays the source of truth (and the file every existing page imports). |
-| `brand.json` | [`brand.json`](../brand.json) | `version: 1`, `kind: "own"` — so the kit treats it as the user's own brand and recommends it first. `marks`, `fonts` and `descriptor` feed the kit's brand lints (`brand-off-palette`, `brand-font`, `brand-mark-missing`). All pre-existing keys (`logo`, `typography`, `imagery`, mascot samples) are kept; the kit passes unknown keys through. |
+| `brand.json` | [`brand.json`](../brand.json) | `version: 1`, `kind: "own"` — so the kit treats it as the user's own brand and recommends it first. `marks` (a `logo*` role) feeds the `brand-mark-missing` lint; `descriptor` feeds the kit's design-system recommender; `fonts` documents where the faces load from. The `brand-off-palette` and `brand-font` lints read colours and `--font-*` families from `tokens.css`, not from `brand.json`. All pre-existing keys (`logo`, `typography`, `imagery`, mascot samples) are kept; the kit passes unknown keys through. |
 
 ## 3. Contract-token aliases
 
@@ -49,8 +49,9 @@ with `0 0 0 2px var(--bg), 0 0 0 4px var(--color-brand-blue)` — the same look 
 outline at a 2px offset. `colors_and_type.css` keeps its color meaning; don't load both files on the
 same page and expect `--focus-ring` to agree.
 
-`tokens.css` carries no `@font-face`/`@import`: kit hosts load Space Grotesk and Raleway from the
-`fonts[].stylesheet` URLs in `brand.json`.
+`tokens.css` carries no `@font-face`/`@import`, so it does not load Space Grotesk or Raleway by itself.
+The kit leaves font loading to the agent; agents can load the faces from the `fonts[].stylesheet`
+Google Fonts URLs in `brand.json` (or `colors_and_type.css`'s `@import`).
 
 ## 4. Install in a consumer project
 
